@@ -29,7 +29,7 @@ const descriptiveStatistics: Section = {
     {
       type: "interactive",
       component: "DistributionExplorer",
-      caption: "Placeholder: interactive distribution explorer — adjust skewness and kurtosis sliders and see how mean vs. median diverge.",
+      caption: "Distribution explorer — adjust skewness and kurtosis sliders and see how mean vs. median diverge.",
       props: {},
     },
     {

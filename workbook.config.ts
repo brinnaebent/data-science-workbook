@@ -15,6 +15,10 @@ import LabelingWorkflow from "./interactives/LabelingWorkflow";
 import WebScrapingDiagram from "./interactives/WebScrapingDiagram";
 import SamplingBiasExplorer from "./interactives/SamplingBiasExplorer";
 import DataInfrastructureWizard from "./interactives/DataInfrastructureWizard";
+import DistributionExplorer from "./interactives/DistributionExplorer";
+import CorrelationHeatmap from "./interactives/CorrelationHeatmap";
+import EDAVizTour from "./interactives/EDAVizTour";
+import IrisPairPlot from "./interactives/IrisPairPlot";
 
 // Register your interactive components here.
 // The key must match the "component" field in your content blocks.
@@ -40,5 +44,9 @@ export default defineConfig({
     WebScrapingDiagram,
     SamplingBiasExplorer,
     DataInfrastructureWizard,
+    DistributionExplorer,
+    CorrelationHeatmap,
+    EDAVizTour,
+    IrisPairPlot,
   },
 });

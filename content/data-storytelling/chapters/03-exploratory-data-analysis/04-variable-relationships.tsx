@@ -14,7 +14,7 @@ const variableRelationships: Section = {
     {
       type: "interactive",
       component: "CorrelationHeatmap",
-      caption: "Placeholder: interactive correlation heatmap — upload or select a sample dataset and explore pairwise relationships.",
+      caption: "Correlation heatmap — select a sample dataset and explore pairwise relationships. Data is synthetic and for educational purposes only. Does not constitute real data relationships.",
       props: {},
     },
     {
