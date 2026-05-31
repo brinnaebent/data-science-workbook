@@ -20,14 +20,14 @@ const dataLeakage: Section = {
     {
       type: "callout",
       variant: "tip",
-      title: "The Rule That Keeps You Honest",
+      title: "A Good Rule of Thumb",
       html: `<p><em>Pretend the test set doesn't exist until the very last step.</em> Run all preprocessing, EDA, feature engineering, model selection, and hyperparameter tuning as if the test set will arrive tomorrow. Then evaluate exactly once. If you don't like the result, you don't get to go back and tune. That's the deal.</p>`,
     },
     {
       type: "callout",
       variant: "example",
       title: "The Pricing Model That Lost Money",
-      html: `<p>A pricing model I heard about performed beautifully in backtests and lost money the moment it went live. The reason: backtests randomly sampled across years instead of training on past and testing on future. The model had been "predicting" past prices using future data. The leakage was invisible in metrics until the system actually went live. Time-aware splits are non-negotiable in any sequential domain.</p>`,
+      html: `<p>A pricing model performed beautifully in backtests and lost money the moment it went live. The reason: backtests randomly sampled across years instead of training on past and testing on future. The model had been "predicting" past prices using future data. The leakage was invisible in metrics until the system actually went live. Time-aware splits are non-negotiable in any sequential domain.</p>`,
     },
     {
       type: "interactive",

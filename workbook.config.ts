@@ -22,6 +22,9 @@ import IrisPairPlot from "./interactives/IrisPairPlot";
 import StarbucksMemory from "./interactives/StarbucksMemory";
 import AudienceChartComparison from "./interactives/AudienceChartComparison";
 import ChartTypePicker from "./interactives/ChartTypePicker";
+import ThreeSplitExplorer from "./interactives/ThreeSplitExplorer";
+import KFoldExplorer from "./interactives/KFoldExplorer";
+import LeakageDetector from "./interactives/LeakageDetector";
 
 // Register your interactive components here.
 // The key must match the "component" field in your content blocks.
@@ -54,5 +57,8 @@ export default defineConfig({
     StarbucksMemory,
     AudienceChartComparison,
     ChartTypePicker,
+    ThreeSplitExplorer,
+    KFoldExplorer,
+    LeakageDetector,
   },
 });

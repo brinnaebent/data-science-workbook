@@ -23,13 +23,7 @@ const versioningAndReproducibility: Section = {
     },
     {
       type: "text",
-      html: `<p>Increasingly sophisticated tools exist for data versioning: <strong>DVC</strong> (Data Version Control), <strong>MLflow</strong>, <strong>Weights &amp; Biases</strong>, <strong>LakeFS</strong>. These treat data with the same rigor we treat code. If you go into industry, expect to encounter at least one of these on any serious ML team. Learning one as a student is a genuine résumé differentiator.</p>`,
-    },
-    {
-      type: "callout",
-      variant: "warning",
-      title: "A Small Honesty Moment",
-      html: `<p>This is hard to do in a classroom setting. You're working with multiple people, rushed, under deadline pressure. "Consistency" is the first casualty. I have absolutely cut corners here in my own career and regretted it — sometimes losing an entire day trying to figure out which version of a dataset produced which model. Practice the discipline in the classroom so it becomes second nature in industry. The ten extra minutes you spend on documentation now save you an entire day of confusion six months from now.</p>`,
+      html: `<p>Increasingly sophisticated tools exist for data versioning: <strong>DVC</strong> (Data Version Control), <strong>MLflow</strong>, <strong>Weights &amp; Biases</strong> (free for students!), <strong>LakeFS</strong>. These treat data with the same rigor we treat code. If you go into industry, expect to encounter at least one of these on any serious ML team. Learning one as a student is a genuine résumé differentiator.</p>`,
     },
     {
       type: "checkpoint",
