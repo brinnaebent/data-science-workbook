@@ -1,0 +1,5 @@
+@import "@brinnaebent/workbook/workbook.css";
+
+/* Source app and interactive components for Tailwind class scanning */
+@source "./**/*.tsx";
+@source "../interactives/**/*.tsx";
