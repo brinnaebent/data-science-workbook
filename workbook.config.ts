@@ -25,6 +25,11 @@ import ChartTypePicker from "./interactives/ChartTypePicker";
 import ThreeSplitExplorer from "./interactives/ThreeSplitExplorer";
 import KFoldExplorer from "./interactives/KFoldExplorer";
 import LeakageDetector from "./interactives/LeakageDetector";
+import MissingnessClassifier from "./interactives/MissingnessClassifier";
+import OutlierDetector from "./interactives/OutlierDetector";
+import TransformExplorer from "./interactives/TransformExplorer";
+import DQAWalkthrough from "./interactives/DQAWalkthrough";
+import WearableMissingnessExplorer from "./interactives/WearableMissingnessExplorer";
 
 // Register your interactive components here.
 // The key must match the "component" field in your content blocks.
@@ -60,5 +65,10 @@ export default defineConfig({
     ThreeSplitExplorer,
     KFoldExplorer,
     LeakageDetector,
+    MissingnessClassifier,
+    OutlierDetector,
+    TransformExplorer,
+    DQAWalkthrough,
+    WearableMissingnessExplorer,
   },
 });

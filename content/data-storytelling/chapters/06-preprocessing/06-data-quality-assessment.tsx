@@ -25,30 +25,12 @@ const dataQualityAssessment: Section = {
 </ul>`,
     },
     {
-      type: "callout",
-      variant: "example",
-      title: "Worked Example: Crop Yield Prediction",
-      html: `<p>A data scientist at an agriculture company is building a crop-yield prediction model. A structured DQA unfolds like this:</p>
-<ol>
-<li><strong>Profile</strong> the dataset. Notice rainfall has extreme values and soil pH has many missing values.</li>
-<li><strong>Investigate missingness.</strong> Soil-pH missing values cluster geographically — MAR. Impute conditioned on region, or exclude affected records.</li>
-<li><strong>Cross-check for accuracy.</strong> Sample farm records against the agricultural extension service — find some crop variety values are wrong. Fix with data engineering.</li>
-<li><strong>Standardize for consistency.</strong> Farm locations recorded inconsistently — some GPS, some postal addresses. Write cleaning rules.</li>
-<li><strong>Enforce integrity.</strong> Farm IDs must be unique, crop variety codes must be valid. Fix violations.</li>
-<li><strong>Document lineage.</strong> Sources: extension service, weather stations, farm records. Capture transformations and quality issues.</li>
-<li><strong>Automate testing.</strong> CI/CD pipeline runs validation rules and catches regressions during model updates.</li>
-<li><strong>Monitor continuously.</strong> Quality is not a one-time project.</li>
-</ol>`,
+      type: "interactive",
+      component: "DQAWalkthrough",
     },
     {
       type: "text",
       html: `<p>Real-time systems need continuous DQA. Tools like <strong>Great Expectations</strong> and <strong>Soda</strong> let you encode data quality rules as code and run them every time new data arrives. If you're going into a data-intensive role in industry, these are worth learning.</p>`,
-    },
-    {
-      type: "callout",
-      variant: "warning",
-      title: "This Is More Work Than You Expect",
-      html: `<p>This is where the difference between a senior data scientist and a junior one becomes visible. Seniors do this work. Juniors skip it and pay for it later. Set up real frameworks at the beginning so future-you doesn't have to clean up past-you's mess — a lesson I've had to learn more than once in my own career.</p>`,
     },
     {
       type: "checkpoint",

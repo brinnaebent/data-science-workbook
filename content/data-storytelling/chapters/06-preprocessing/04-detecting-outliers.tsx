@@ -18,12 +18,10 @@ const detectingOutliers: Section = {
 </ul>`,
     },
     {
-      type: "callout",
-      variant: "info",
-      title: "Detection Methods",
-      html: `<p><strong>Visual.</strong> Scatter plots and box plots. Anything outside the box plot's whiskers is conventionally flagged.</p>
-<p><strong>Z-score method.</strong> Assumes approximate normality. Compute $z = (x - \\mu) / \\sigma$ for each point. Flag any point where $|z| > k$. Common choice: $k = 3$. Sensitive to the normality assumption — if your data isn't approximately normal, the z-score method will mis-flag.</p>
-<p><strong>IQR method.</strong> Does not assume normality — more general. Upper threshold: $Q3 + k \\times IQR$; lower threshold: $Q1 - k \\times IQR$, where $k = 1.5$ is conventional. Any point outside this range is flagged.</p>
+      type: "text",
+      html: `<h3>Discovering Outliers</h3><p><strong>Visual.</strong> Scatter plots and box plots. Anything outside the box plot's whiskers is conventionally flagged.</p>
+<p><strong>Z-score method.</strong> Assumes approximate normality. Compute $z = (x - \\mu) / \\sigma$ for each point. Flag any point where $|z| > k$. Common choice: $k = 3$. Here $k$ is a threshold multiplier — higher $k$ means only more extreme points are flagged; lower $k$ flags more aggressively. Sensitive to the normality assumption — if your data isn't approximately normal, the z-score method will mis-flag.</p>
+<p><strong>IQR method.</strong> Does not assume normality. Upper threshold: $Q3 + k \\times IQR$; lower threshold: $Q1 - k \\times IQR$, where $k = 1.5$ is conventional (Tukey's rule). $k$ controls the fence width: larger $k$ widens the fences and flags fewer points; smaller $k$ narrows them and flags more. Any point outside this range is flagged.</p>
 <p><strong>Cook's distance.</strong> For regression: measures how much the regression parameters change when a specific point is removed. Useful for identifying <em>influential</em> observations — points that disproportionately steer the model.</p>`,
     },
     {
@@ -33,10 +31,10 @@ const detectingOutliers: Section = {
       html: `<p>In fraud detection, <em>the outliers are the point</em> — you're hunting them, not removing them. In sensor monitoring, outliers might be equipment failures you need to flag immediately. In customer analytics, outliers might be your most valuable customers. Always investigate before deciding what to do with an outlier.</p>`,
     },
     {
-      type: "image",
-      src: "/images/placeholder.png",
-      alt: "Box plot and z-score comparison showing flagged outliers",
-      caption: "Placeholder: side-by-side comparison of IQR and z-score outlier detection on right-skewed data, showing where each method flags differently.",
+      type: "interactive",
+      component: "OutlierDetector",
+      caption: "Adjust the threshold multiplier for each method and see how IQR and z-score flag different points on right-skewed data.",
+      props: {},
     },
     {
       type: "checkpoint",
