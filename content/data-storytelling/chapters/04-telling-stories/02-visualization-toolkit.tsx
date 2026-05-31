@@ -10,6 +10,22 @@ const visualizationToolkit: Section = {
       html: `<p>Know your toolbox. This isn't exhaustive, but these are the visualizations you'll reach for most — and for each one, there's a specific job it's best at.</p>`,
     },
     {
+      type: "article",
+      href: "https://cloud.google.com/blog/products/data-analytics/different-types-graphs-charts-uses",
+      imageSrc: "/data-storytelling/plots.png",
+      imageAlt: "Different types of graphs and charts and their uses",
+      publisher: "Google Cloud",
+      category: "Data Analytics",
+      title: "Different Types of Graphs and Charts and Their Uses",
+      excerpt: "A practical guide to choosing the right visualization — from bar charts to scatter plots — based on what your data is and what you're trying to show.",
+    },
+    {
+      type: "interactive",
+      component: "ChartTypePicker",
+      caption: "Placeholder: interactive chart selector — describe your data and audience, get a recommended visualization type.",
+      props: {},
+    },
+    {
       type: "callout",
       variant: "info",
       title: "Distribution Plots",
@@ -31,12 +47,6 @@ const visualizationToolkit: Section = {
 <li><strong>Bar chart</strong> — counts or frequencies across categories. Best for: "how many in each category?" Universally readable.</li>
 <li><strong>Line plot</strong> — trends over time or sequential data. The default for time series. Widely readable.</li>
 </ul>`,
-    },
-    {
-      type: "interactive",
-      component: "ChartTypePicker",
-      caption: "Placeholder: interactive chart selector — describe your data and audience, get a recommended visualization type.",
-      props: {},
     },
     {
       type: "callout",

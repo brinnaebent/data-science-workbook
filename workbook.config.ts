@@ -20,6 +20,8 @@ import CorrelationHeatmap from "./interactives/CorrelationHeatmap";
 import EDAVizTour from "./interactives/EDAVizTour";
 import IrisPairPlot from "./interactives/IrisPairPlot";
 import StarbucksMemory from "./interactives/StarbucksMemory";
+import AudienceChartComparison from "./interactives/AudienceChartComparison";
+import ChartTypePicker from "./interactives/ChartTypePicker";
 
 // Register your interactive components here.
 // The key must match the "component" field in your content blocks.
@@ -50,5 +52,7 @@ export default defineConfig({
     EDAVizTour,
     IrisPairPlot,
     StarbucksMemory,
+    AudienceChartComparison,
+    ChartTypePicker,
   },
 });
