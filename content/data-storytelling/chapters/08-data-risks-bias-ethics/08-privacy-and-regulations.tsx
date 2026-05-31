@@ -10,11 +10,33 @@ const privacyAndRegulations: Section = {
       html: `<p><strong>Data privacy</strong> is the right of users to have control over how their information is collected, used, and shared. Understanding it is not optional for anyone building data products — both because it's ethically important and because it's legally required.</p>`,
     },
     {
+      type: "article",
+      href: "https://www.nytimes.com/interactive/2018/12/10/business/location-data-privacy-apps.html",
+      imageSrc: "/data-storytelling/nyt-cellphones.png",
+      imageAlt: "Article Header",
+      publisher: "New York Times",
+      title: "Your Apps Know Where You Were Last Night, and They’re Not Keeping It Secret",
+      excerpt: "Dozens of companies use smartphone locations to help advertisers and even hedge funds. They say it’s anonymous, but the data shows how personal it is.",
+      ctaLabel: "Read Article",
+      byline: "JENNIFER VALENTINO-DeVRIES, NATASHA SINGER, MICHAEL H. KELLER and AARON KROLIK",
+    },
+    {
       type: "callout",
       variant: "warning",
       title: "Case 1: Location Data — 'Anonymized' Isn't Anonymous",
       html: `<p>At least 75 companies receive precise, "anonymized" location data from apps whose users enabled location services for weather, news, or similar purposes. They sell it to advertisers, retailers, and hedge funds. The market is in the tens of billions of dollars per year.</p>
 <p>The New York Times investigation tracked specific individuals via this data. A teacher's device pinged from home to school hundreds of times — they could identify how long she spent at the dermatologist, when she went to the gym, when she visited a Weight Watchers location. The data is "anonymous" only in the sense that names aren't attached to the IDs. Location patterns over time identify people uniquely. Anonymization-by-removing-names is not real anonymization.</p>`,
+    },
+    {
+      type: "article",
+      href: "https://www.forbes.com/sites/kashmirhill/2012/02/16/how-target-figured-out-a-teen-girl-was-pregnant-before-her-father-did/",
+      imageSrc: "/data-storytelling/target-design.jpg",
+      imageAlt: "target pregnancy prediction",
+      publisher: "Forbes",
+      title: "How Target Figured Out A Teen Girl Was Pregnant Before Her Father Did",
+      excerpt: "[Target] was able to identify about 25 products that, when analyzed together, allowed him to assign each shopper a “pregnancy prediction” score. ",
+      ctaLabel: "Read Article",
+      byline: "Kashmir Hill",
     },
     {
       type: "callout",

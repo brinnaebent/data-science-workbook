@@ -7,8 +7,11 @@ const mitigatingBias: Section = {
   blocks: [
     {
       type: "text",
-      html: `<p>Knowing where bias enters is necessary but not sufficient. You need mitigation strategies at each stage. The general principles below apply broadly; the specific tactics depend on your domain, your data, and what kind of bias you've identified.</p>
-<ul>
+      html: `<p>Knowing where bias enters is necessary but not sufficient. You need mitigation strategies at each stage. The general principles below apply broadly; the specific tactics depend on your domain, your data, and what kind of bias you've identified.</p>`,
+    },
+    {
+      type: "text",
+      html: `<ol>
 <li><strong>Representativeness.</strong> Ensure your dataset represents the target population — not just your convenient sampling frame.</li>
 <li><strong>Diverse and inclusive collection.</strong> Sources and participants spanning gender, race, ethnicity, age, socioeconomic status, geography, and other relevant attributes.</li>
 <li><strong>Balanced distribution.</strong> Across groups and categories. If a subgroup is genuinely rare, consider oversampling or synthetic augmentation.</li>
@@ -16,8 +19,8 @@ const mitigatingBias: Section = {
 <li><strong>Audit for sensitive attribute proxies.</strong> Postal code is often a proxy for race. Time-of-day-of-shopping can be a proxy for socioeconomic status. Removing the explicit sensitive attribute isn't enough if correlated proxies remain.</li>
 <li><strong>Documentation and transparency.</strong> Collection process, sources, known biases, limitations — all documented.</li>
 <li><strong>Regular monitoring.</strong> Especially with internet-sourced data — biases shift over time as the world changes.</li>
-<li><strong>Diverse teams.</strong> People with different perspectives spot different problems. This is not decorative — it is functional.</li>
-</ul>`,
+<li><strong>Diverse teams.</strong> People with different perspectives spot different problems.</li>
+</ol>`,
     },
     {
       type: "callout",
