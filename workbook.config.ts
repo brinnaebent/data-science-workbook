@@ -19,6 +19,7 @@ import DistributionExplorer from "./interactives/DistributionExplorer";
 import CorrelationHeatmap from "./interactives/CorrelationHeatmap";
 import EDAVizTour from "./interactives/EDAVizTour";
 import IrisPairPlot from "./interactives/IrisPairPlot";
+import StarbucksMemory from "./interactives/StarbucksMemory";
 
 // Register your interactive components here.
 // The key must match the "component" field in your content blocks.
@@ -48,5 +49,6 @@ export default defineConfig({
     CorrelationHeatmap,
     EDAVizTour,
     IrisPairPlot,
+    StarbucksMemory,
   },
 });

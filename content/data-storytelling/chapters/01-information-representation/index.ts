@@ -7,6 +7,7 @@ import sensorData from "./05-sensor-data";
 import imagesAndVideo from "./06-images-and-video";
 import text from "./07-text";
 import userBehaviorAndCombinedTypes from "./08-user-behavior-and-combined-types";
+import representationIsCompression from "./09-representation-is-compression";
 
 const informationRepresentation: Chapter = {
   id: "information-representation",
@@ -23,6 +24,7 @@ const informationRepresentation: Chapter = {
     imagesAndVideo,
     text,
     userBehaviorAndCombinedTypes,
+    representationIsCompression,
   ],
 };
 
