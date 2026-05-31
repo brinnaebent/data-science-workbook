@@ -27,6 +27,7 @@ const dataQualityAssessment: Section = {
     {
       type: "interactive",
       component: "DQAWalkthrough",
+      caption: "Step through each dimension of a data quality assessment on a realistic dataset — profiling, completeness, accuracy, consistency, integrity, lineage, testing, and monitoring.",
     },
     {
       type: "text",

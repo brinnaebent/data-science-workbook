@@ -30,6 +30,7 @@ const missingnessAsFeature: Section = {
     {
       type: "interactive",
       component: "WearableMissingnessExplorer",
+      caption: "Toggle between raw gaps, mean imputation, and a binary missing flag to see how each strategy changes what the model can learn from a user's device-wear pattern.",
     },
     {
       type: "checkpoint",
