@@ -3,7 +3,7 @@ import type { Section } from "@brinnaebent/workbook";
 const whatFeatureEngineeringIs: Section = {
   id: "what-feature-engineering-is",
   number: 1,
-  title: "What Feature Engineering Is",
+  title: "Feature Engineering",
   blocks: [
     {
       type: "text",
@@ -24,6 +24,16 @@ const whatFeatureEngineeringIs: Section = {
       variant: "tip",
       title: "Where Competitions Are Won",
       html: `<p>In Kaggle competitions, the difference between leaderboard winners and also-rans is almost always feature engineering. The models are largely the same — gradient-boosted trees, neural networks — but the features are different. The same is true in industry. The companies that win on ML often win because they have feature engineering pipelines their competitors haven't thought of.</p>`,
+    },
+    {
+      type: "text",
+      html: `<p>Feature engineering relies on domain expertise. You are rarely the domain expert — and even if you are, you should seek out others. The best feature engineering work involves a data scientist who understands the math talking to a domain expert who understands what the numbers actually mean.</p>
+<p>Three strategies for accessing expertise you don't have:</p>
+<ul>
+<li><strong>Read.</strong> Research papers, textbooks, domain lectures. Build expertise yourself, even if you'll bring in collaborators. It pays off in unexpected ways — you'll ask better questions and spot better opportunities.</li>
+<li><strong>Talk to domain experts.</strong> Learn their vocabulary so you can communicate. Build relationships with people who think differently than you do. Many of the best features I've ever engineered came from a conversation where an expert said "well, we always look at X because of Y" — something I never would have found in the literature.</li>
+<li><strong>Apply ideas across domains.</strong> Signal processing techniques for heartbeat detection from PPG are mathematically similar to anomaly detection in financial time series. Image augmentation from medical imaging transfers to satellite imagery. Cross-domain transfer of feature engineering ideas is wildly underrated.</li>
+</ul>`,
     },
     {
       type: "checkpoint",

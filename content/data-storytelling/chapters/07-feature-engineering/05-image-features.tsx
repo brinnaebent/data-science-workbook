@@ -1,4 +1,5 @@
 import type { Section } from "@brinnaebent/workbook";
+import type { CVFeature } from "@/content/types";
 
 const imageFeatures: Section = {
   id: "image-features",
@@ -17,10 +18,152 @@ const imageFeatures: Section = {
 <p><strong>Deep learning–based feature extraction:</strong> Use pre-trained CNNs (ResNet, VGG, EfficientNet) as feature extractors, often with transfer learning and fine-tuning. Features from the penultimate layer of a pre-trained model are usually more discriminative than anything you'd engineer by hand. This is the dominant modern approach.</p>`,
     },
     {
-      type: "image",
-      src: "/images/placeholder.png",
-      alt: "Image feature extraction pipeline from raw pixels to CNN embeddings",
-      caption: "Placeholder: diagram showing the feature extraction pipeline from raw image → hand-crafted features vs. CNN embedding.",
+      type: "interactive",
+      component: "CVFeatureSlideshow",
+      caption: "",
+      props: {
+        category: "Color-Based Features",
+        intro:
+          "The most intuitive starting point: color. Different objects tend to have different color distributions, and we can capture those distributions statistically.",
+        accentColor: "blue",
+        features: [
+          {
+            name: "Color Histograms",
+            visual: "color-histogram",
+            description:
+              "Calculate how often each color value appears across different color spaces (RGB, HSV, LAB). A forest will have a lot of green. A beach will have a lot of blue and tan.",
+          },
+          {
+            name: "Color Moments",
+            visual: "color-moments",
+            description:
+              "Statistical summaries of color channels: mean, standard deviation, skewness. These three numbers per channel compactly describe the color distribution without storing the full histogram.",
+          },
+          {
+            name: "Dominant Colors",
+            visual: "dominant-colors",
+            description:
+              "Extract the most prevalent colors using clustering (k-means). Useful when the primary color of an object is its most distinguishing feature.",
+          },
+          {
+            name: "Color Coherence Vectors",
+            visual: "color-coherence",
+            description:
+              "Distinguish between large, uniformly-colored regions and small isolated patches of color. This adds spatial context that histograms miss.",
+          },
+        ] satisfies CVFeature[],
+      },
+    },
+    {
+      type: "interactive",
+      component: "CVFeatureSlideshow",
+      caption: "",
+      props: {
+        category: "Texture-Based Features",
+        intro:
+          "Texture captures how the surface of an object looks locally — rough, smooth, striped, dotted.",
+        accentColor: "violet",
+        features: [
+          {
+            name: "Gray Level Co-occurrence Matrix (GLCM)",
+            visual: "glcm",
+            description:
+              "Captures how often pairs of pixels with specific intensity values appear adjacent to each other. Encodes the spatial structure of intensity patterns.",
+          },
+          {
+            name: "Local Binary Patterns (LBP)",
+            visual: "lbp",
+            description:
+              "For each pixel, compare it to its neighbors and encode whether each neighbor is brighter or darker. The resulting binary pattern is a compact texture descriptor.",
+          },
+          {
+            name: "Gabor Filters",
+            visual: "gabor",
+            description:
+              "Apply filters at different scales and orientations to capture texture patterns across multiple levels of detail, similar to how the human visual system processes texture.",
+          },
+          {
+            name: "Haralick Features",
+            visual: "haralick",
+            description:
+              "Statistical measures derived from the GLCM, including contrast, correlation, and entropy — summarizing texture properties in a handful of numbers.",
+          },
+        ] satisfies CVFeature[],
+      },
+    },
+    {
+      type: "interactive",
+      component: "CVFeatureSlideshow",
+      caption: "",
+      props: {
+        category: "Statistical Features",
+        intro:
+          "Sometimes the simplest descriptors are the most robust. Basic statistical summaries of pixel intensities — mean, variance, entropy — capture global image properties without any geometric assumptions.",
+        accentColor: "emerald",
+        features: [
+          {
+            name: "Standard Statistics",
+            visual: "std-stats",
+            description:
+              "Mean and variance of pixel intensities give a quick summary of brightness and contrast.",
+          },
+          {
+            name: "Entropy",
+            visual: "entropy",
+            description:
+              "Measures image complexity. A uniform gray square has low entropy. A busy street scene has high entropy.",
+          },
+          {
+            name: "Zernike Moments",
+            visual: "zernike",
+            description:
+              "Rotation-invariant descriptors based on polynomial decomposition — useful when orientation of an object should not affect its classification.",
+          },
+          {
+            name: "Wavelet Transforms",
+            visual: "wavelet",
+            description:
+              "Multi-scale analysis that captures features at different resolutions simultaneously, useful for images where detail matters at multiple scales.",
+          },
+        ] satisfies CVFeature[],
+      },
+    },
+    {
+      type: "interactive",
+      component: "CVFeatureSlideshow",
+      caption: "",
+      props: {
+        category: "Shape-Based Features",
+        intro:
+          "Shape features describe the boundaries and structure of objects rather than their color or texture.",
+        accentColor: "amber",
+        features: [
+          {
+            name: "Edge Detection (Sobel, Canny, Prewitt)",
+            visual: "edge-detection",
+            description:
+              "Identify boundaries in images based on intensity gradients. These operators highlight where the image changes rapidly — the outlines of objects.",
+          },
+          {
+            name: "HOG (Histogram of Oriented Gradients)",
+            visual: "hog",
+            description:
+              "Captures local shape information through gradient directions. HOG was the state-of-the-art for pedestrian detection for years.",
+          },
+          {
+            name: "SIFT (Scale-Invariant Feature Transform)",
+            visual: "sift",
+            description:
+              "Detects keypoints and computes descriptors that are robust to changes in scale, rotation, and illumination.",
+          },
+          {
+            name: "Hu Moments",
+            visual: "hu-moments",
+            description:
+              "Shape descriptors invariant to rotation, scale, and translation — the same shape produces the same descriptor however you flip or resize it.",
+          },
+        ] satisfies CVFeature[],
+      },
     },
     {
       type: "callout",

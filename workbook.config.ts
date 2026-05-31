@@ -30,6 +30,11 @@ import OutlierDetector from "./interactives/OutlierDetector";
 import TransformExplorer from "./interactives/TransformExplorer";
 import DQAWalkthrough from "./interactives/DQAWalkthrough";
 import WearableMissingnessExplorer from "./interactives/WearableMissingnessExplorer";
+import TimeSeriesDecomposition from "./interactives/TimeSeriesDecomposition";
+import CVFeatureSlideshow from "./interactives/CVFeatureSlideshow";
+import StemmingLemmatizationDemo from "./interactives/StemmingLemmatizationDemo";
+import PCAExplorer from "./interactives/PCAExplorer";
+import FeatureSelectionComparison from "./interactives/FeatureSelectionComparison";
 
 // Register your interactive components here.
 // The key must match the "component" field in your content blocks.
@@ -70,5 +75,10 @@ export default defineConfig({
     TransformExplorer,
     DQAWalkthrough,
     WearableMissingnessExplorer,
+    TimeSeriesDecomposition,
+    CVFeatureSlideshow,
+    StemmingLemmatizationDemo,
+    PCAExplorer,
+    FeatureSelectionComparison,
   },
 });

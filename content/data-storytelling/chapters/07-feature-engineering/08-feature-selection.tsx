@@ -10,9 +10,7 @@ const featureSelection: Section = {
       html: `<p>Engineering creates features. Selection narrows them down to the ones that actually earn their place in the model. More features is not always better — dimensionality, overfitting, and interpretability all suffer when you include noise alongside signal. Three families of approaches cover most cases.</p>`,
     },
     {
-      type: "callout",
-      variant: "info",
-      title: "Three Selection Approaches",
+      type: "text",
       html: `<p><strong>Correlation-based selection.</strong> Compute pairwise correlations; remove one of any pair above a threshold (e.g., 0.8). Use Pearson for linear relationships, Spearman for monotonic, Kendall's tau for ordinal. Simple, fast, interpretable — but misses nonlinear relationships and may remove complementary features.</p>
 <p><strong>Recursive Feature Elimination (RFE).</strong> Wrap a model. Rank features by importance (coefficients for linear models, Gini/entropy for trees). Remove the least important. Rebuild. Repeat. Captures interactions and nonlinearities; accounts for how features work together. Computationally expensive; model-specific; risks overfitting if not combined with cross-validation.</p>
 <p><strong>Univariate selection.</strong> Score each feature individually based on its relationship with the target — Pearson or F-test or mutual information for regression; chi-square, ANOVA F-test, or mutual information for classification. Fast, simple, model-agnostic. But ignores feature interactions — a feature that's individually weak may be jointly strong with another. Use as a first filter, not a final answer.</p>`,
@@ -21,13 +19,12 @@ const featureSelection: Section = {
       type: "callout",
       variant: "example",
       title: "Genomics: When Selection Is Everything",
-      html: `<p>In genomics, you might have tens of thousands of features (gene expression levels) and a few hundred samples. Feature selection isn't an optimization — it's a requirement. Without it, any model will overfit. The right selection method depends on whether you care about interpretability (correlation), predictive performance (RFE), or speed (univariate). In high-dimensional sensor data — wearables, industrial monitoring — the same calculus applies.</p>`,
+      html: `<p>In genomics, you might have tens of thousands of features (gene expression levels) and a few hundred samples. Feature selection is necessary hin this case. Without it, any model will overfit. The right selection method depends on whether you care about interpretability (correlation), predictive performance (RFE), or speed (univariate). In high-dimensional sensor data — wearables, industrial monitoring — the same calculus applies.</p>`,
     },
     {
-      type: "image",
-      src: "/images/placeholder.png",
-      alt: "Feature selection method comparison: correlation, RFE, and univariate scoring",
-      caption: "Placeholder: visual comparison of the three selection methods applied to the same feature set, showing which features each retains.",
+      type: "interactive",
+      component: "FeatureSelectionComparison",
+      caption: "Toggle between correlation, RFE, and univariate selection to see which features each method retains from the same set — and why they disagree.",
     },
     {
       type: "checkpoint",
