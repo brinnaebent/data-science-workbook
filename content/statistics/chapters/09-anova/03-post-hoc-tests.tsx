@@ -10,20 +10,23 @@ const postHocTests: Section = {
       html: `<p>When ANOVA says "some group differs," post hoc tests tell you <em>which</em> groups differ — while controlling the family-wise error rate across all pairwise comparisons.</p>`,
     },
     {
-      type: "callout",
-      variant: "info",
-      title: "Tukey's HSD (Honestly Significant Difference)",
-      html: `<p>The most commonly used post hoc test. Compares all possible pairs of group means while controlling family-wise Type 1 error. Assumes equal variance and approximately normal data.</p>
+      type: "text",
+      html: `<h3><strong>Tukey's HSD (Honestly Significant Difference)</strong></h3>
+<p>The most commonly used post hoc test. Compares all possible pairs of group means while controlling family-wise Type 1 error. Assumes equal variance and approximately normal data.</p>
 <p><strong>How it works:</strong> Computes an HSD value based on the critical q value from the studentized range distribution. If a pairwise mean difference exceeds HSD, those groups are significantly different.</p>
 <p><strong>In Python:</strong> <code>statsmodels.stats.multicomp.pairwise_tukeyhsd(values, groups)</code></p>
 <p><strong>Default choice</strong> for post hoc testing after a significant ANOVA.</p>`,
     },
     {
-      type: "callout",
-      variant: "info",
-      title: "Other Options",
-      html: `<ul>
-<li><strong>Bonferroni correction:</strong> Divide α by number of comparisons. Simple and conservative. Works for any comparison structure, not just pairwise after ANOVA. Use when you have few comparisons and want a simple approach.</li>
+      type: "interactive",
+      component: "TukeyHSDExplorer",
+      caption: "Adjust group means and spread to see how Tukey's HSD threshold responds. The bar chart shows each pairwise mean difference against the HSD cutoff — when the bar exceeds the marker, that pair is significant at α = 0.05.",
+    },
+    {
+      type: "text",
+      html: `<h3><strong>Other Options</strong></h3>
+<ul>
+<li><strong>Bonferroni-adjusted pairwise comparisons:</strong> Conduct pairwise t-tests and adjust the significance threshold to α/m, where m is the number of comparisons. Controls the family-wise error rate and is simple to apply, though it can be conservative when many comparisons are performed.</li>
 <li><strong>Scheffé's test:</strong> Most conservative. Controls for all possible comparisons (not just pairwise), including complex contrasts. Use when you want to make comparisons you didn't pre-specify.</li>
 <li><strong>Duncan's new multiple range test:</strong> Less conservative than Tukey's. More prone to Type 1 errors. Less commonly used today.</li>
 </ul>`,

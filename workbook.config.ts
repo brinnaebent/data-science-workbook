@@ -73,6 +73,7 @@ import MannWhitneyWalkthrough from "./interactives/MannWhitneyWalkthrough";
 import ChiSquareIndependenceWalkthrough from "./interactives/ChiSquareIndependenceWalkthrough";
 import ChiSquareGoodnessOfFit from "./interactives/ChiSquareGoodnessOfFit";
 import TwoGroupDecisionTree from "./interactives/TwoGroupDecisionTree";
+import TukeyHSDExplorer from "./interactives/TukeyHSDExplorer";
 
 // Register your interactive components here.
 // The key must match the "component" field in your content blocks.
@@ -156,5 +157,6 @@ export default defineConfig({
     ChiSquareIndependenceWalkthrough,
     ChiSquareGoodnessOfFit,
     TwoGroupDecisionTree,
+    TukeyHSDExplorer,
   },
 });
