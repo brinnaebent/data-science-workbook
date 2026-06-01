@@ -29,14 +29,14 @@ const discreteDistributions: Section = {
       type: "callout",
       variant: "example",
       title: "Poisson Distribution",
-      html: `<p>Models the number of events occurring in a fixed interval of time or space, given a constant average rate. Single parameter λ (the rate).</p>
+      html: `<p>Models the number of events occurring in a fixed interval of time or space, given a constant average rate. Single parameter $\\lambda$ (the rate).</p>
 <p><strong>When it shows up:</strong> Customer service calls per hour. API requests per second. Defects per meter of manufacturing line. Any "count of independent events arriving at a steady rate" is Poisson.</p>
-<p><strong>Mean:</strong> λ. <strong>Variance:</strong> λ. (The mean and variance are equal — this is a unique property of the Poisson.)</p>`,
+<p><strong>Mean:</strong> $\\lambda$. <strong>Variance:</strong> $\\lambda$. (The mean and variance are equal — this is a unique property of the Poisson.)</p>`,
     },
     {
       type: "interactive",
       component: "DiscreteDistributionExplorer",
-      caption: "Placeholder: Toggle between Bernoulli, Binomial, and Poisson. Adjust parameters and observe the PMF and mean/variance.",
+      caption: "Toggle between Bernoulli, Binomial, and Poisson. Adjust parameters with the sliders and watch the PMF bars shift — hover any bar to see its exact probability.",
       props: {},
     },
     {

@@ -38,6 +38,10 @@ import FeatureSelectionComparison from "./interactives/FeatureSelectionCompariso
 import PopulationSampleExplorer from "./interactives/PopulationSampleExplorer";
 import DescriptiveStatsExplorer from "./interactives/DescriptiveStatsExplorer";
 import HowMuchDataExplorer from "./interactives/HowMuchDataExplorer";
+import DistributionShapeExplorer from "./interactives/DistributionShapeExplorer";
+import DiscreteDistributionExplorer from "./interactives/DiscreteDistributionExplorer";
+import ContinuousDistributionExplorer from "./interactives/ContinuousDistributionExplorer";
+import TDistributionExplorer from "./interactives/TDistributionExplorer";
 
 // Register your interactive components here.
 // The key must match the "component" field in your content blocks.
@@ -86,5 +90,9 @@ export default defineConfig({
     PopulationSampleExplorer,
     DescriptiveStatsExplorer,
     HowMuchDataExplorer,
+    DistributionShapeExplorer,
+    DiscreteDistributionExplorer,
+    ContinuousDistributionExplorer,
+    TDistributionExplorer,
   },
 });

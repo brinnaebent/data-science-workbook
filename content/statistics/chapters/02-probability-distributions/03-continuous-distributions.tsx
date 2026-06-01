@@ -13,7 +13,7 @@ const continuousDistributions: Section = {
       type: "callout",
       variant: "example",
       title: "Normal (Gaussian) Distribution",
-      html: `<p>Symmetric, bell-shaped, characterized by mean μ and standard deviation σ. The most important distribution in statistics, for two reasons:</p>
+      html: `<p>Symmetric, bell-shaped, characterized by mean $\mu$ and standard deviation $\sigma$. The most important distribution in statistics, for two reasons:</p>
 <ol>
 <li><strong>The Central Limit Theorem:</strong> The distribution of sample means approaches normal as sample size grows, regardless of the underlying distribution. This is why so many statistical tests assume normality — in the limit, it's valid even when the raw data isn't normal.</li>
 <li><strong>Natural prevalence:</strong> Heights, measurement errors, sums of many small independent effects — these all tend toward normal in practice.</li>
@@ -31,13 +31,13 @@ const continuousDistributions: Section = {
       type: "callout",
       variant: "example",
       title: "Exponential Distribution",
-      html: `<p>Models the time between events in a Poisson process. Single parameter: the rate λ (higher rate = shorter typical waiting time). It has the <em>memoryless property</em>: knowing that you've already waited 5 minutes tells you nothing about how much longer you'll wait.</p>
+      html: `<p>Models the time between events in a Poisson process. Single parameter: the rate $\lambda$ (higher rate = shorter typical waiting time). It has the <em>memoryless property</em>: knowing that you've already waited 5 minutes tells you nothing about how much longer you'll wait.</p>
 <p><strong>When it shows up:</strong> Time between bus arrivals. Time until a customer churns. Time to component failure. Survival analysis. Any "how long until the next event?" question where events arrive at a steady rate.</p>`,
     },
     {
       type: "interactive",
       component: "ContinuousDistributionExplorer",
-      caption: "Placeholder: Toggle between Normal, Uniform, and Exponential. Adjust parameters (μ, σ for Normal; λ for Exponential) and see the PDF and CDF side by side.",
+      caption: "Toggle between Normal, Uniform, and Exponential. Adjust parameters with the sliders and switch between the PDF and CDF views to see how each distribution's shape and cumulative probability change.",
       props: {},
     },
     {

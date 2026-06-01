@@ -7,7 +7,7 @@ const distributionsAcrossML: Section = {
   blocks: [
     {
       type: "text",
-      html: `<p>You don't need to memorize every formula — you need to recognize which distribution describes your situation. The skill that pays off: seeing a problem and knowing what shape the uncertainty should take.</p>`,
+      html: `<p>Rather than memorizing every formula, you should focus on recognizing which distribution describes your situation. The skill that pays off: seeing a problem and knowing what shape the uncertainty should take.</p>`,
     },
     {
       type: "callout",
@@ -24,7 +24,7 @@ const distributionsAcrossML: Section = {
     },
     {
       type: "text",
-      html: `<p>The most important skill here isn't choosing the "right" distribution from a formula sheet — it's understanding why the choice matters and what can go wrong when it's wrong.</p>
+      html: `
 <p>A useful heuristic for choosing:</p>
 <ol>
 <li><strong>Is the outcome binary?</strong> → Bernoulli (single event) or Binomial (count of successes).</li>
@@ -37,8 +37,20 @@ const distributionsAcrossML: Section = {
     {
       type: "reflection",
       id: "stats-ch2-s5-reflect",
-      question: "For each of these ML tasks, identify the most appropriate distribution for the outcome variable and explain why: (1) predicting whether an email is spam, (2) predicting the number of support tickets a customer will submit next month, (3) predicting how long a customer will remain subscribed before canceling.",
-      sampleAnswer: "(1) Spam/not-spam → Bernoulli (single binary trial). Use logistic regression with a Bernoulli likelihood. (2) Number of support tickets → Poisson (count of independent events in a fixed time window). Use Poisson regression. (3) Time until cancellation → Exponential (or a more flexible distribution like Weibull if you expect hazard rate to change over time). Use survival analysis (e.g., Cox regression).",
+      question: "Identify the most appropriate distribution for the outcome variable and explain why: predicting the number of support tickets a customer will submit next month",
+      sampleAnswer: "Number of support tickets → Poisson (count of independent events in a fixed time window). Use Poisson regression.",
+    },
+    {
+      type: "reflection",
+      id: "stats-ch2-s5-reflect",
+      question: "Identify the most appropriate distribution for the outcome variable and explain why: predicting whether an email is spam",
+      sampleAnswer: "Spam/not-spam → Bernoulli (single binary trial). Use logistic regression with a Bernoulli likelihood.",
+    },
+    {
+      type: "reflection",
+      id: "stats-ch2-s5-reflect",
+      question: "Identify the most appropriate distribution for the outcome variable and explain why: predicting how long a customer will remain subscribed before canceling.",
+      sampleAnswer: "Time until cancellation → Exponential (or a more flexible distribution like Weibull if you expect hazard rate to change over time). Use survival analysis (e.g., Cox regression).",
     },
   ],
 };

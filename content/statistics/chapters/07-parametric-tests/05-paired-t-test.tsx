@@ -13,7 +13,7 @@ const pairedTTest: Section = {
 <p><strong>Use it when:</strong> The same subjects are measured under two conditions (before/after, treatment/control on same subjects). Pairing controls for individual variability — this is where paired tests get their statistical power advantage over independent tests.</p>
 <p><strong>Test statistic:</strong></p>
 <p style="text-align:center">$$t = \\frac{\\bar{d} - \\mu_d}{s_d/\\sqrt{n}}$$</p>
-<p>where d̄ is the mean of paired differences, μ_d is 0 under the null, s_d is the SD of the differences, and n is the number of pairs.</p>
+<p>where $\bar{d}$ is the mean of paired differences, $\mu_d$ is 0 under the null, $s_d$ is the SD of the differences, and $n$ is the number of pairs.</p>
 <p><strong>In Python:</strong> <code>scipy.stats.ttest_rel(before, after)</code></p>`,
     },
     {

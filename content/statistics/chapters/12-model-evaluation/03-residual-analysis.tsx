@@ -27,9 +27,9 @@ const residualAnalysis: Section = {
       variant: "info",
       title: "Confidence Intervals",
       html: `<p>A <strong>confidence interval</strong> gives a range of values likely to contain the true population parameter. A 95% CI from repeated sampling would contain the true value about 95% of the time.</p>
-<p><strong>Z-score method</strong> (population σ known, n ≥ 30):</p>
+<p><strong>Z-score method</strong> (population $\sigma$ known, $n \geq 30$):</p>
 <p style="text-align:center">$$\\bar{x} \\pm z_{\\alpha/2} \\cdot \\frac{\\sigma}{\\sqrt{n}}$$</p>
-<p><strong>T-score method</strong> (population σ unknown — use this one in practice):</p>
+<p><strong>T-score method</strong> (population $\sigma$ unknown — use this one in practice):</p>
 <p style="text-align:center">$$\\bar{x} \\pm t_{\\alpha/2} \\cdot \\frac{s}{\\sqrt{n}}$$</p>
 <p><strong>Careful:</strong> A 95% CI does NOT mean "there's a 95% probability the true value is in this interval." That's a Bayesian statement. The frequentist interpretation: if we repeated the procedure many times, ~95% of computed intervals would contain the true parameter.</p>`,
     },

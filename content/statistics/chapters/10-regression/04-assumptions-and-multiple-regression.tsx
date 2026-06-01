@@ -24,7 +24,7 @@ const assumptionsAndMultiple: Section = {
       title: "Multiple Linear Regression",
       html: `<p>What if more than one variable matters? CHD mortality is probably influenced by smoking, age, saturated fat consumption, exercise, and more. Multiple linear regression handles many predictors:</p>
 <p style="text-align:center">$$y = \\beta_0 + \\beta_1 x_1 + \\beta_2 x_2 + \\cdots + \\beta_p x_p + \\epsilon$$</p>
-<p>Each β_i is interpreted as: the change in y per one-unit change in x_i, <strong>holding all other predictors constant</strong>. That last clause matters. Interpretation of one coefficient depends on what else is in the model. Adding or removing a variable can change other coefficients.</p>
+<p>Each $\beta_i$ is interpreted as: the change in $y$ per one-unit change in $x_i$, <strong>holding all other predictors constant</strong>. That last clause matters. Interpretation of one coefficient depends on what else is in the model. Adding or removing a variable can change other coefficients.</p>
 <p><strong>In Python:</strong> <code>statsmodels.api.OLS</code> or <code>sklearn.linear_model.LinearRegression</code> with a multi-column predictor matrix.</p>`,
     },
     {

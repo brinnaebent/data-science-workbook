@@ -21,16 +21,16 @@ const populationVsSample: Section = {
       html: `<p>This is why everything we do in this unit is <strong>sampling statistics</strong> — methods designed to make sound claims about a population when all you have is a sample. Population parameters are the unknowns we're trying to estimate. Sample statistics are our estimates.</p>
 <p>A few definitions:</p>
 <ul>
-<li><strong>Population mean (μ):</strong> The true average over the whole population. Unknown in practice.</li>
-<li><strong>Sample mean (x̄):</strong> The average from your data. Your best estimate of μ.</li>
-<li><strong>Population standard deviation (σ):</strong> The true spread. Almost always unknown.</li>
-<li><strong>Sample standard deviation (s):</strong> Computed from your data, with a correction factor. Your estimate of σ.</li>
+<li><strong>Population mean ($\mu$):</strong> The true average over the whole population. Unknown in practice.</li>
+<li><strong>Sample mean ($\bar{x}$):</strong> The average from your data. Your best estimate of $\mu$.</li>
+<li><strong>Population standard deviation ($\sigma$):</strong> The true spread. Almost always unknown.</li>
+<li><strong>Sample standard deviation ($s$):</strong> Computed from your data, with a correction factor. Your estimate of $\sigma$.</li>
 </ul>`,
     },
     {
       type: "interactive",
       component: "PopulationSampleExplorer",
-      caption: "Draw repeated samples from a population of 200 exam scores and watch how the distribution of sample means (x̄) clusters around the true population mean (μ). Increase n to see the spread shrink.",
+      caption: "Draw repeated samples from a population of 200 exam scores and watch how the distribution of sample means ($\\bar{x}$) clusters around the true population mean ($\\mu$). Increase $n$ to see the spread shrink.",
       props: {},
     },
     {

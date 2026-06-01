@@ -19,7 +19,7 @@ const chiSquare: Section = {
 <ol>
 <li>Build a contingency table of observed frequencies (rows × columns = one cell per category combination).</li>
 <li>Compute expected frequencies under independence: (row total × column total) / grand total.</li>
-<li>Chi-square statistic = Σ (observed − expected)² / expected.</li>
+<li>Chi-square statistic: $\chi^2 = \sum \frac{(O - E)^2}{E}$</li>
 </ol>
 <p><strong>Examples:</strong> Is device type associated with conversion? Is gender associated with product preference? Is neighborhood associated with churn?</p>
 <p><strong>In Python:</strong> <code>scipy.stats.chi2_contingency(contingency_table)</code></p>`,

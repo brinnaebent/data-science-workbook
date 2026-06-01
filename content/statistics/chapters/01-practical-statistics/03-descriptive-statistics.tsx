@@ -41,9 +41,9 @@ const descriptiveStatistics: Section = {
       title: "The Empirical Rule",
       html: `<p>If your data is approximately normal, standard deviations have a concrete meaning:</p>
 <ul>
-<li><strong>±1σ:</strong> ~68% of data</li>
-<li><strong>±2σ:</strong> ~95% of data</li>
-<li><strong>±3σ:</strong> ~99.7% of data</li>
+<li><strong>$\pm 1\sigma$:</strong> ~68% of data</li>
+<li><strong>$\pm 2\sigma$:</strong> ~95% of data</li>
+<li><strong>$\pm 3\sigma$:</strong> ~99.7% of data</li>
 </ul>
 <p>This is why "more than 3 standard deviations from the mean" is a common outlier threshold. In a normal distribution, under 0.3% of data should be out there. If you're seeing substantially more, investigate.</p>`,
     },

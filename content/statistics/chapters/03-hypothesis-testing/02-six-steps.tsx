@@ -13,12 +13,12 @@ const sixSteps: Section = {
       type: "callout",
       variant: "info",
       title: "Step 1: Formulate Hypotheses",
-      html: `<p>You need two: a <strong>null hypothesis (H₀)</strong> and an <strong>alternative hypothesis (H₁)</strong>.</p>
+      html: `<p>You need two: a <strong>null hypothesis ($H_0$)</strong> and an <strong>alternative hypothesis ($H_1$)</strong>.</p>
 <p>The null is the assumption of no significant difference or effect. The alternative is the claim you're trying to support. The null is what you're trying to produce evidence <em>against</em>.</p>
 <p>Example: Testing a new image recognition algorithm against a baseline with 85% accuracy.</p>
 <ul>
-<li>H₀: The new algorithm's average accuracy equals 85%.</li>
-<li>H₁: The new algorithm's average accuracy is greater than 85%.</li>
+<li>$H_0$: The new algorithm's average accuracy equals 85%.</li>
+<li>$H_1$: The new algorithm's average accuracy is greater than 85%.</li>
 </ul>`,
     },
     {
@@ -39,7 +39,7 @@ const sixSteps: Section = {
       title: "Steps 4–6: Compute, Evaluate, Decide",
       html: `<p><strong>Step 4:</strong> Calculate the <strong>test statistic</strong> — a number computed from your sample that summarizes how far the data deviates from what the null predicts.</p>
 <p><strong>Step 5:</strong> Calculate the <strong>p-value</strong> — the probability of seeing a test statistic at least as extreme as yours, assuming the null is true.</p>
-<p><strong>Step 6:</strong> Make your decision. If p ≤ α (your pre-chosen significance level), <strong>reject the null</strong>. Otherwise, <strong>fail to reject</strong>.</p>
+<p><strong>Step 6:</strong> Make your decision. If $p \leq \alpha$ (your pre-chosen significance level), <strong>reject the null</strong>. Otherwise, <strong>fail to reject</strong>.</p>
 <p>Critical language note: you <em>fail to reject</em> the null — you never "accept" it. The world is allowed to remain ambiguous.</p>`,
     },
     {
