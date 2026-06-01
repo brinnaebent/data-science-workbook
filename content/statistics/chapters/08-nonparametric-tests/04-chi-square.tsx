@@ -2,7 +2,7 @@ import type { Section } from "@brinnaebent/workbook";
 
 const chiSquare: Section = {
   id: "chi-square",
-  number: 3,
+  number: 4,
   title: "The Chi-Square Test",
   blocks: [
     {
@@ -10,27 +10,37 @@ const chiSquare: Section = {
       html: `<p>The tests so far compare means or distributions of continuous data. The chi-square test is fundamentally different — it's for <strong>categorical data</strong>. Are two categorical variables associated? Does a categorical variable's distribution match what you'd expect?</p>`,
     },
     {
-      type: "callout",
-      variant: "info",
-      title: "Chi-Square Test of Independence",
-      html: `<p><strong>Question:</strong> Are two categorical variables associated?</p>
+      type: "text",
+      html: `<h3><strong>Chi-Square Test of Independence</strong></h3>
+<p><strong>Question:</strong> Are two categorical variables associated?</p>
 <p><strong>Use it when:</strong> You have two categorical variables and want to know if they're related — or independent.</p>
 <p><strong>Process:</strong></p>
 <ol>
 <li>Build a contingency table of observed frequencies (rows × columns = one cell per category combination).</li>
 <li>Compute expected frequencies under independence: (row total × column total) / grand total.</li>
-<li>Chi-square statistic: $\chi^2 = \sum \frac{(O - E)^2}{E}$</li>
-</ol>
+<li>Chi-square statistic: $\\chi^2 = \\sum \\frac{(O - E)^2}{E}$</li>
+</ol><br>
 <p><strong>Examples:</strong> Is device type associated with conversion? Is gender associated with product preference? Is neighborhood associated with churn?</p>
 <p><strong>In Python:</strong> <code>scipy.stats.chi2_contingency(contingency_table)</code></p>`,
     },
     {
-      type: "callout",
-      variant: "info",
-      title: "Chi-Square Goodness-of-Fit",
-      html: `<p><strong>Question:</strong> Does the distribution of a single categorical variable match an expected distribution?</p>
+      type: "interactive",
+      component: "ChiSquareIndependenceWalkthrough",
+      caption: "Walk through the four steps of the chi-square test of independence. Switch datasets to see how expected counts, cell contributions, and the final p-value change.",
+      props: {},
+    },
+    {
+      type: "text",
+      html: `<h3><strong>Chi-Square Goodness-of-Fit</strong></h3>
+<p><strong>Question:</strong> Does the distribution of a single categorical variable match an expected distribution?</p>
 <p><strong>Examples:</strong> Are customer arrivals uniformly distributed across days of the week? Are dice rolls actually uniform? Does the demographic distribution of your users match the national distribution?</p>
 <p><strong>In Python:</strong> <code>scipy.stats.chisquare(observed, expected)</code></p>`,
+    },
+    {
+      type: "interactive",
+      component: "ChiSquareGoodnessOfFit",
+      caption: "Walk through the goodness-of-fit test step by step. See how observed counts compare to a reference distribution and which categories drive the test statistic.",
+      props: {},
     },
     {
       type: "callout",
@@ -45,7 +55,7 @@ const chiSquare: Section = {
     },
     {
       type: "checkpoint",
-      id: "stats-ch8-s3-q1",
+      id: "stats-ch8-s4-q1",
       kind: "mc",
       question: "You want to test whether users from different countries (US, UK, Germany, France) have different rates of opting into push notifications (Yes/No). You build a 4×2 contingency table. One cell has an expected count of 3. What should you do?",
       options: [

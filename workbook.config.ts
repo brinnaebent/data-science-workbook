@@ -53,7 +53,6 @@ import ZScoreExplorer from "./interactives/ZScoreExplorer";
 import OneSampleTTest from "./interactives/OneSampleTTest";
 import IndependentSamplesTTest from "./interactives/IndependentSamplesTTest";
 import PairedVsIndependentExplorer from "./interactives/PairedVsIndependentExplorer";
-import NonparametricTestExplorer from "./interactives/NonparametricTestExplorer";
 import TestDecisionTree from "./interactives/TestDecisionTree";
 import ANOVAVariancePartitioner from "./interactives/ANOVAVariancePartitioner";
 import ResidualsExplorer from "./interactives/ResidualsExplorer";
@@ -69,6 +68,11 @@ import DAGBuilder from "./interactives/DAGBuilder";
 import DeploymentDecisionTree from "./interactives/DeploymentDecisionTree";
 import DriftDetective from "./interactives/DriftDetective";
 import StreamlitLab from "./interactives/StreamlitLab";
+import WilcoxonWalkthrough from "./interactives/WilcoxonWalkthrough";
+import MannWhitneyWalkthrough from "./interactives/MannWhitneyWalkthrough";
+import ChiSquareIndependenceWalkthrough from "./interactives/ChiSquareIndependenceWalkthrough";
+import ChiSquareGoodnessOfFit from "./interactives/ChiSquareGoodnessOfFit";
+import TwoGroupDecisionTree from "./interactives/TwoGroupDecisionTree";
 
 // Register your interactive components here.
 // The key must match the "component" field in your content blocks.
@@ -132,7 +136,6 @@ export default defineConfig({
     OneSampleTTest,
     IndependentSamplesTTest,
     PairedVsIndependentExplorer,
-    NonparametricTestExplorer,
     TestDecisionTree,
     ANOVAVariancePartitioner,
     ResidualsExplorer,
@@ -148,5 +151,10 @@ export default defineConfig({
     DeploymentDecisionTree,
     DriftDetective,
     StreamlitLab,
+    WilcoxonWalkthrough,
+    MannWhitneyWalkthrough,
+    ChiSquareIndependenceWalkthrough,
+    ChiSquareGoodnessOfFit,
+    TwoGroupDecisionTree,
   },
 });

@@ -1,15 +1,14 @@
 import type { Section } from "@brinnaebent/workbook";
 
-const wilcoxonAndMannWhitney: Section = {
-  id: "wilcoxon-and-mann-whitney",
+const wilcoxonSignedRank: Section = {
+  id: "wilcoxon-signed-rank",
   number: 2,
-  title: "Wilcoxon Signed-Rank and Mann-Whitney U",
+  title: "Wilcoxon Signed-Rank Test",
   blocks: [
     {
-      type: "callout",
-      variant: "info",
-      title: "Wilcoxon Signed-Rank Test (Paired)",
-      html: `<p><strong>Question:</strong> Is there a significant difference in the medians of two related groups?</p>
+      type: "text",
+      html: `
+<p><strong>Question:</strong> Is there a significant difference in the medians of two related groups?</p>
 <p><strong>Use it when:</strong> Paired data (like the paired t-test), but normality is violated.</p>
 <p><strong>How it works:</strong></p>
 <ol>
@@ -18,32 +17,13 @@ const wilcoxonAndMannWhitney: Section = {
 <li>Reattach the original signs to the ranks.</li>
 <li>The test statistic W is the smaller of the sum of positive ranks vs. negative ranks.</li>
 </ol>
+<br>
 <p><strong>In Python:</strong> <code>scipy.stats.wilcoxon(before, after)</code></p>`,
     },
     {
-      type: "callout",
-      variant: "info",
-      title: "Mann-Whitney U Test (Independent)",
-      html: `<p><strong>Question:</strong> Are the distributions of two independent groups significantly different? (Equivalently: if you randomly pick one observation from each group, what's the probability that group A's value exceeds group B's?)</p>
-<p><strong>Use it when:</strong> Two independent groups, normality is violated. This is the nonparametric analog of the independent t-test. Sometimes called the Wilcoxon rank-sum test — note: different from the Wilcoxon <em>signed-rank</em> test above.</p>
-<p><strong>How it works:</strong></p>
-<ol>
-<li>Combine all observations and rank them in ascending order (average ranks for ties).</li>
-<li>Sum the ranks for each group separately.</li>
-<li>Compute U statistics from the rank sums; take the smaller as the test statistic.</li>
-</ol>
-<p><strong>In Python:</strong> <code>scipy.stats.mannwhitneyu(group1, group2)</code></p>`,
-    },
-    {
-      type: "callout",
-      variant: "warning",
-      title: "Don't Confuse These Two",
-      html: `<p>The Wilcoxon <strong>signed-rank</strong> test is for <em>paired</em> data. The Wilcoxon <strong>rank-sum</strong> test (Mann-Whitney U) is for <em>independent</em> groups. They share a name and similar mechanics but answer different questions. Check which one you need before running.</p>`,
-    },
-    {
       type: "interactive",
-      component: "NonparametricTestExplorer",
-      caption: "Enter two datasets and toggle between Wilcoxon signed-rank (paired) and Mann-Whitney U (independent). See the ranks, test statistic, and p-value.",
+      component: "WilcoxonWalkthrough",
+      caption: "Walk through the four steps of the Wilcoxon signed-rank test on real paired data. Switch datasets to see how the ranks and test statistic change.",
       props: {},
     },
     {
@@ -77,4 +57,4 @@ const wilcoxonAndMannWhitney: Section = {
   ],
 };
 
-export default wilcoxonAndMannWhitney;
+export default wilcoxonSignedRank;

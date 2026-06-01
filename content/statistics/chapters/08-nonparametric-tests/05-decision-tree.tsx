@@ -2,39 +2,18 @@ import type { Section } from "@brinnaebent/workbook";
 
 const decisionTree: Section = {
   id: "test-decision-tree",
-  number: 4,
+  number: 5,
   title: "The Test Decision Tree",
   blocks: [
     {
       type: "text",
-      html: `<p>When I was a graduate student, I kept an index card on my desk with a decision tree for picking the right two-group statistical test. Here it is.</p>`,
+      html: `<p>When I was a graduate student, I kept an index card on my desk with a decision tree for picking the right two-group statistical test. Here is the grown-up version:</p>`,
     },
     {
-      type: "callout",
-      variant: "info",
-      title: "Two-Group Comparison Decision Tree",
-      html: `<pre style="font-size:0.85em; line-height:1.5">
-Start: You want to compare two groups.
-
-┌─ Is your data PAIRED? ─┐
-│                        │
-YES                      NO
-│                        │
-└─ Paired data           └─ Independent data
-   │                        │
-   ▼                        ▼
-Approximately normal?    Approximately normal?
-   │                        │
-   ├─ YES → Paired t-test   ├─ NO → Mann-Whitney U
-   │                        │
-   └─ NO → Wilcoxon         └─ YES → Equal variances?
-            signed-rank                │
-            test                       ├─ YES → Student's t-test
-                                       │
-                                       └─ NO → Welch's t-test
-</pre>
-<p><strong>Paired</strong> = the same unit measured twice, or matched pairs.<br>
-<strong>Independent</strong> = different subjects in each group, no overlap.</p>`,
+      type: "interactive",
+      component: "TwoGroupDecisionTree",
+      caption: "The two-group comparison decision tree. Hover any node to highlight its subtree and trace the path to a test.",
+      props: {},
     },
     {
       type: "callout",
@@ -60,7 +39,7 @@ Approximately normal?    Approximately normal?
     },
     {
       type: "reflection",
-      id: "stats-ch8-s4-reflect",
+      id: "stats-ch8-s5-reflect",
       question: "For each scenario, identify the correct test and explain why: (1) Comparing click-through rates (binary outcome) for two ad creatives shown to different users. (2) Comparing model accuracy scores across 10 benchmark datasets for two models. (3) Testing whether the distribution of error types produced by a model (Type A, Type B, Type C) matches the expected distribution.",
       sampleAnswer: "(1) Chi-square test of independence (or a proportion test) — binary categorical outcome, two independent groups. (2) Paired t-test (or Wilcoxon signed-rank if non-normal) — same 10 datasets used for both models, outcomes are paired by dataset, and you're comparing continuous accuracy scores. (3) Chi-square goodness-of-fit — one categorical variable (error type) compared against an expected distribution.",
     },
