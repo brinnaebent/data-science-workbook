@@ -31,19 +31,6 @@ const whenToUseBayesian: Section = {
 </ul>`,
     },
     {
-      type: "callout",
-      variant: "example",
-      title: "Bayesian in ML Practice",
-      html: `<p>You'll meet Bayesian thinking in ML in several places:</p>
-<ul>
-<li><strong>Bayesian optimization</strong> for hyperparameter tuning — maintains a probabilistic model of the objective function and updates it as trials come in.</li>
-<li><strong>Probabilistic classifiers</strong> like Naive Bayes.</li>
-<li><strong>Bayesian neural networks</strong> — model uncertainty in weights, not just outputs.</li>
-<li><strong>Thompson sampling</strong> in reinforcement learning and multi-armed bandits.</li>
-<li><strong>Bayesian A/B testing</strong> — reports the full posterior distribution over the lift, rather than a binary reject/fail-to-reject decision.</li>
-</ul>`,
-    },
-    {
       type: "reflection",
       id: "stats-ch11-s3-reflect",
       question: "You're running an A/B test to evaluate a small change to a checkout flow. You have 50 prior experiments with similar changes and a good sense of typical lift magnitudes. Would you lean toward a frequentist or Bayesian approach, and why?",
