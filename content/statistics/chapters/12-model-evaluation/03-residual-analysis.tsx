@@ -36,7 +36,7 @@ const residualAnalysis: Section = {
     {
       type: "interactive",
       component: "ResidualAnalysisDashboard",
-      caption: "Placeholder: Fit a regression model and display residual plots (vs. fitted values, Q-Q plot). Toggle between a well-specified model and one with heteroscedasticity to see the patterns.",
+      caption: "Fit a regression model and display residual plots (vs. fitted values, Q-Q plot). Toggle between a well-specified model and one with heteroscedasticity to see the patterns.",
       props: {},
     },
   ],

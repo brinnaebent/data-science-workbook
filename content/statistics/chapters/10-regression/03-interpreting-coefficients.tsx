@@ -35,7 +35,7 @@ const interpretingCoefficients: Section = {
     {
       type: "interactive",
       component: "RegressionInterpreter",
-      caption: "Placeholder: Adjust slope and intercept on a scatter plot. See the equation update and practice interpreting what a unit change in x means for predicted y.",
+      caption: "Adjust slope and intercept on a scatter plot. See the equation update and practice interpreting what a unit change in x means for predicted y.",
       props: {},
     },
   ],

@@ -25,7 +25,7 @@ const residualsAndOLS: Section = {
     {
       type: "interactive",
       component: "ResidualsExplorer",
-      caption: "Placeholder: Drag a regression line and see the residuals update in real time. Observe how the SSE changes as the line moves toward and away from the OLS solution.",
+      caption: "Drag a regression line and see the residuals update in real time. Observe how the SSE changes as the line moves toward and away from the OLS solution.",
       props: {},
     },
     {

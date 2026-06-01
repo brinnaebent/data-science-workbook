@@ -39,7 +39,7 @@ const bayesTheorem: Section = {
     {
       type: "interactive",
       component: "BayesTheoremVisualizer",
-      caption: "Placeholder: Adjust prior probability, test sensitivity, and specificity. See the posterior probability update. Visualize how prevalence (prior) dramatically affects the positive predictive value.",
+      caption: "Adjust prior probability, test sensitivity, and specificity. See the posterior probability update. Visualize how prevalence (prior) dramatically affects the positive predictive value.",
       props: {},
     },
     {

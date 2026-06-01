@@ -2,18 +2,16 @@ import type { Section } from "@brinnaebent/workbook";
 
 const pairedTTest: Section = {
   id: "paired-t-test",
-  number: 5,
+  number: 6,
   title: "The Paired Samples t-Test",
   blocks: [
     {
-      type: "callout",
-      variant: "info",
-      title: "The Paired Samples t-Test",
+      type: "text",
       html: `<p><strong>Question:</strong> Is there a significant difference between the means of two <em>related</em> measurements?</p>
 <p><strong>Use it when:</strong> The same subjects are measured under two conditions (before/after, treatment/control on same subjects). Pairing controls for individual variability — this is where paired tests get their statistical power advantage over independent tests.</p>
 <p><strong>Test statistic:</strong></p>
 <p style="text-align:center">$$t = \\frac{\\bar{d} - \\mu_d}{s_d/\\sqrt{n}}$$</p>
-<p>where $\bar{d}$ is the mean of paired differences, $\mu_d$ is 0 under the null, $s_d$ is the SD of the differences, and $n$ is the number of pairs.</p>
+<p>where $\\bar{x}$ is the mean of paired differences, $\mu_d$ is 0 under the null, $s_d$ is the SD of the differences, and $n$ is the number of pairs.</p>
 <p><strong>In Python:</strong> <code>scipy.stats.ttest_rel(before, after)</code></p>`,
     },
     {
@@ -24,12 +22,13 @@ const pairedTTest: Section = {
 <li><strong>Algorithm comparison across datasets:</strong> Model A and B evaluated on the same 10 benchmark datasets. Pair the performance by dataset.</li>
 <li><strong>Feature engineering evaluation:</strong> Same model trained with and without a feature, evaluated on the same test set. Pair by fold in cross-validation.</li>
 </ul>
-<p>The key insight: pairing removes between-subject variability from the error term. If different test folds vary a lot in difficulty, the paired test adjusts for that. An independent test wouldn't — it would treat all that fold variability as error, reducing power.</p>`,
+<br>
+<p>Pairing removes between-subject variability from the error term. If different test folds vary a lot in difficulty, the paired test adjusts for that. An independent test wouldn't — it would treat all that fold variability as error, reducing power.</p>`,
     },
     {
       type: "interactive",
       component: "PairedVsIndependentExplorer",
-      caption: "Placeholder: Compare the same dataset analyzed as paired vs. independent. See how the paired test has more power when individual variation is large.",
+      caption: "Compare the same dataset analyzed as paired vs. independent. See how the paired test has more power when individual variation is large.",
       props: {},
     },
     {

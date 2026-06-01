@@ -38,7 +38,7 @@ const partitioningVariability: Section = {
     {
       type: "interactive",
       component: "ANOVAVariancePartitioner",
-      caption: "Placeholder: Adjust the means and spreads of three groups. See SSB, SSW, and the F-statistic update in real time. Observe how group separation relative to within-group spread determines F.",
+      caption: "Adjust the means and spreads of three groups. See SSB, SSW, and the F-statistic update in real time. Observe how group separation relative to within-group spread determines F.",
       props: {},
     },
     {

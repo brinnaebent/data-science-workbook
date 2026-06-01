@@ -2,26 +2,29 @@ import type { Section } from "@brinnaebent/workbook";
 
 const independentSamplesT: Section = {
   id: "independent-samples-t",
-  number: 4,
+  number: 5,
   title: "Independent Samples and Welch's t-Test",
   blocks: [
     {
-      type: "callout",
-      variant: "info",
-      title: "Student's Independent Samples t-Test",
-      html: `<p><strong>Question:</strong> Are the means of two independent groups significantly different?</p>
+      type: "text",
+      html: `<h3><strong>Student's Independent Samples t-Test</strong></h3>
+<p><strong>Question:</strong> Are the means of two independent groups significantly different?</p>
 <p><strong>Use it when:</strong> Two separate groups, no overlap between subjects, means compared. Common in A/B tests.</p>
 <p><strong>Assumptions:</strong> Independence, normality within each group, <em>equal variances (homogeneity)</em>.</p>
 <p><strong>In Python:</strong> <code>scipy.stats.ttest_ind(group1, group2)</code></p>`,
     },
     {
-      type: "callout",
-      variant: "info",
-      title: "Welch's t-Test (Unequal Variances)",
-      html: `<p><strong>Question:</strong> Same as Student's — but used when the equal-variance assumption may not hold.</p>
+      type: "text",
+      html: `<h3><strong>Welch's t-Test (Unequal Variances)</strong></h3>
+<p><strong>Question:</strong> Same as Student's — but used when the equal-variance assumption may not hold.</p>
 <p><strong>Use it when:</strong> Two independent groups, but variance in the groups differs or you're unsure. Welch's computes an adjusted degrees of freedom (Welch-Satterthwaite equation) that accounts for unequal variances.</p>
 <p><strong>Recommendation:</strong> Default to Welch's. The cost of using it when variances are actually equal is small. The cost of using Student's when they're not can be substantial — your p-values will be wrong.</p>
 <p><strong>In Python:</strong> <code>scipy.stats.ttest_ind(group1, group2, equal_var=False)</code></p>`,
+    },
+    {
+      type: "interactive",
+      component: "IndependentSamplesTTest",
+      caption: "Adjust group means, standard deviations, and sample sizes to see how Welch's t-statistic and p-value respond. Notice how the unequal-variance warning appears when SD ratios diverge.",
     },
     {
       type: "callout",

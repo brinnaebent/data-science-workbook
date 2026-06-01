@@ -30,7 +30,7 @@ const simpsonsParadox: Section = {
     {
       type: "interactive",
       component: "SimpsonsParadoxVisualizer",
-      caption: "Placeholder: Display a Simpson's Paradox scenario — show the aggregate trend and the per-subgroup trends side by side. Adjust the subgroup sizes to watch the paradox emerge and disappear.",
+      caption: "Display a Simpson's Paradox scenario — show the aggregate trend and the per-subgroup trends side by side. Adjust the subgroup sizes to watch the paradox emerge and disappear.",
       props: {},
     },
     {

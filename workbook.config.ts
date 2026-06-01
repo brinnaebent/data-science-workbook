@@ -48,6 +48,27 @@ import SamplingMethodsExplorer from "./interactives/SamplingMethodsExplorer";
 import StratifiedSplitExplorer from "./interactives/StratifiedSplitExplorer";
 import SMOTEVisualizer from "./interactives/SMOTEVisualizer";
 import ClassBalancingComparison from "./interactives/ClassBalancingComparison";
+import AssumptionChecker from "./interactives/AssumptionChecker";
+import ZScoreExplorer from "./interactives/ZScoreExplorer";
+import OneSampleTTest from "./interactives/OneSampleTTest";
+import IndependentSamplesTTest from "./interactives/IndependentSamplesTTest";
+import PairedVsIndependentExplorer from "./interactives/PairedVsIndependentExplorer";
+import NonparametricTestExplorer from "./interactives/NonparametricTestExplorer";
+import TestDecisionTree from "./interactives/TestDecisionTree";
+import ANOVAVariancePartitioner from "./interactives/ANOVAVariancePartitioner";
+import ResidualsExplorer from "./interactives/ResidualsExplorer";
+import RegressionInterpreter from "./interactives/RegressionInterpreter";
+import BayesTheoremVisualizer from "./interactives/BayesTheoremVisualizer";
+import ResidualAnalysisDashboard from "./interactives/ResidualAnalysisDashboard";
+import SimpsonsParadoxVisualizer from "./interactives/SimpsonsParadoxVisualizer";
+import SQLSandbox from "./interactives/SQLSandbox";
+import EmbeddingPlayground from "./interactives/EmbeddingPlayground";
+import StoragePicker from "./interactives/StoragePicker";
+import PipelineCostSimulator from "./interactives/PipelineCostSimulator";
+import DAGBuilder from "./interactives/DAGBuilder";
+import DeploymentDecisionTree from "./interactives/DeploymentDecisionTree";
+import DriftDetective from "./interactives/DriftDetective";
+import StreamlitLab from "./interactives/StreamlitLab";
 
 // Register your interactive components here.
 // The key must match the "component" field in your content blocks.
@@ -106,5 +127,26 @@ export default defineConfig({
     StratifiedSplitExplorer,
     SMOTEVisualizer,
     ClassBalancingComparison,
+    AssumptionChecker,
+    ZScoreExplorer,
+    OneSampleTTest,
+    IndependentSamplesTTest,
+    PairedVsIndependentExplorer,
+    NonparametricTestExplorer,
+    TestDecisionTree,
+    ANOVAVariancePartitioner,
+    ResidualsExplorer,
+    RegressionInterpreter,
+    BayesTheoremVisualizer,
+    ResidualAnalysisDashboard,
+    SimpsonsParadoxVisualizer,
+    SQLSandbox,
+    EmbeddingPlayground,
+    StoragePicker,
+    PipelineCostSimulator,
+    DAGBuilder,
+    DeploymentDecisionTree,
+    DriftDetective,
+    StreamlitLab,
   },
 });

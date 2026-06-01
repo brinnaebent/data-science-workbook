@@ -43,7 +43,7 @@ const wilcoxonAndMannWhitney: Section = {
     {
       type: "interactive",
       component: "NonparametricTestExplorer",
-      caption: "Placeholder: Enter two datasets and toggle between Wilcoxon signed-rank (paired) and Mann-Whitney U (independent). See the ranks, test statistic, and p-value.",
+      caption: "Enter two datasets and toggle between Wilcoxon signed-rank (paired) and Mann-Whitney U (independent). See the ranks, test statistic, and p-value.",
       props: {},
     },
     {

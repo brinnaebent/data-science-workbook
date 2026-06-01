@@ -55,7 +55,7 @@ Approximately normal?    Approximately normal?
     {
       type: "interactive",
       component: "TestDecisionTree",
-      caption: "Placeholder: Interactive decision tree — answer questions about your data (paired? normal? equal variance?) and arrive at the recommended test with a brief explanation.",
+      caption: "Interactive decision tree — answer questions about your data (paired? normal? equal variance?) and arrive at the recommended test with a brief explanation.",
       props: {},
     },
     {

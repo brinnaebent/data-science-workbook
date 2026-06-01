@@ -37,13 +37,12 @@ const checkingAssumptions: Section = {
       type: "callout",
       variant: "info",
       title: "Assumption 3: Homogeneity of Variance",
-      html: `<p>The groups being compared should have approximately equal variances. Check with <strong>Levene's test</strong>: the null is that variances are equal; a significant p-value means they're not.</p>
-<p>If Levene's test is significant, switch to <strong>Welch's t-test</strong>, which doesn't assume equal variances. Many statisticians recommend defaulting to Welch's regardless — the cost of using it when variances are equal is small, but the cost of using Student's when they're not can be substantial.</p>`,
+      html: `<p>The groups being compared should have approximately equal variances. Check with <strong>Levene's test</strong>: the null is that variances are equal; a significant p-value means they're not.</p>`,
     },
     {
       type: "interactive",
       component: "AssumptionChecker",
-      caption: "Placeholder: Upload or generate a dataset, and run Shapiro-Wilk and Levene's tests. View Q-Q plots and histogram overlays to visually assess normality.",
+      caption: "Given a dataset, and run Shapiro-Wilk and Levene's tests. View Q-Q plots and histogram overlays to visually assess normality.",
       props: {},
     },
     {
