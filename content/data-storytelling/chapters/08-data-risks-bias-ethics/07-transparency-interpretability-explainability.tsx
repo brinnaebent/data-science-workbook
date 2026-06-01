@@ -2,7 +2,7 @@ import type { Section } from "@brinnaebent/workbook";
 
 const transparencyInterpretabilityExplainability: Section = {
   id: "transparency-interpretability-explainability",
-  number: 7,
+  number: 6,
   title: "Transparency, Interpretability, Explainability",
   blocks: [
     {
@@ -12,10 +12,14 @@ const transparencyInterpretabilityExplainability: Section = {
 <p><strong>Interpretable Machine Learning</strong> uses models that are <strong>inherently understandable</strong>. Decision trees you can trace through. Linear regression with examinable coefficients. Generalized Additive Models (GAMs). The model itself doesn't need additional explanation — the model <em>is</em> the explanation. Interpretable models are often preferred in regulated domains (medicine, finance, criminal justice) where the decision process must be auditable, not just the outcome.</p>`,
     },
     {
-      type: "callout",
-      variant: "info",
-      title: "Explainable AI (XAI)",
-      html: `<p>Used for black-box models where the internal mechanism is too complex to inspect directly. XAI methods try to <em>approximate</em> the model's reasoning post-hoc:</p>
+      type: "image",
+      src: "/data-storytelling/xai.png",
+      alt: "Interpretable and Explainable ML Comparison",
+      caption: "Interpretable ML is a 'glass' box - you can trace inputs directly to outputs. Examples are regression and decision trees. In Explainable ML, which is performed post hoc on 'blackbox' models, there are a couple primary types of approaches. In one approach, we modify (perturb) the inputs and see what happens to the outputs (e.g., LIME). In the other, we split open the model and poke at the model internals (e.g., GradCAM).",
+    },
+    {
+      type: "text",
+      html: `<p><strong>Explainable AI (XAI)</strong> is used for black-box models where the internal mechanism is too complex to inspect directly. XAI methods try to <em>approximate</em> the model's reasoning post-hoc:</p>
 <ul>
 <li><strong>SHAP</strong> — game-theoretic feature attributions showing each feature's contribution to a specific prediction.</li>
 <li><strong>LIME</strong> — local linear approximations of model behavior around a specific prediction.</li>
@@ -28,12 +32,6 @@ const transparencyInterpretabilityExplainability: Section = {
       variant: "tip",
       title: "Regulation Is Arriving",
       html: `<p>The EU's AI Act has explainability requirements for high-risk systems. US financial regulators require lenders to explain credit decisions. As AI expands into regulated domains, explainability is moving from a research interest to a compliance requirement. If you go into industry, this is a skill worth developing now rather than when the regulation lands on your desk.</p>`,
-    },
-    {
-      type: "image",
-      src: "/images/placeholder.png",
-      alt: "SHAP explanation output showing feature contributions for a single prediction",
-      caption: "Placeholder: example SHAP waterfall plot showing how each feature pushed a prediction above or below the baseline.",
     },
     {
       type: "checkpoint",

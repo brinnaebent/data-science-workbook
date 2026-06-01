@@ -2,7 +2,7 @@ import type { Section } from "@brinnaebent/workbook";
 
 const privacyAndRegulations: Section = {
   id: "privacy-and-regulations",
-  number: 8,
+  number: 7,
   title: "Privacy and Regulations",
   blocks: [
     {
