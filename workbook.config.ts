@@ -44,6 +44,8 @@ import ContinuousDistributionExplorer from "./interactives/ContinuousDistributio
 import TDistributionExplorer from "./interactives/TDistributionExplorer";
 import PValueVisualizer from "./interactives/PValueVisualizer";
 import PowerAnalysisExplorer from "./interactives/PowerAnalysisExplorer";
+import SamplingMethodsExplorer from "./interactives/SamplingMethodsExplorer";
+import StratifiedSplitExplorer from "./interactives/StratifiedSplitExplorer";
 
 // Register your interactive components here.
 // The key must match the "component" field in your content blocks.
@@ -98,5 +100,7 @@ export default defineConfig({
     TDistributionExplorer,
     PValueVisualizer,
     PowerAnalysisExplorer,
+    SamplingMethodsExplorer,
+    StratifiedSplitExplorer,
   },
 });
