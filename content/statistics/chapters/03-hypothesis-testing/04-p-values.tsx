@@ -15,7 +15,7 @@ const pValues: Section = {
       variant: "warning",
       title: "Common Misinterpretations of the p-value",
       html: `<ul>
-<li><strong>Wrong:</strong> "p = 0.03 means there's a 3% chance the null is true."<br><strong>Right:</strong> "If the null were true, we'd see results this extreme about 3% of the time." The p-value is about the data given the null — not about the null given the data. (That's a Bayesian calculation.)</li>
+<li><strong>Wrong:</strong> "p = 0.03 means there's a 3% chance the null is true."<br><strong>Right:</strong> "If the null were true, we'd see results this extreme about 3% of the time." The p-value is about the data given the null — not about the null given the data.</li>
 <li><strong>Wrong:</strong> "p &lt; 0.05 means the effect is real and important."<br><strong>Right:</strong> Statistical significance and practical significance are different. A tiny effect can have a tiny p-value if you have enough data.</li>
 <li><strong>Wrong:</strong> "p &gt; 0.05 proves there's no effect."<br><strong>Right:</strong> Failing to reject the null means you lack evidence for an effect — not that there's no effect. The effect might be real but your sample might be too small to detect it.</li>
 </ul>`,
@@ -28,7 +28,7 @@ const pValues: Section = {
     {
       type: "interactive",
       component: "PValueVisualizer",
-      caption: "Placeholder: Visualize a null distribution and a test statistic. Adjust the statistic and see the p-value — the shaded area beyond the observed value — update in real time.",
+      caption: "Drag the test statistic to see the p-value (shaded area) update in real time. Toggle between one- and two-tailed tests and change α to see how the rejection decision changes.",
       props: {},
     },
     {

@@ -3,8 +3,12 @@ import type { Section } from "@brinnaebent/workbook";
 const sixSteps: Section = {
   id: "six-steps-of-hypothesis-testing",
   number: 2,
-  title: "The Six Steps",
+  title: "Overview of Hypothesis Testing",
   blocks: [
+    {
+      type: "text",
+      html: `<p>Here's something that gets lost when we focus on shipping code: as a data scientist or ML engineer, you are doing science. You're forming hypotheses. You're designing experiments. You're drawing conclusions from evidence. Every time you tune hyperparameters, compare algorithms, or evaluate whether a new feature improved your model, you're doing hypothesis testing — whether you call it that or not.</p>`,
+    },
     {
       type: "text",
       html: `<p>Done well, hypothesis testing looks like this — six steps, in order, with no shortcuts.</p>`,
@@ -25,7 +29,7 @@ const sixSteps: Section = {
       type: "callout",
       variant: "info",
       title: "Step 2: Select Your Statistical Test",
-      html: `<p>Choose your test <em>before looking at the data</em>. Different tests are appropriate for different data structures. Part III of this textbook is about how to choose. For now: the test must be locked in a priori.</p>`,
+      html: `<p>Choose your test <em>before looking at the data</em>. Different tests are appropriate for different data structures. Later in this unit, we will talk about choosing the appropriate test.</p>`,
     },
     {
       type: "callout",
@@ -36,11 +40,21 @@ const sixSteps: Section = {
     {
       type: "callout",
       variant: "info",
-      title: "Steps 4–6: Compute, Evaluate, Decide",
-      html: `<p><strong>Step 4:</strong> Calculate the <strong>test statistic</strong> — a number computed from your sample that summarizes how far the data deviates from what the null predicts.</p>
-<p><strong>Step 5:</strong> Calculate the <strong>p-value</strong> — the probability of seeing a test statistic at least as extreme as yours, assuming the null is true.</p>
-<p><strong>Step 6:</strong> Make your decision. If $p \leq \alpha$ (your pre-chosen significance level), <strong>reject the null</strong>. Otherwise, <strong>fail to reject</strong>.</p>
-<p>Critical language note: you <em>fail to reject</em> the null — you never "accept" it. The world is allowed to remain ambiguous.</p>`,
+      title: "Step 4: Calculate the Test Statistic",
+      html: `<p>Calculate the <strong>test statistic</strong> — a number computed from your sample that summarizes how far the data deviates from what the null predicts.</p>`,
+    },
+    {
+      type: "callout",
+      variant: "info",
+      title: "Step 5: Calculate the P-Value",
+      html: `<p>Calculate the <strong>p-value</strong> — the probability of seeing a test statistic at least as extreme as yours, assuming the null is true.</p>`,
+    },
+    {
+      type: "callout",
+      variant: "info",
+      title: "Step 6: Make Your Decision",
+      html: `<p>If $p \\leq \\alpha$ (your pre-chosen significance level), <strong>reject the null</strong>. Otherwise, <strong>fail to reject</strong>.</p>
+<p>Critical language note: you <em>fail to reject</em> the null — you never "accept" it.</p>`,
     },
     {
       type: "checkpoint",

@@ -42,6 +42,7 @@ import DistributionShapeExplorer from "./interactives/DistributionShapeExplorer"
 import DiscreteDistributionExplorer from "./interactives/DiscreteDistributionExplorer";
 import ContinuousDistributionExplorer from "./interactives/ContinuousDistributionExplorer";
 import TDistributionExplorer from "./interactives/TDistributionExplorer";
+import PValueVisualizer from "./interactives/PValueVisualizer";
 
 // Register your interactive components here.
 // The key must match the "component" field in your content blocks.
@@ -94,5 +95,6 @@ export default defineConfig({
     DiscreteDistributionExplorer,
     ContinuousDistributionExplorer,
     TDistributionExplorer,
+    PValueVisualizer,
   },
 });

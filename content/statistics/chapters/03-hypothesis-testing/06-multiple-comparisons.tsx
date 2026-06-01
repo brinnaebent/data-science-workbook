@@ -26,12 +26,6 @@ const multipleComparisons: Section = {
 <p><strong>Trade-off:</strong> Bonferroni reduces power — by raising the bar, you'll miss more real effects. It's conservative by design. For very large numbers of tests, consider the Benjamini-Hochberg procedure instead, which controls the <em>false discovery rate</em> rather than the <em>family-wise error rate</em>.</p>`,
     },
     {
-      type: "interactive",
-      component: "MultipleComparisonsExplorer",
-      caption: "Placeholder: Set the number of tests and significance threshold, and watch the family-wise error rate climb. See how Bonferroni correction restores it to the nominal level.",
-      props: {},
-    },
-    {
       type: "checkpoint",
       id: "stats-ch3-s6-q1",
       kind: "mc",
