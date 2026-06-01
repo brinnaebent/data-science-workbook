@@ -10,26 +10,26 @@ const goodnessOfFit: Section = {
       html: `<p><strong>Goodness-of-fit</strong> measures how well a model explains the variability in the data. Three you'll see most often:</p>`,
     },
     {
-      type: "callout",
-      variant: "info",
-      title: "R² (Coefficient of Determination)",
-      html: `<p>The proportion of variance in the outcome explained by the predictors. Ranges from 0 to 1.</p>
+      type: "text",
+      html: `<h3>R² (Coefficient of Determination)</h3>
+<p>The proportion of variance in the outcome explained by the predictors. Ranges from 0 to 1.</p>
 <ul>
 <li>R² = 1: the model explains all variance (every prediction is perfect).</li>
 <li>R² = 0: the model explains nothing (you're no better than predicting the mean).</li>
 </ul>
-<p><strong>Critical limitation:</strong> Add more predictors and R² almost never decreases. It always "rewards" complexity, even if the extra variables are noise. R² alone will favor the most complex model — which is a problem.</p>`,
+<br>
+<p><strong>Critical limitation:</strong> Add more predictors and R² almost never decreases. It always "rewards" complexity, even if the extra variables are noise. R² alone will favor the most complex model, which can be problematic, as you lose understandability when your models are more complex.</p>`,
     },
     {
-      type: "callout",
-      variant: "info",
-      title: "AIC and BIC",
-      html: `<p>Both metrics balance goodness-of-fit against model complexity by penalizing models with more parameters. Lower values = better model.</p>
+      type: "text",
+      html: `<h3>AIC and BIC</h3>
+<p>Both metrics balance goodness-of-fit against model complexity by penalizing models with more parameters. Lower values = better model.</p>
 <ul>
 <li><strong>AIC (Akaike Information Criterion):</strong> Lighter complexity penalty. Tends to favor slightly more complex models. Use when prediction is the goal.</li>
 <li><strong>BIC (Bayesian Information Criterion):</strong> Heavier complexity penalty, especially as sample size grows. Favors simpler models more aggressively. Use when explanation and parsimony are the goal.</li>
 </ul>
-<p>In practice: report R² alongside AIC or BIC. R² tells you how well the model fits. AIC/BIC tell you whether the fit is worth the complexity.</p>`,
+<br>
+<p>In practice, you may choose to report R² alongside AIC or BIC. R² tells you how well the model fits. AIC/BIC tell you whether the fit is worth the complexity.</p>`,
     },
     {
       type: "checkpoint",

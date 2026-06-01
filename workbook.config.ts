@@ -74,6 +74,7 @@ import ChiSquareIndependenceWalkthrough from "./interactives/ChiSquareIndependen
 import ChiSquareGoodnessOfFit from "./interactives/ChiSquareGoodnessOfFit";
 import TwoGroupDecisionTree from "./interactives/TwoGroupDecisionTree";
 import TukeyHSDExplorer from "./interactives/TukeyHSDExplorer";
+import EvaluationChecklist from "./interactives/EvaluationChecklist";
 
 // Register your interactive components here.
 // The key must match the "component" field in your content blocks.
@@ -158,5 +159,6 @@ export default defineConfig({
     ChiSquareGoodnessOfFit,
     TwoGroupDecisionTree,
     TukeyHSDExplorer,
+    EvaluationChecklist,
   },
 });

@@ -10,7 +10,7 @@ const modelEvaluation: Chapter = {
   number: 12,
   title: "Model Evaluation",
   overview:
-    "A model with good metrics is not the same as a trustworthy model. This chapter closes the unit with the statistical toolkit for honest model evaluation: goodness-of-fit measures, residual analysis, confidence intervals, Simpson's Paradox, and a checklist that synthesizes every concept from the unit into a practical evaluation workflow.",
+    "A model with good metrics is not the same as a trustworthy model. This chapter closes the unit with the statistical toolkit for robust model evaluation: goodness-of-fit measures, residual analysis, confidence intervals, Simpson's Paradox, and a checklist that synthesizes every concept from the unit into a practical evaluation workflow.",
   sections: [
     howGoodIsMyModel,
     goodnessOfFit,
