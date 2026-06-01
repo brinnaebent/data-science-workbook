@@ -61,7 +61,7 @@ export default function Home() {
           About
         </h2>
         <p className="text-slate-600">
-          This workbook was created and maintained by{" "}
+          This workbook was created and is maintained by Dr. Brinnae Bent at Duke University for AIPI 510: Data Sourcing for Analytics.{" "}
           {/* TODO: add your name(s) here */}
         </p>
       </section>

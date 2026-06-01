@@ -6,25 +6,33 @@ const descriptiveStatistics: Section = {
   title: "Descriptive Statistics",
   blocks: [
     {
+      type: "interactive",
+      component: "DescriptiveStatsExplorer",
+      caption: "A right-skewed salary dataset (n=40). Toggle each statistic to see it overlaid on the histogram — notice how the mean is pulled far right by a few high earners while the median stays anchored near the bulk of the data.",
+      props: {},
+    },
+    {
       type: "text",
-      html: `<p>Most of you have seen this material before. We're moving quickly, but let's get the vocabulary down in one place so we can build on it throughout the unit.</p>
+      html: `
 <p><strong>Measures of central tendency</strong> answer: <em>what's typical?</em></p>
 <ul>
 <li><strong>Mean</strong> is the arithmetic average. Sensitive to outliers — one billionaire moves the average household income of a small town enormously.</li>
 <li><strong>Median</strong> is the middle value when data is sorted. Robust to outliers — the billionaire doesn't change the median household income.</li>
 <li><strong>Mode</strong> is the most frequently occurring value. The only measure of central tendency that makes sense for purely categorical data.</li>
 </ul>
+<br>
 <p>When you have a skewed distribution — income, web session length, time-to-failure — the gap between mean and median tells you something. Mean substantially greater than median? Long right tail. Mean substantially less? Long left tail.</p>`,
     },
     {
       type: "text",
       html: `<p><strong>Measures of dispersion</strong> answer: <em>how spread out is the data?</em></p>
 <ul>
-<li><strong>Standard deviation</strong> is the average distance of data points from the mean. The workhorse measure of spread.</li>
+<li><strong>Standard deviation</strong> is the average distance of data points from the mean.</li>
 <li><strong>Variance</strong> is the square of the standard deviation. Useful in statistical derivations.</li>
 <li><strong>Range</strong> is maximum minus minimum. Dominated by extremes.</li>
 <li><strong>Interquartile range (IQR)</strong> is Q3 − Q1. Captures the spread of the middle half of your data, robust to outliers — which is why box plots use it.</li>
 </ul>
+<br>
 <p>A note on the formulas: the <strong>population standard deviation</strong> divides by N. The <strong>sample standard deviation</strong> divides by <em>n − 1</em>. That <em>n − 1</em> is Bessel's correction — it compensates for the systematic underestimation that happens when you use the sample mean instead of the true population mean.</p>`,
     },
     {
@@ -49,8 +57,8 @@ const descriptiveStatistics: Section = {
     },
     {
       type: "interactive",
-      component: "DescriptiveStatsExplorer",
-      caption: "Placeholder: Adjust a dataset's shape (skew, spread, outliers) and observe how mean, median, standard deviation, and IQR respond differently.",
+      component: "DistributionExplorer",
+      caption: "Distribution explorer — adjust skewness and kurtosis sliders and see how mean vs. median diverge.",
       props: {},
     },
     {

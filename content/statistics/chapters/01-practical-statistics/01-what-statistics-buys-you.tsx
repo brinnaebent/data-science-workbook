@@ -7,7 +7,7 @@ const whatStatisticsBuysYou: Section = {
   blocks: [
     {
       type: "text",
-      html: `<p>There's a word hiding in plain sight in our job title. <em>Data <strong>science</strong>.</em> Not data engineering, not data analysis, not data plumbing — science. And science means hypotheses, experiments, evidence, and the discipline of saying "I'm not sure" when you're not sure. Statistics is the language we use to do that work honestly.</p>
+      html: `<p>Whether you are a data scientist, a research engineer, an ML Engineer, an AI engineer, or some title that has yet to be invited, your job will surely have some science in it. And science means hypotheses, experiments, evidence, and the discipline of saying "I'm not sure" when you're not sure. Statistics is the language we use to do that work honestly.</p>
 <p>Here's something worth sitting with: across careers in this field, statistics is almost always the differentiator. Not the most fashionable framework, not the latest model architecture — statistics. The colleagues who could think clearly about a hypothesis, design an experiment, and tell you whether a result actually meant anything were the ones whose work held up. They were often the only ones in the room who could do it.</p>`,
     },
     {

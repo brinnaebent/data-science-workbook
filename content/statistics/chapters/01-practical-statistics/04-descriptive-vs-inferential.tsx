@@ -7,7 +7,7 @@ const descriptiveVsInferential: Section = {
   blocks: [
     {
       type: "text",
-      html: `<p>Statistics splits into two broad modes of work, and knowing which one you're doing matters.</p>
+      html: `<p>Statistics splits into two broad modes of work:</p>
 <p><strong>Descriptive statistics</strong> summarize the data you have. Mean, median, standard deviation, a histogram — these describe your sample. They make no claims about a broader population. There's no inference, no probability, no "and therefore." You're just characterizing what's in the table.</p>
 <p><strong>Inferential statistics</strong> go further. They use your sample to make claims about a population you haven't fully observed. "The new algorithm is significantly better." "Users in segment A convert at a higher rate than users in segment B." These are claims about the world based on limited data — and that's where probability and hypothesis testing enter.</p>`,
     },
@@ -27,6 +27,7 @@ const descriptiveVsInferential: Section = {
 <li>Where are the extreme values, and do they make sense?</li>
 <li>What does "typical" look like for each variable?</li>
 </ul>
+<br>
 <p>You'd be amazed how often this five-second check catches data quality problems, label leakage, or misunderstandings about what a column means. Before you train, describe.</p>`,
     },
     {

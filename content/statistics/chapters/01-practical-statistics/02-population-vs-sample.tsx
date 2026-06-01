@@ -19,7 +19,7 @@ const populationVsSample: Section = {
     {
       type: "text",
       html: `<p>This is why everything we do in this unit is <strong>sampling statistics</strong> — methods designed to make sound claims about a population when all you have is a sample. Population parameters are the unknowns we're trying to estimate. Sample statistics are our estimates.</p>
-<p>A few key distinctions to hold:</p>
+<p>A few definitions:</p>
 <ul>
 <li><strong>Population mean (μ):</strong> The true average over the whole population. Unknown in practice.</li>
 <li><strong>Sample mean (x̄):</strong> The average from your data. Your best estimate of μ.</li>
@@ -30,7 +30,7 @@ const populationVsSample: Section = {
     {
       type: "interactive",
       component: "PopulationSampleExplorer",
-      caption: "Placeholder: Draw repeated samples from a population and observe how the sample mean varies around the true population mean.",
+      caption: "Draw repeated samples from a population of 200 exam scores and watch how the distribution of sample means (x̄) clusters around the true population mean (μ). Increase n to see the spread shrink.",
       props: {},
     },
     {

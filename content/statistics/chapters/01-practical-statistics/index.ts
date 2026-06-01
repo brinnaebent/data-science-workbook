@@ -6,11 +6,11 @@ import descriptiveVsInferential from "./04-descriptive-vs-inferential";
 import howMuchData from "./05-how-much-data";
 
 const thinkingLikeADataScientist: Chapter = {
-  id: "thinking-like-a-data-scientist",
+  id: "practical-statistics",
   number: 1,
-  title: "Thinking Like a Data Scientist",
+  title: "Practical Statistics",
   overview:
-    "Statistics is what separates 'the number went up' from 'the number went up meaningfully.' This chapter establishes why statistical thinking matters, introduces the core vocabulary of populations and samples, and frames the unit's central question: how much data do you actually need?",
+    "This chapter establishes why statistical thinking matters, introduces the core vocabulary of populations and samples, and frames the unit's central question: how much data do you actually need?",
   sections: [
     whatStatisticsBuysYou,
     populationVsSample,

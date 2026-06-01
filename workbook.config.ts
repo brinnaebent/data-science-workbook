@@ -35,6 +35,9 @@ import CVFeatureSlideshow from "./interactives/CVFeatureSlideshow";
 import StemmingLemmatizationDemo from "./interactives/StemmingLemmatizationDemo";
 import PCAExplorer from "./interactives/PCAExplorer";
 import FeatureSelectionComparison from "./interactives/FeatureSelectionComparison";
+import PopulationSampleExplorer from "./interactives/PopulationSampleExplorer";
+import DescriptiveStatsExplorer from "./interactives/DescriptiveStatsExplorer";
+import HowMuchDataExplorer from "./interactives/HowMuchDataExplorer";
 
 // Register your interactive components here.
 // The key must match the "component" field in your content blocks.
@@ -80,5 +83,8 @@ export default defineConfig({
     StemmingLemmatizationDemo,
     PCAExplorer,
     FeatureSelectionComparison,
+    PopulationSampleExplorer,
+    DescriptiveStatsExplorer,
+    HowMuchDataExplorer,
   },
 });
