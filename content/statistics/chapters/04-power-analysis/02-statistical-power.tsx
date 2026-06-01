@@ -24,23 +24,24 @@ const statisticalPower: Section = {
 <p>The most common scenario: specify effect size, α, and power → solve for minimum sample size.</p>`,
     },
     {
+      type: "interactive",
+      component: "PowerAnalysisExplorer",
+      caption: "Adjust effect size, sample size, and α to see how the null (H₀) and alternative (H₁) distributions shift relative to the critical value. The green shaded region is power; the red region is β.",
+      props: {},
+    },
+    {
       type: "text",
       html: `<p>Power gets higher when:</p>
 <ul>
 <li><strong>Sample size increases.</strong> More data = more power. This is usually your main lever.</li>
 <li><strong>Effect size is larger.</strong> Big effects are easier to detect.</li>
 </ul>
+<br>
 <p>Power gets lower when:</p>
 <ul>
 <li><strong>The significance threshold becomes stricter.</strong> Moving from α = 0.05 to α = 0.01 makes it harder to clear the bar.</li>
 <li><strong>Variability in the data increases.</strong> Noisy data masks signal.</li>
 </ul>`,
-    },
-    {
-      type: "interactive",
-      component: "PowerAnalysisExplorer",
-      caption: "Placeholder: Adjust effect size, sample size, and α, and watch power update in real time. Shows the two-distribution visualization of null and alternative hypotheses overlapping.",
-      props: {},
     },
     {
       type: "checkpoint",

@@ -7,7 +7,7 @@ const effectSize: Section = {
   blocks: [
     {
       type: "text",
-      html: `<p>The hardest part of a power analysis is the effect size. By the time you're computing power, you've already set α to 0.05 and power to 0.80 — so effect size is the only piece left. Three common ways to estimate it:</p>`,
+      html: `<p>The hardest part of a power analysis is the effect size. We usually set significance level and power to the defaults: α to 0.05 and power to 0.80. Effect size is the last remaining piece. Three common ways to estimate it:</p>`,
     },
     {
       type: "callout",
