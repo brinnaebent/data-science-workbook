@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build && npx pagefind --site out --output-path out/pagefind",
-    "start": "next start",
+    "start": "npx serve@latest out",
     "lint": "eslint"
   },
   "dependencies": {
