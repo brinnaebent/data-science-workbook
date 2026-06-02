@@ -75,6 +75,8 @@ import ChiSquareGoodnessOfFit from "./interactives/ChiSquareGoodnessOfFit";
 import TwoGroupDecisionTree from "./interactives/TwoGroupDecisionTree";
 import TukeyHSDExplorer from "./interactives/TukeyHSDExplorer";
 import EvaluationChecklist from "./interactives/EvaluationChecklist";
+import RegressionAssumptionsGrid from "./interactives/RegressionAssumptionsGrid";
+import RegressionUsesGrid from "./interactives/RegressionUsesGrid";
 
 // Register your interactive components here.
 // The key must match the "component" field in your content blocks.
@@ -160,5 +162,7 @@ export default defineConfig({
     TwoGroupDecisionTree,
     TukeyHSDExplorer,
     EvaluationChecklist,
+    RegressionAssumptionsGrid,
+    RegressionUsesGrid,
   },
 });

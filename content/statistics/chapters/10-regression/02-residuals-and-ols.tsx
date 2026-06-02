@@ -7,52 +7,59 @@ const residualsAndOLS: Section = {
   blocks: [
     {
       type: "text",
-      html: `<p>Start with any line drawn through a scatter plot. For each data point, the <strong>residual</strong> is the vertical distance between the point and the line. Points above the line have positive residuals; below have negative. If a point lies exactly on the line, the residual is zero.</p>
-<p>A residual is the <em>error</em> of the line's prediction: the line predicts a value, the data shows the actual value, and the residual is the difference.</p>
-<p>If you sum all residuals for a well-fit line, you get zero — the positive and negative residuals cancel. But "sums to zero" isn't useful. A terrible line could still have residuals that sum to zero. We need a measure of total error that doesn't cancel.</p>`,
+      html: `<p>Imagine plotting house prices against the number of cats in the neighborhood. You'd see something like the chart in the workbook: dots scattered with no discernible pattern. Cats tell you nothing about prices.</p>
+<p>Now draw any line through that scatter. For each house, the <strong>residual</strong> is the vertical distance between the actual price (the dot) and the line's prediction. Points above the line have positive residuals — the model underpredicted. Points below have negative — the model overpredicted. A residual of zero means the prediction was exactly right.</p>
+<p>Residuals measure prediction error. The line is your model; the residuals are everywhere it's wrong.</p>`,
+    },
+    {
+      type: "text",
+      html: `<p>Here's the problem with simply summing residuals: for any line that passes through the mean of the data (which all OLS lines do), the positive and negative residuals cancel perfectly. The sum is always zero — for a terrible line and an excellent one alike. Zero tells you nothing.</p>
+<p>To solve this, let's <strong>square each residual</strong> before summing. Squaring does two things. First, it makes everything positive — no more cancellation. Second, it penalizes large errors more than small ones: a residual of 100k contributes 10 billion to the sum, while a residual of 10k contributes only 100 million. The line "cares" more about the houses it gets badly wrong.</p>`,
     },
     {
       type: "callout",
       variant: "info",
       title: "Ordinary Least Squares",
-      html: `<p>The solution: <strong>square</strong> the residuals before summing them. Squaring does two things:</p>
-<ol>
-<li>Makes everything positive — negatives don't cancel positives.</li>
-<li>Emphasizes large deviations. A residual of 10 contributes 100 to the sum; a residual of 2 contributes only 4. The line "cares" more about points it's far from.</li>
-</ol>
-<p>The <strong>sum of squared residuals (SSE)</strong> measures total model error. <strong>Ordinary least squares (OLS)</strong> finds the line that minimizes SSE. Calculus gives us the exact solution; Python computes it directly.</p>`,
+      html: `<p>The <strong>sum of squared errors (SSE)</strong> — or sum of squared residuals — is our measure of total model error:</p>
+<p style="text-align:center">$$\\text{SSE} = \\sum_{i=1}^{n}(y_i - \\hat{y}_i)^2$$</p>
+<p>where $y_i$ is the actual price of house $i$ and $\\hat{y}_i$ is the line's prediction. <strong>Ordinary least squares (OLS)</strong> finds the line that minimizes SSE. Calculus gives a closed-form solution; no iteration required. In Python, <code>sklearn.linear_model.LinearRegression</code> and <code>statsmodels.api.OLS</code> both solve it directly.</p>`,
     },
     {
       type: "interactive",
       component: "ResidualsExplorer",
-      caption: "Drag a regression line and see the residuals update in real time. Observe how the SSE changes as the line moves toward and away from the OLS solution.",
+      caption: "Drag the line and watch the residuals (vertical bars) and SSE update in real time. Try: start with cats as the predictor — can you beat the OLS line? Then switch to bedrooms and see how much tighter the OLS solution is.",
       props: {},
+    },
+    {
+      type: "text",
+      html: `<p>Notice what happened when you switched from cats to bedrooms: the OLS line's SSE dropped substantially. The residuals are smaller and more symmetric. This is a better-fitting model — not because we tried harder, but because bedrooms actually carry information about price. Cats don't.</p>
+<p>That's the intuition behind model quality: a predictor is useful if it reduces SSE compared to knowing nothing (a flat line at the mean). If it doesn't, adding it to your model is noise.</p>`,
     },
     {
       type: "checkpoint",
       id: "stats-ch10-s2-q1",
       kind: "mc",
-      question: "Why does OLS minimize the sum of *squared* residuals rather than just the sum of residuals?",
+      question: "You draw two lines through the same house-price scatter plot. Line A has a raw sum of residuals of 0. Line B has a sum of squared residuals of 0. Which line fits the data better?",
       options: [
         {
-          label: "Squared residuals are easier to compute",
+          label: "Line A — residuals sum to zero, so it must be centered correctly",
           correct: false,
-          explanation: "Squaring is slightly more computation, not less. This isn't the reason.",
+          explanation: "Any line that passes through the mean of the data will have residuals summing to zero — including terrible fits. A sum of zero is guaranteed by construction, not by fit quality.",
         },
         {
-          label: "Because the sum of raw residuals is always zero for any line, making it useless as a loss function",
+          label: "Line B — a sum of squared residuals of zero means every prediction is exact",
           correct: true,
-          explanation: "Correct. For any line where the mean is on the line (which OLS guarantees), positive and negative residuals cancel exactly. Squaring prevents this cancellation and creates a meaningful error measure that OLS can minimize.",
+          explanation: "Correct. The only way SSE = 0 is if every single residual is zero — meaning the line passes through every data point exactly. This is perfect fit (or the data is perfectly collinear). Line A's sum-of-residuals = 0 is uninformative.",
         },
         {
-          label: "To penalize outliers equally regardless of direction",
+          label: "They're equivalent — both sums being zero means the same thing",
           correct: false,
-          explanation: "Squaring penalizes large residuals more heavily regardless of direction — it doesn't treat both directions equally, it makes the loss function symmetric. But the core reason for squaring is to prevent cancellation of positive and negative residuals.",
+          explanation: "They're not equivalent. Sum of raw residuals = 0 is a property of any line through the mean. Sum of squared residuals = 0 requires perfect prediction of every point. These are very different conditions.",
         },
         {
-          label: "Squared residuals satisfy normality assumptions",
+          label: "You can't compare lines without knowing their slopes",
           correct: false,
-          explanation: "OLS doesn't assume residuals are normally distributed — that's a separate assumption about the residuals of the fitted model, not a reason for squaring.",
+          explanation: "You can compare fit quality directly via SSE. A smaller SSE means better fit, regardless of slope.",
         },
       ],
     },
