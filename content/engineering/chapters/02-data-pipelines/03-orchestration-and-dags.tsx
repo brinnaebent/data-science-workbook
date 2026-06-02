@@ -12,22 +12,19 @@ const orchestrationAndDAGs: Section = {
 <p>That is the job of an <strong>orchestration tool</strong>. And the central concept underneath all of them is the DAG.</p>`,
     },
     {
-      type: "callout",
-      variant: "info",
-      title: "Directed Acyclic Graphs (DAGs)",
-      html: `<p>A <strong>directed acyclic graph</strong> is a graph where edges have a direction (A → B means "A must finish before B starts") and there are no cycles (you can't loop back to a node you've already visited).</p>
+      type: "text",
+      html: `<h3>Directed Acyclic Graph (DAG)</h3><p>A directed acyclic graph is a graph where edges have a direction (A → B means "A must finish before B starts") and there are no cycles (you can't loop back to a node you've already visited).</p>
 <p>In a pipeline DAG:</p>
 <ul>
 <li><strong>Nodes</strong> are tasks — "extract orders from Postgres," "transform and join," "load to Snowflake"</li>
 <li><strong>Edges</strong> are dependencies — "this task depends on that one"</li>
 <li><strong>Acyclic</strong> means pipelines run forward in time, not in loops</li>
-</ul>
+</ul><br>
 <p>When you define a pipeline as a DAG, the orchestrator can figure out which tasks can run in parallel (those with no dependency on each other) and which must run sequentially. This is not something you calculate manually — you express the graph, and the tool does the scheduling.</p>`,
     },
     {
-      type: "image",
-      src: "/images/engineering/airflow-dag.png",
-      alt: "Example Airflow DAG with nodes for extract, validate, transform, load, and notify, with dependency arrows between them",
+      type: "interactive",
+      component: "AirflowDAG",
       caption: "An Airflow DAG visualizes the dependency structure of a pipeline. Tasks with no dependency on each other can run in parallel; the orchestrator handles the scheduling automatically.",
     },
     {
@@ -35,7 +32,7 @@ const orchestrationAndDAGs: Section = {
       variant: "info",
       title: "Apache Airflow",
       html: `<p><strong>Apache Airflow</strong> is the de facto open-source standard for pipeline orchestration. You write pipelines as Python code — each task is a Python function or operator, and you express the dependencies between them using Python. Airflow's scheduler interprets the DAG and executes tasks in order, retries failures, and surfaces everything in a web UI.</p>
-<pre><code class="language-python">from airflow import DAG
+<br><pre><code class="language-python">from airflow import DAG
 from airflow.operators.python import PythonOperator
 from datetime import datetime
 
@@ -44,7 +41,7 @@ with DAG("nightly_sales", start_date=datetime(2024, 1, 1), schedule="0 2 * * *")
     transform = PythonOperator(task_id="transform", python_callable=transform_orders)
     load = PythonOperator(task_id="load_to_warehouse", python_callable=load_to_snowflake)
 
-    extract >> transform >> load  # dependency chain</code></pre>
+    extract >> transform >> load  # dependency chain</code></pre><br>
 <p>The <code>>></code> operator defines the edge: extract must finish before transform, transform must finish before load.</p>`,
     },
     {

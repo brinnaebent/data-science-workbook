@@ -8,13 +8,13 @@ const bigDataHadoopSparkHive: Section = {
     {
       type: "text",
       html: `<p>There's a moment in every data team's life when the data outgrows a single machine. Maybe you're joining 50 GB tables and your laptop starts sweating. Maybe a query that ran in ten minutes last year now takes three hours. Maybe you're trying to process a week's worth of clickstream data and it simply doesn't fit in memory.</p>
-<p>When that moment arrives, you need a <strong>distributed</strong> processing framework — software that splits a computation across many machines and coordinates the results. Three names define this space, and they appear constantly in job descriptions, architecture docs, and technical interviews.</p>`,
+<p>When that moment arrives, you need a <strong>distributed</strong> processing framework — software that splits a computation across many machines and coordinates the results. Three names define this space, and they often appear in job descriptions, architecture docs, and technical interviews.</p>`,
     },
     {
       type: "callout",
       variant: "info",
       title: "Apache Hadoop",
-      html: `<p>Hadoop is the granddaddy of big data. It introduced two foundational ideas in the mid-2000s:</p>
+      html: `<p>Hadoop introduced two foundational ideas in the mid-2000s:</p>
 <ul>
 <li><strong>HDFS (Hadoop Distributed File System)</strong> — store data across many machines, with automatic replication for fault tolerance. If one node fails, the data exists on two others.</li>
 <li><strong>MapReduce</strong> — process distributed data in parallel using a two-phase programming model: a <em>map</em> step that processes each chunk independently, and a <em>reduce</em> step that aggregates the results.</li>
@@ -40,7 +40,7 @@ const bigDataHadoopSparkHive: Section = {
       type: "callout",
       variant: "info",
       title: "Apache Hive",
-      html: `<p>Hive sits on top of Hadoop (or Spark) and lets you query distributed data using <strong>HiveQL</strong>, a SQL dialect. Under the hood, Hive translates your query into MapReduce or Spark jobs. The point: SQL is a vastly larger talent pool than MapReduce is. Hive made big data queryable by analysts who couldn't write MapReduce programs.</p>
+      html: `<p>Hive sits on top of Hadoop (or Spark) and lets you query distributed data using <strong>HiveQL</strong>, a SQL dialect. Under the hood, Hive translates your query into MapReduce or Spark jobs. Hive made big data queryable by analysts who couldn't write MapReduce programs.</p>
 <p>A common architecture you'll encounter in Hadoop-heritage environments:</p>
 <pre><code>sources → HDFS (storage) → Spark (processing) → Hive (querying)</code></pre>
 <p>Hive is less prominent in greenfield projects — modern cloud warehouses provide SQL over distributed data without the operational complexity of a Hadoop cluster — but it's ubiquitous in enterprises that built their data infrastructure in the 2010s.</p>`,
@@ -53,10 +53,9 @@ const bigDataHadoopSparkHive: Section = {
 <p>The rule of thumb: try Pandas first. Try DuckDB (a fast in-process analytical database) second. Add distributed compute only when you've verified that the data genuinely doesn't fit single-machine processing.</p>`,
     },
     {
-      type: "image",
-      src: "/images/engineering/spark-architecture.png",
-      alt: "Spark cluster diagram: a driver node holds the SparkContext and distributes tasks to executor nodes, each of which processes a partition of the data in memory",
-      caption: "Spark distributes data across executors and processes partitions in parallel, keeping intermediate results in memory to avoid expensive disk I/O.",
+      type: "interactive",
+      component: "SparkArchitecture",
+      caption: "Step through the four phases of a Spark job to see how the driver partitions data, dispatches tasks to executors, and collects results — all without touching disk for intermediate state.",
     },
     {
       type: "checkpoint",

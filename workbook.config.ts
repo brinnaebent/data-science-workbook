@@ -83,6 +83,9 @@ import JoinTypesGrid from "./interactives/JoinTypesGrid";
 import DatabaseDecisionFramework from "./interactives/DatabaseDecisionFramework";
 import NoSQLTypesGrid from "./interactives/NoSQLTypesGrid";
 import LakehouseComparison from "./interactives/LakehouseComparison";
+import ETLStepsGrid from "./interactives/ETLStepsGrid";
+import AirflowDAG from "./interactives/AirflowDAG";
+import SparkArchitecture from "./interactives/SparkArchitecture";
 
 // Register your interactive components here.
 // The key must match the "component" field in your content blocks.
@@ -176,5 +179,8 @@ export default defineConfig({
     DatabaseDecisionFramework,
     NoSQLTypesGrid,
     LakehouseComparison,
+    ETLStepsGrid,
+    AirflowDAG,
+    SparkArchitecture,
   },
 });

@@ -6,15 +6,10 @@ const designingAPipeline: Section = {
   title: "Designing a Pipeline",
   blocks: [
     {
-      type: "text",
-      html: `<p>Concepts are useful. Worked examples are where understanding actually forms. Let's build a pipeline — from business requirement to architecture sketch — and then talk about the part nobody covers in textbooks: quality, governance, and what keeps a pipeline alive after you ship it.</p>`,
-    },
-    {
       type: "callout",
       variant: "example",
       title: "The Brief: E-Commerce Sales Dashboard",
-      html: `<p>An e-commerce company wants a daily dashboard of sales by region. The data lives in three places: orders in a Postgres database, web events in Kafka, and marketing spend in the Salesforce API. The dashboard needs to be ready by 7 a.m. every day, reflecting the previous day's data.</p>
-<p>Here's a reasonable pipeline:</p>
+      html: `<p>An e-commerce company wants a daily dashboard of sales by region. The data lives in three places: orders in a Postgres database, web events in Kafka, and marketing spend in the Salesforce API. The dashboard needs to be ready by 7 a.m. every day, reflecting the previous day's data.</p><br>
 <ol>
 <li><strong>Source layer</strong> — Postgres (orders), Kafka (web events), Salesforce API (marketing spend). Three different systems, three different access patterns.</li>
 <li><strong>Ingestion</strong> — An Airflow DAG that runs at 2 a.m. every night: extracts yesterday's orders via SQL, the day's events from Kafka, and the marketing data via REST API call.</li>
@@ -26,33 +21,22 @@ const designingAPipeline: Section = {
 </ol>`,
     },
     {
-      type: "text",
-      html: `<p>Every job in data engineering is a version of this pipeline, at different scales and in different domains. What changes is the volume, the sources, and the transformation complexity. What doesn't change: data needs to get extracted from somewhere, transformed into something useful, and loaded somewhere reliable.</p>
-<p>Now for the part nobody writes about.</p>`,
+      type: "interactive",
+      component: "DAGBuilder",
+      caption: "",
+      props: {},
     },
     {
       type: "callout",
       variant: "warning",
       title: "The Unsexy 20%: Quality, Lineage, Governance, Cost",
-      html: `<p>Getting a pipeline to run for the first time is 80% of the work. Keeping it running when the company grows — and proving to auditors that it runs correctly — is the other 80%.</p>
-<ul>
+      html: `<p>Getting a pipeline to run for the first time is 80% of the work. Keeping it running when the company grows (and proving to auditors that it runs correctly!) is the other 20%.</p>
+<ul><br>
 <li><strong>Data quality</strong> — schema checks, null-rate monitoring, distribution drift detection. Tools: Great Expectations, dbt tests, Soda. Without automated quality checks, you'll find out about bad data when the CEO asks why the dashboard shows $0 in sales for a region that shipped 10,000 units.</li>
 <li><strong>Lineage</strong> — given a number on a dashboard, can you trace it back to the source rows that produced it? Lineage tools (DataHub, OpenLineage) make this possible. Regulators and auditors increasingly require it.</li>
 <li><strong>Governance</strong> — who is allowed to see what, and how do you prove it? Access control isn't a nice-to-have; it's a HIPAA requirement, a GDPR requirement, and a SOC 2 requirement depending on your industry.</li>
 <li><strong>Cost</strong> — pipelines that worked fine at 100 GB/day can bankrupt you at 10 TB/day. Watch query costs. BigQuery and Snowflake both have pricing models where a single poorly-optimized query can be shockingly expensive.</li>
 </ul>`,
-    },
-    {
-      type: "image",
-      src: "/images/engineering/pipeline-architecture.png",
-      alt: "End-to-end pipeline architecture diagram: sources on the left feed into ingestion, staging in S3, transformation via Spark, loading into Snowflake, and serving to a BI tool; a monitoring layer runs alongside all steps",
-      caption: "A complete pipeline has a monitoring layer — not just a monitoring afterthought. Quality checks, alerting, and cost tracking run alongside every step.",
-    },
-    {
-      type: "interactive",
-      component: "DAGBuilder",
-      caption: "Wire up pipeline nodes — Extract, Transform, Load — and watch the dependency graph render. Click 'run' to see tasks execute in order.",
-      props: {},
     },
     {
       type: "checkpoint",
