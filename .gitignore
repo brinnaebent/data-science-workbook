@@ -2,7 +2,7 @@
 out/
 node_modules/
 *.tsbuildinfo
-.npmrc
+.env
 markdown/
 .DS_Store
 public/.DS_Store
