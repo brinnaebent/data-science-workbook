@@ -77,6 +77,12 @@ import TukeyHSDExplorer from "./interactives/TukeyHSDExplorer";
 import EvaluationChecklist from "./interactives/EvaluationChecklist";
 import RegressionAssumptionsGrid from "./interactives/RegressionAssumptionsGrid";
 import RegressionUsesGrid from "./interactives/RegressionUsesGrid";
+import DataTypesGrid from "./interactives/DataTypesGrid";
+import FourVsGrid from "./interactives/FourVsGrid";
+import JoinTypesGrid from "./interactives/JoinTypesGrid";
+import DatabaseDecisionFramework from "./interactives/DatabaseDecisionFramework";
+import NoSQLTypesGrid from "./interactives/NoSQLTypesGrid";
+import LakehouseComparison from "./interactives/LakehouseComparison";
 
 // Register your interactive components here.
 // The key must match the "component" field in your content blocks.
@@ -164,5 +170,11 @@ export default defineConfig({
     EvaluationChecklist,
     RegressionAssumptionsGrid,
     RegressionUsesGrid,
+    DataTypesGrid,
+    FourVsGrid,
+    JoinTypesGrid,
+    DatabaseDecisionFramework,
+    NoSQLTypesGrid,
+    LakehouseComparison,
   },
 });

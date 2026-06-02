@@ -8,7 +8,7 @@ const engineering: Unit = {
   number: 3,
   title: "Data/ML Engineering",
   description:
-    "Where does your data actually live, how does it get to you, and how does the model you build ever escape your laptop? This unit covers data storage, data pipelines, and ML pipelines — the infrastructure layer that separates a science project from a production system.",
+    "Where does your data actually live, how does it get to you, and how does the model you build ever escape your laptop? This unit covers data storage, data pipelines, and ML pipelines — the infrastructure layer that separates a simple class project from a production system.",
   chapters: [dataStorage, dataPipelines, mlPipelines],
 };
 

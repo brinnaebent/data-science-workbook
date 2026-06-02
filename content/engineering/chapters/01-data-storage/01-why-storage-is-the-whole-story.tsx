@@ -7,27 +7,13 @@ const whyStorageIsTheWholeStory: Section = {
   blocks: [
     {
       type: "text",
-      html: `<p>Here's a piece of Silicon Valley history worth sitting with. In the early 2010s, several tech companies made a decision that looked, frankly, irresponsible: they started storing everything. Every click. Every page view. Every user interaction, every log line, every raw API response. Storage was getting cheaper by the month, and they were hoarding data like it was precious — except nobody could clearly articulate what it was for yet.</p>
-<p>A decade later, those companies had the training corpora that made large language models possible. The data they'd accumulated wasn't junk. It was the moat. The companies that hadn't done it couldn't catch up by buying compute alone — they simply didn't have the data. Storage, as a strategic decision made years before anyone knew why, turned out to be the whole game.</p>
-<p>That history lesson has a practical point for you: <strong>the storage decisions you inherit will constrain every model decision you can make.</strong> You cannot train on data you didn't keep. You cannot reproduce a model built on a dataset that got overwritten. You cannot audit a system that never logged its inputs. Storage is upstream of everything.</p>`,
-    },
-    {
-      type: "callout",
-      variant: "info",
-      title: "Learning Objectives",
-      html: `<p>By the end of this chapter, you'll be able to:</p>
-<ol>
-<li>Distinguish structured, semi-structured, and unstructured data, and identify which storage pattern fits each.</li>
-<li>Use the four V's — volume, velocity, variety, veracity — to translate a business problem into storage requirements.</li>
-<li>Compare relational, NoSQL, vector, time-series, warehouse, lake, and lakehouse storage along the axes of schema, query pattern, scalability, and cost.</li>
-<li>Write and interpret core SQL — <code>SELECT</code>, <code>WHERE</code>, <code>JOIN</code>, <code>INSERT</code>, <code>UPDATE</code>, <code>DELETE</code>.</li>
-<li>Explain what a vector embedding is and how vector databases enable retrieval-augmented generation (RAG).</li>
-<li>Defend a storage choice for a given project, including which cloud services you'd reach for.</li>
-</ol>`,
+      html: `<p>In the early 2010s, several tech companies made a decision that looked, frankly, irresponsible: they started storing everything. Every click. Every page view. Every user interaction, every log line, every raw API response. Storage was getting cheaper by the month, and they were hoarding data like it was precious — except nobody could clearly articulate what it was for yet!</p>
+<p>A decade later, those companies had the training corpora that made massive recommendation systems, prediction models, and even large language models possible. The data they'd accumulated wasn't junk. It was the moat. The companies that hadn't done it couldn't catch up by buying compute alone ... they simply didn't have the data. Storage, as a strategic decision made years before anyone knew why, turned out to be the whole game.</p>
+<p><strong>The storage decisions you inherit will constrain every model decision you can make.</strong> You cannot train on data you didn't keep. You cannot reproduce a model built on a dataset that got overwritten. You cannot audit a system that never logged its inputs. Storage is upstream of everything.</p>`,
     },
     {
       type: "text",
-      html: `<p>Storage matters to you, specifically, in five practical ways:</p>
+      html: `<p>Storage matters in five practical ways:</p>
 <ul>
 <li><strong>Decision-making.</strong> Dashboards, business intelligence, the gut-check an executive needs before signing a contract — all of it runs on stored data.</li>
 <li><strong>Regulatory compliance.</strong> HIPAA, GDPR, financial recordkeeping — compliance is inseparable from storage architecture. "We didn't keep that log" is not a defense.</li>

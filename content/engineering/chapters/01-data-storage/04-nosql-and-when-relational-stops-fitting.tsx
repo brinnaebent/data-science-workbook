@@ -7,41 +7,19 @@ const nosqlAndWhenRelationalStopsFitting: Section = {
   blocks: [
     {
       type: "text",
-      html: `<p>The 2000s brought a problem that relational databases hadn't been designed for: internet scale. When Google needed to index the web, Amazon needed to serve product pages to millions of simultaneous shoppers, and Facebook needed to store social connections for a billion people, the relational model started to crack. Not because it was bad — because the workloads were genuinely different.</p>
-<p>The response was a family of databases that prioritized horizontal scaling and schema flexibility over the relational model's consistency guarantees. The umbrella term became <strong>NoSQL</strong> — which, confusingly, doesn't mean "no SQL ever." It means "not only SQL" — a acknowledgment that SQL-shaped thinking is one tool among several.</p>
-<p>There are four NoSQL subtypes, and the cheat code is to learn them by <em>use case</em>, not by name.</p>`,
+      html: `<p>The 2000s brought a problem that relational databases hadn't been designed for: internet scale. When Google needed to index the web, Amazon needed to serve product pages to millions of simultaneous shoppers, and Facebook needed to store social connections for a billion people, the relational model started to crack.</p>
+<p>The response was a family of databases that prioritized horizontal scaling and schema flexibility over the relational model's consistency guarantees. The umbrella term became <strong>NoSQL</strong>, which, confusingly, doesn't mean "no SQL ever." It means "not only SQL", an acknowledgment that SQL-shaped thinking is one tool among several.</p>
+<p>There are four NoSQL subtypes:</p>`,
     },
     {
-      type: "callout",
-      variant: "info",
-      title: "Four NoSQL Types and When to Reach for Each",
-      html: `<table>
-<thead><tr><th>Type</th><th>What it stores</th><th>Reach for it when</th><th>Examples</th></tr></thead>
-<tbody>
-<tr><td><strong>Document</strong></td><td>JSON-like objects, each self-describing</td><td>Content management, user profiles, event logs — anything where each record can have a different shape</td><td>MongoDB, Couchbase, DocumentDB</td></tr>
-<tr><td><strong>Key-Value</strong></td><td>Key → value pairs</td><td>Caching, session state, real-time lookups — you know exactly what you're looking for</td><td>Redis, DynamoDB</td></tr>
-<tr><td><strong>Column-Family</strong></td><td>Rows grouped into column families</td><td>IoT telemetry, time-series at massive scale, very large web apps with simple access patterns</td><td>Cassandra, HBase, Bigtable</td></tr>
-<tr><td><strong>Graph</strong></td><td>Nodes and edges</td><td>Social networks, fraud detection, recommendations, knowledge graphs — any domain where relationships are first-class</td><td>Neo4j, Neptune, OrientDB</td></tr>
-</tbody>
-</table>`,
+      type: "interactive",
+      component: "NoSQLTypesGrid",
+      caption: "",
     },
     {
-      type: "callout",
-      variant: "example",
-      title: "The Fraud Detection Case for Graph Databases",
-      html: `<p>A bank's fraud team needs to answer: "Is this account within three hops of a known fraudulent account?" In SQL, that's a recursive self-join — expensive to write, expensive to run, and it gets worse as the network grows. In a graph database, "find all nodes within three hops" is a native operation. The query is three lines. The result comes back in milliseconds.</p>
-<p>This isn't a case where graph databases are slightly better. It's a case where graph databases make the query possible at scale and relational databases make it nearly impossible. Recognizing which problem you have is 80% of the storage decision.</p>`,
-    },
-    {
-      type: "text",
-      html: `<p>The general decision framework, compressed to a sentence each:</p>
-<ul>
-<li>Structured + transactional → relational</li>
-<li>Highly connected data → graph</li>
-<li>Massive scale with simple access patterns → key-value or column-family</li>
-<li>Schema-flexible documents → document store</li>
-</ul>
-<p>Notice what this framework doesn't do: it doesn't say "use NoSQL" as a blanket answer. NoSQL databases give up things — typically, strong consistency guarantees and rich query languages — in exchange for scale and flexibility. Those trade-offs are worth making when your workload demands it. They're not worth making when a Postgres instance would have been fine.</p>`,
+      type: "interactive",
+      component: "DatabaseDecisionFramework",
+      caption: "Practice applying the four-rule framework. Each scenario contains a signal — identify it and pick the right storage pattern.",
     },
     {
       type: "callout",

@@ -11,7 +11,7 @@ const dataStorage: Chapter = {
   number: 1,
   title: "Data Storage",
   overview:
-    "Where your data lives shapes every model decision you can make. This chapter covers the full spectrum — relational databases, NoSQL, vector databases, warehouses, and lakes — and builds a decision framework for choosing the right tool.",
+    "Where your data lives shapes every model decision you can make. This chapter covers relational databases, NoSQL, vector databases, warehouses, and data lakes, and builds a decision framework for choosing the right tool.",
   sections: [
     whyStorageIsTheWholeStory,
     whatKindOfData,
