@@ -22,6 +22,17 @@ const missingnessAsFeature: Section = {
       html: `<p>Credit scoring is a domain where missingness-as-feature is widely used. The pattern of which fields a borrower fills in — and which they leave blank — is itself predictive of creditworthiness. Models exploit this. The same pattern appears in fraud detection (which fields does the fraudster skip?), insurance underwriting, and many user-facing systems where users self-select what to disclose. In these domains, treating a missing value as "just missing" throws away signal you actually need.</p>`,
     },
     {
+      type: "callout",
+      variant: "example",
+      title: "Wearable Sensor Data",
+      html: `<p>Wearable devices produce another clear example: if a user's step count, heart rate, or sleep data goes missing for several consecutive days, the gap itself is often a signal. People tend to stop wearing their devices when they're sick, hospitalized, or going through a difficult period. A model that imputes "average steps" across a missing week treats those days as normal — but a binary flag for "device not worn for 3+ consecutive days" can serve as a proxy for illness or disengagement that's genuinely predictive in health outcome models.</p>`,
+    },
+    {
+      type: "interactive",
+      component: "WearableMissingnessExplorer",
+      caption: "Toggle between raw gaps, mean imputation, and a binary missing flag to see how each strategy changes what the model can learn from a user's device-wear pattern.",
+    },
+    {
       type: "checkpoint",
       id: "ds-pre-missingness-feature-q1",
       kind: "mc",

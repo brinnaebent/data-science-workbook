@@ -10,6 +10,11 @@ const visualizationInEda: Section = {
       html: `<p>You'll plot things during EDA primarily for <em>yourself</em>, not for stakeholders. These are throwaway plots — they don't have to be pretty. The goal is to learn something quickly. Save the polish for your final report. (We cover communication visualizations in Chapter 4.)</p>`,
     },
     {
+      type: "interactive",
+      component: "EDAVizTour",
+      caption: "The four core EDA plot types — histogram, box plot, scatter plot, and correlation heatmap — applied to a shared dataset.",
+    },
+    {
       type: "callout",
       variant: "info",
       title: "The EDA Visualization Toolkit",
@@ -21,12 +26,6 @@ const visualizationInEda: Section = {
 <li><strong>Correlation heatmaps</strong> — color-coded correlation matrix. Faster to read than raw numbers; patterns jump out immediately.</li>
 <li><strong>Bar charts by category</strong> — count or distribution broken out by a categorical variable. Quick way to spot imbalance.</li>
 </ul>`,
-    },
-    {
-      type: "image",
-      src: "/images/placeholder.png",
-      alt: "EDA visualization examples — histogram, box plot, scatter plot, and heatmap",
-      caption: "Placeholder: side-by-side examples of the core EDA plot types applied to the same dataset.",
     },
     {
       type: "callout",

@@ -17,6 +17,63 @@ const textFeatures: Section = {
 </ol>`,
     },
     {
+      type: "text",
+      html: `<h3>Tokenization</h3>
+      <p>The first step in any text --> number conversion is tokenization. Tokenization splits a string into substrings. The default is to split on whitespace and punctuation:</p>
+ 
+        <blockquote>"Which class is the best class at Duke? Deep Learning Applications."</blockquote>
+        <p>becomes</p>
+        <blockquote><code>['Which', 'class', 'is', 'the', 'best', 'class', 'at', 'Duke', '?', 'Deep', 'Learning', 'Applications', '.']</code></blockquote>
+        <br>
+        <p>You can also tokenize by sentence (useful for long documents you want to summarize one sentence at a time), by <strong>subword</strong> (the modern default — <code>tokenization</code> → <code>['token', 'ization']</code>), or by character (rarely useful, but possible).</p>`,
+    },
+    {
+      type: "interactive",
+      component: "TokenizerPlayground",
+      caption: "Type any sentence and compare word-level, subword, and character-level tokenization side by side.",
+      props: {},
+    },
+    {
+      type: "text",
+      html: `<h3>Stop Word Removal</h3>
+        <p>Many common words — <em>the, of, and, is</em> — appear so frequently that they swamp the signal in your features. Stop word removal drops them so the model can focus on what carries meaning.</p>
+        <p>NLTK ships with a default English stop word list, but you can absolutely add to it. If you're classifying product reviews, the word "product" is technically informative but in practice useless, since it appears in every document. Add it.</p>
+        <p>Apply stop word removal to our example tokens and watch what gets stripped:</p>`,
+    },
+    {
+      type: "interactive",
+      component: "StopWordVisualizer",
+      caption: "Tokens struck through in red are NLTK stop words. The filtered list keeps only content-bearing words.",
+      props: {},
+    },
+    {
+      type: "text",
+      html: `<h3>Stemming vs. Lemmatization</h3>
+        <p>The words <em>branch, branches, branching, branched</em> all refer to roughly the same concept. We'd like to collapse them.</p>
+        <ul>
+          <li><strong>Stemming</strong> chops off suffixes mechanically. <em>changes, changed, changing</em> → <code>chang</code>. Not a real word. Doesn't matter — it's a feature, not a noun. Fast, crude.</li>
+          <li><strong>Lemmatization</strong> uses a dictionary to map each form to a canonical root. <em>is, am, were</em> → <code>be</code>. <em>changes</em> → <code>change</code>. Slower, but the output is always a real word.</li>
+        </ul>
+        <p>If you're throwing together a quick keyword classifier on millions of documents, stem. If you care about interpretability or accuracy, lemmatize.</p>`,
+    },
+    {
+      type: "interactive",
+      component: "StemmingLemmatizationDemo",
+      caption: "Type any text and see Porter stemming vs. WordNet lemmatization side by side. Highlighted tokens changed from their original form.",
+      props: {},
+    },
+    {
+      type: "text",
+      html: `<h3>Embedding Models</h3>
+        <p>Over the decades, we have experimented with many modeling techniques to turn tokens of words into numbers. From Bag of Words to Word2Vec to modern transformer approaches, you will cover these in great detail in Deep Learning. For now, we will abstract away the architectures and focus on the concepts. Embedding models are neural network based models that allow us to take words and convert them into numbers. Attention-based embedding models enable us to do this extremely well due to the attention mechanism (you will also learn a lot more about this later).</p>`,
+    },
+    {
+      type: "interactive",
+      component: "Word2VecVisualizer",
+      caption: "Explore a pretrained Word2Vec embedding space. Word2Vec is a simple but powerful neural-network based embedding model. Search for a word and see its nearest neighbors. Try words with multiple meanings.",
+      props: {},
+    },
+    {
       type: "callout",
       variant: "info",
       title: "The Vector Representation Spectrum",
@@ -24,20 +81,8 @@ const textFeatures: Section = {
 <li><strong>Bag of Words (BoW).</strong> Count occurrences of each word per document. Ignores order. Sparse, interpretable, effective for simple tasks. Loses all context and syntax.</li>
 <li><strong>TF-IDF.</strong> Weighs term frequency by inverse document frequency — rare, informative words are up-weighted; common words are down-weighted. Better signal-to-noise than raw counts.</li>
 <li><strong>Word2Vec embeddings.</strong> Dense vectors learned from context. Semantic neighbors cluster together. Single fixed vector per word — no context sensitivity.</li>
-<li><strong>Contextual embeddings (BERT, transformers).</strong> The vector for "bank" in "river bank" differs from "bank account." Context-sensitive, expensive to compute, dramatically more powerful for most NLP tasks.</li>
+<li><strong>Contextual embeddings (BERT, transformers).</strong> The vector for "bank" in "river bank" differs from "bank account." Context-sensitive, expensive to compute, more powerful for most NLP tasks.</li>
 </ul>`,
-    },
-    {
-      type: "callout",
-      variant: "tip",
-      title: "The Shift That Changed Everything",
-      html: `<p>The transition from TF-IDF → Word2Vec → BERT → transformer-based models is one of the most dramatic methodological revolutions in any field. For your own projects: use TF-IDF when you need fast, interpretable, low-compute features; use contextual embeddings when you need maximum accuracy and can afford the compute.</p>`,
-    },
-    {
-      type: "interactive",
-      component: "TextVectorizer",
-      caption: "Placeholder: interactive text vectorizer — paste a sentence and see BoW, TF-IDF, and embedding representations side by side.",
-      props: {},
     },
     {
       type: "checkpoint",

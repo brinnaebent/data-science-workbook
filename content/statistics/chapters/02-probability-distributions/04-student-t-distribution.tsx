@@ -12,22 +12,16 @@ const studentTDistribution: Section = {
 <p>The t-distribution accounts for it. Its heavier tails represent the increased probability of extreme values when your variance estimate is imprecise. When sample sizes are large (roughly n > 30), the t-distribution converges to the normal — the extra uncertainty becomes negligible. When samples are small, the heavier tails make your tests appropriately more conservative.</p>`,
     },
     {
-      type: "image",
-      src: "/images/t-distribution-placeholder.png",
-      alt: "Comparison of Normal and t-distributions with varying degrees of freedom",
-      caption: "Placeholder: As degrees of freedom increase (larger sample), the t-distribution's heavier tails converge toward the standard normal.",
+      type: "interactive",
+      component: "TDistributionExplorer",
+      caption: "Adjust degrees of freedom and threshold to see how the t-distribution's heavier tails shrink toward the normal — and how much more tail probability a t-test assigns compared to a z-test at the same cutoff.",
+      props: {},
     },
     {
       type: "callout",
       variant: "tip",
       title: "When to Use t vs. Normal",
       html: `<p>In practice: <strong>always use the t-distribution</strong> for tests about means unless you somehow know the population standard deviation (which you almost never do). For large samples, the t and normal give nearly identical results. For small samples, the t is more honest about uncertainty.</p>`,
-    },
-    {
-      type: "interactive",
-      component: "TDistributionExplorer",
-      caption: "Placeholder: Adjust degrees of freedom and observe how the t-distribution's tails converge toward the normal. See what 'extreme' means at each sample size.",
-      props: {},
     },
     {
       type: "checkpoint",

@@ -13,10 +13,10 @@ const crossValidation: Section = {
 <p><strong>Leave-one-out (LOOCV)</strong> sets k equal to the number of samples — each "fold" is a single observation. Extremely conservative and robust, but also extremely computationally expensive. Use when your dataset is small and you can afford the compute.</p>`,
     },
     {
-      type: "image",
-      src: "/images/placeholder.png",
-      alt: "K-fold cross-validation diagram showing fold splits",
-      caption: "Placeholder: visual showing 5-fold cross-validation — each row is one fold assignment, each column is a split iteration.",
+      type: "interactive",
+      component: "KFoldExplorer",
+      caption: "Click any iteration row or use prev/next to step through each fold assignment. Switch between K-Fold, Stratified K-Fold, and LOOCV.",
+      props: {},
     },
     {
       type: "callout",

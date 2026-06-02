@@ -3,24 +3,27 @@ import type { Section } from "@brinnaebent/workbook";
 const whyThisChapterMatters: Section = {
   id: "why-this-chapter-matters",
   number: 1,
-  title: "Why This Chapter Matters: Portia Woodruff",
+  title: "Why This Chapter Matters",
   blocks: [
     {
       type: "text",
-      html: `<p>In 2023, Detroit police used facial recognition technology to falsely identify Portia Woodruff as a carjacking suspect. She was arrested while eight months pregnant, for a crime she did not commit. When her lawyers asked why the model had identified her, the answer was: they couldn't say. The model had simply produced an output. The team that deployed it could not explain why.</p>
-<p>This is not a hypothetical. This happened.</p>`,
-    },
-    {
-      type: "callout",
-      variant: "warning",
-      title: "Three Hypothetical-but-Realistic Scenarios",
-      html: `<p><strong>The resume model.</strong> You submit your resume to a company that uses AI to select interviewees. You're not selected, even though your resume matches the job description perfectly. The model can't tell you why — it gave only an output. It turns out the training set was based on current employee resumes, and many of them had listed a specific hobby as a proxy for cultural fit. Now replace that hobby with a gender indicator, an ethnicity signal, or a socioeconomic marker.</p>
-<p><strong>The loan model.</strong> You apply for a loan and are denied despite a good credit score and stable job. The model used social media data and found a post from years ago where you discussed financial struggles. Your privacy is violated and your financial future is impacted.</p>
-<p><strong>The hospital triage.</strong> You go to the hospital and are sent to the back of the line by an AI triage algorithm. The model was using socioeconomic data the engineers had left in the training set without realizing it.</p>`,
+      html: `<p>In 2023, Detroit police used facial recognition technology to falsely identify Portia Woodruff as a carjacking suspect. She was arrested while eight months pregnant, for a crime she did not commit. When her lawyers asked why the model had identified her, the answer was: they couldn't say. The model had simply produced an output. The team that deployed it could not explain why.</p>`,
     },
     {
       type: "text",
-      html: `<p>Recruitment, finance, and healthcare are real high-stakes domains actively using AI tools. The patterns these examples describe are not fictional. They have happened. They will happen again. Building AI tools means accepting some responsibility for outcomes like these — and this chapter is about giving you the vocabulary and frameworks to handle that responsibility well.</p>`,
+      html: `<p>A recent study by Sorokovikova, et al., showed that all tested LLMs exhibited perceived gender bias when providing recommendations for salary negotiation. The only difference in the prompt was the name on the provided resume -- either a female presenting name or a male presenting name!</p>`,
+    },
+    {
+      type: "image",
+      src: "/data-storytelling/salary.png",
+      alt: "Chart showing gender bias in LLM salary negotiation recommendations",
+      width: "50%",
+      caption: `<a href="https://arxiv.org/pdf/2506.10491" target="_blank" rel="noopener noreferrer">[Source]</a>`,
+    },
+
+    {
+      type: "text",
+      html: `<p>Recruitment, finance, and healthcare are real high-stakes domains actively using AI tools. The patterns these examples describe are not fictional. They have happened. They will happen again. Building AI tools means accepting some responsibility for outcomes like these — and this chapter is about giving you the vocabulary and frameworks to handle that responsibility.</p>`,
     },
     {
       type: "checkpoint",

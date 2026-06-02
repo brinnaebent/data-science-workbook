@@ -10,9 +10,7 @@ const timeSeriesFeatures: Section = {
       html: `<p>Time series shows up everywhere — stock prices, weather, energy consumption, vital signs, machine performance, web traffic. Most companies you'd never think of as "time series companies" are working on time series data. The raw signal is rarely the right input to a model — the features you engineer from it are.</p>`,
     },
     {
-      type: "callout",
-      variant: "info",
-      title: "Six Feature Categories",
+      type: "text",
       html: `<ul>
 <li><strong>Temporal features.</strong> Day of week, month, quarter, hour, time of day. Capture recurring patterns aligned with calendar or clock structure.</li>
 <li><strong>Lagged features.</strong> Past values of the variable as features for the current prediction. "Yesterday's sales" as a feature for today's. The model learns temporal dependencies — what came before predicts what comes next.</li>
@@ -23,10 +21,14 @@ const timeSeriesFeatures: Section = {
 </ul>`,
     },
     {
-      type: "image",
-      src: "/images/placeholder.png",
-      alt: "Time series decomposition into trend, seasonal, and residual components",
-      caption: "Placeholder: time series decomposition diagram showing raw signal split into trend + seasonal + residual components.",
+      type: "interactive",
+      component: "TimeSeriesDecomposition",
+      caption: "Adjust trend, seasonal amplitude, and noise to see how each component contributes to the raw signal. Switch to Decomposed view to isolate each layer.",
+    },
+    {
+      type: "interactive",
+      component: "FrequencyDomainExplorer",
+      caption: "Toggle frequency components to see how they combine in the time domain — and how the frequency domain makes each component visible separately.",
     },
     {
       type: "callout",

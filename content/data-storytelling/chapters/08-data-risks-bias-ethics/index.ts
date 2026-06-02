@@ -3,8 +3,6 @@ import whyThisChapterMatters from "./01-why-this-chapter-matters";
 import responsibleAiFramework from "./02-responsible-ai-framework";
 import sixSourcesOfBias from "./03-six-sources-of-bias";
 import mitigatingBias from "./04-mitigating-bias";
-import fatFairnessAccountabilityTransparency from "./05-fat-fairness-accountability-transparency";
-import buildingEthicsIn from "./06-building-ethics-in";
 import transparencyInterpretabilityExplainability from "./07-transparency-interpretability-explainability";
 import privacyAndRegulations from "./08-privacy-and-regulations";
 
@@ -19,8 +17,6 @@ const dataRisksBiasEthics: Chapter = {
     responsibleAiFramework,
     sixSourcesOfBias,
     mitigatingBias,
-    fatFairnessAccountabilityTransparency,
-    buildingEthicsIn,
     transparencyInterpretabilityExplainability,
     privacyAndRegulations,
   ],

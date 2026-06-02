@@ -7,13 +7,13 @@ const openingQuestions: Section = {
   blocks: [
     {
       type: "text",
-      html: `<p>The temptation when you get a new dataset is to load it into a notebook, call <code>df.head()</code>, and start fitting models. Don't. Start with questions. EDA begins before you touch the data.</p>`,
+      html: `<p>The temptation when you get a new dataset is to load it into a notebook, call <code>df.head()</code>, and start fitting models. Don't. Start with questions. EDA begins before you look at an ML model!</p>`,
     },
     {
       type: "callout",
       variant: "info",
       title: "Four Categories of Opening Questions",
-      html: `<p><strong>Context questions.</strong> What is the source of the data? Who collected it, how, and when? What are the known biases and limitations? How does this data relate to the problem you're solving? This is the connective tissue between sourcing (Chapter 2) and everything that comes next. Skip context, and you'll make technical decisions in a vacuum.</p>
+      html: `<p><strong>Context questions.</strong> What is the source of the data? Who collected it, how, and when? What are the known biases and limitations? How does this data relate to the problem you're solving? This is the connective tissue between sourcing (Chapter 2) and everything that comes next. </p>
 <p><strong>Sampling questions.</strong> Is the dataset representative of the population of interest? Will you need train/validation/test splits? How will you split? Are there subgroups that need separate analysis? If your dataset is 95% from one country but you'll deploy globally, you need to know that now — not after the model is in production.</p>
 <p><strong>Structure questions.</strong> What are the dimensions? What are the data types of each variable — numerical, categorical, text, datetime? Are there missing values, and how are they represented?</p>
 <p><strong>Quality questions.</strong> Are there duplicates? Inconsistent values? Columns that look numeric but contain strings? Outliers visible even before any statistics are computed?</p>`,

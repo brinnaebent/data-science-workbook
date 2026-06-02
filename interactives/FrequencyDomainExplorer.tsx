@@ -14,10 +14,10 @@ interface Component {
 }
 
 const COMPONENTS: Component[] = [
-  { id: "a", label: "1 Hz",  freq: 1,   amp: 0.7,  color: "text-sky-400",    colorHex: "#38bdf8" },
-  { id: "b", label: "3 Hz",  freq: 3,   amp: 0.45, color: "text-violet-400", colorHex: "#a78bfa" },
-  { id: "c", label: "7 Hz",  freq: 7,   amp: 0.28, color: "text-rose-400",   colorHex: "#fb7185" },
-  { id: "d", label: "12 Hz", freq: 12,  amp: 0.18, color: "text-amber-400",  colorHex: "#fbbf24" },
+  { id: "a", label: "1 Hz",  freq: 1,   amp: 0.7,  color: "text-sky-600",    colorHex: "#0284c7" },
+  { id: "b", label: "3 Hz",  freq: 3,   amp: 0.45, color: "text-violet-600", colorHex: "#7c3aed" },
+  { id: "c", label: "7 Hz",  freq: 7,   amp: 0.28, color: "text-rose-500",   colorHex: "#f43f5e" },
+  { id: "d", label: "12 Hz", freq: 12,  amp: 0.18, color: "text-amber-500",  colorHex: "#f59e0b" },
 ];
 
 const DURATION = 2;      // seconds shown
@@ -109,16 +109,16 @@ export default function FrequencyDomainExplorer() {
   const maxAmp = Math.max(...COMPONENTS.map((c) => c.amp));
 
   return (
-    <div className="rounded-xl border border-slate-700 bg-slate-900 overflow-hidden">
+    <div className="rounded-xl border border-slate-200 bg-white overflow-hidden shadow-sm">
       {/* header */}
-      <div className="px-5 py-3 border-b border-slate-700">
-        <span className="text-xs font-semibold uppercase tracking-wide text-slate-400">
+      <div className="px-5 py-3 border-b border-slate-100 bg-slate-50">
+        <span className="text-xs font-semibold uppercase tracking-wide text-slate-500">
           Time Domain vs. Frequency Domain
         </span>
       </div>
 
       <div className="p-5 flex flex-col gap-6">
-        <p className="text-sm text-slate-400 leading-relaxed">
+        <p className="text-sm text-slate-600 leading-relaxed">
           The same signal, two ways of looking at it. Toggle frequency components on and off to see
           how they combine in the time domain — and how the frequency domain strips that complexity
           back to a clean list of <em>what frequencies are present and how strong they are</em>.
@@ -140,16 +140,16 @@ export default function FrequencyDomainExplorer() {
                   onMouseLeave={() => setHoveredId(null)}
                   className={`flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-mono border transition-all cursor-pointer
                     ${on
-                      ? "bg-slate-800 border-slate-600 text-slate-200"
-                      : "bg-slate-900 border-slate-700 text-slate-600 line-through"
+                      ? "bg-white border-slate-300 text-slate-700"
+                      : "bg-slate-50 border-slate-200 text-slate-400 line-through"
                     }`}
                 >
                   <span
                     className="inline-block w-2 h-2 rounded-full shrink-0"
-                    style={{ background: on ? c.colorHex : "#475569" }}
+                    style={{ background: on ? c.colorHex : "#cbd5e1" }}
                   />
                   {c.label}
-                  <span className="text-[10px] text-slate-500 no-underline">
+                  <span className="text-[10px] text-slate-400 no-underline">
                     {(c.amp * 100).toFixed(0)}%
                   </span>
                 </button>
@@ -161,18 +161,18 @@ export default function FrequencyDomainExplorer() {
         {/* ── time domain ── */}
         <div className="flex flex-col gap-2">
           <div className="flex items-baseline justify-between">
-            <p className="text-xs font-semibold uppercase tracking-wide text-emerald-400">
+            <p className="text-xs font-semibold uppercase tracking-wide text-emerald-600">
               Time Domain
             </p>
-            <p className="text-[11px] text-slate-500">amplitude over time</p>
+            <p className="text-[11px] text-slate-400">amplitude over time</p>
           </div>
-          <div className="rounded-lg border border-slate-700 bg-slate-950 overflow-hidden">
+          <div className="rounded-lg border border-slate-200 bg-slate-50 overflow-hidden">
             <svg viewBox={`0 0 ${W} ${H}`} className="w-full" style={{ display: "block" }}>
               {/* zero line */}
               <line
                 x1={PAD.left} y1={ty(0)}
                 x2={W - PAD.right} y2={ty(0)}
-                stroke="#1e293b" strokeWidth="1"
+                stroke="#e2e8f0" strokeWidth="1"
               />
               {/* time axis ticks */}
               {[0, 0.5, 1, 1.5, 2].map((t) => {
@@ -184,7 +184,7 @@ export default function FrequencyDomainExplorer() {
                     y={H - 2}
                     textAnchor="middle"
                     fontSize="8"
-                    fill="#475569"
+                    fill="#94a3b8"
                   >
                     {t}s
                   </text>
@@ -200,18 +200,18 @@ export default function FrequencyDomainExplorer() {
                     fill="none"
                     stroke={c.colorHex}
                     strokeWidth="1"
-                    opacity="0.45"
+                    opacity="0.5"
                     strokeDasharray="3 2"
                   />
                 ) : null
               )}
 
               {/* composite */}
-              <path d={compositePath} fill="none" stroke="#34d399" strokeWidth="2" />
+              <path d={compositePath} fill="none" stroke="#059669" strokeWidth="2" />
             </svg>
           </div>
           <p className="text-[11px] text-slate-500">
-            The <span className="text-emerald-400 font-semibold">green composite</span> is what you
+            The <span className="text-emerald-600 font-semibold">green composite</span> is what you
             would actually record with a sensor — all frequencies mixed together, inseparable by eye.
             Hover a toggle to see that component as a faint dashed line.
           </p>
@@ -220,18 +220,18 @@ export default function FrequencyDomainExplorer() {
         {/* ── frequency domain ── */}
         <div className="flex flex-col gap-2">
           <div className="flex items-baseline justify-between">
-            <p className="text-xs font-semibold uppercase tracking-wide text-violet-400">
+            <p className="text-xs font-semibold uppercase tracking-wide text-violet-600">
               Frequency Domain
             </p>
-            <p className="text-[11px] text-slate-500">amplitude at each frequency</p>
+            <p className="text-[11px] text-slate-400">amplitude at each frequency</p>
           </div>
-          <div className="rounded-lg border border-slate-700 bg-slate-950 overflow-hidden">
+          <div className="rounded-lg border border-slate-200 bg-slate-50 overflow-hidden">
             <svg viewBox={`0 0 ${FW} ${FH}`} className="w-full" style={{ display: "block" }}>
               {/* baseline */}
               <line
                 x1={FPAD.left} y1={FPAD.top + FPH}
                 x2={FW - FPAD.right} y2={FPAD.top + FPH}
-                stroke="#1e293b" strokeWidth="1"
+                stroke="#e2e8f0" strokeWidth="1"
               />
 
               {COMPONENTS.map((c, i) => {
@@ -252,8 +252,8 @@ export default function FrequencyDomainExplorer() {
                       width={barW}
                       height={barH}
                       rx="2"
-                      fill={on ? c.colorHex : "#1e293b"}
-                      opacity={on ? (isHov ? 1 : 0.75) : 0.3}
+                      fill={on ? c.colorHex : "#e2e8f0"}
+                      opacity={on ? (isHov ? 1 : 0.8) : 0.4}
                       style={{ transition: "height 0.25s ease, y 0.25s ease, opacity 0.15s" }}
                     />
                     {/* amplitude label inside bar (only when tall enough) */}
@@ -263,8 +263,8 @@ export default function FrequencyDomainExplorer() {
                         y={barY + 11}
                         textAnchor="middle"
                         fontSize="8"
-                        fill={c.colorHex}
-                        opacity="0.85"
+                        fill="white"
+                        opacity="0.9"
                       >
                         {(c.amp * 100).toFixed(0)}%
                       </text>
@@ -275,7 +275,7 @@ export default function FrequencyDomainExplorer() {
                       y={FH - 3}
                       textAnchor="middle"
                       fontSize="9"
-                      fill={on ? "#94a3b8" : "#334155"}
+                      fill={on ? "#64748b" : "#cbd5e1"}
                     >
                       {c.freq} Hz
                     </text>
@@ -287,27 +287,27 @@ export default function FrequencyDomainExplorer() {
           <p className="text-[11px] text-slate-500">
             The frequency domain reveals exactly which frequencies are present and at what strength —
             something impossible to read from the time-domain waveform. This is what a{" "}
-            <strong className="text-slate-400">Fourier transform</strong> gives you: a decomposition
+            <strong className="text-slate-600">Fourier transform</strong> gives you: a decomposition
             of any signal into its constituent frequencies.
           </p>
         </div>
 
         {/* ── key insight callout ── */}
-        <div className="rounded-lg border border-slate-700 bg-slate-800/40 px-4 py-3 flex flex-col gap-1.5">
-          <p className="text-[11px] font-semibold uppercase tracking-wide text-slate-400">
+        <div className="rounded-lg border border-slate-200 bg-slate-50 px-4 py-3 flex flex-col gap-1.5">
+          <p className="text-[11px] font-semibold uppercase tracking-wide text-slate-500">
             Why this matters for sensor data
           </p>
-          <ul className="text-xs text-slate-400 leading-relaxed space-y-1 list-none">
+          <ul className="text-xs text-slate-500 leading-relaxed space-y-1 list-none">
             <li>
-              <span className="text-slate-300 font-semibold">Time domain</span> — tells you{" "}
+              <span className="text-slate-700 font-semibold">Time domain</span> — tells you{" "}
               <em>when</em> something happened: a spike, a trend, a burst of activity.
             </li>
             <li>
-              <span className="text-slate-300 font-semibold">Frequency domain</span> — tells you{" "}
+              <span className="text-slate-700 font-semibold">Frequency domain</span> — tells you{" "}
               <em>what rhythms</em> drive the signal: breathing rate, vibration modes, electrical noise at 50/60 Hz.
             </li>
             <li>
-              <span className="text-slate-300 font-semibold">Feature engineering</span> often requires both:
+              <span className="text-slate-700 font-semibold">Feature engineering</span> often requires both:
               time-domain statistics (mean, variance, peaks) for event detection; frequency-domain
               features (spectral power bands) for rhythm-based classification.
             </li>

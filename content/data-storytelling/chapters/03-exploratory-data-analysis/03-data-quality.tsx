@@ -9,8 +9,8 @@ const dataQuality: Section = {
       type: "text",
       html: `<p>After descriptive statistics, run a quality pass. The goal is to surface problems before they become invisible assumptions baked into your model. Four questions drive this pass.</p>
 <ul>
-<li><strong>Duplicate rows?</strong> Duplicates can be exact (same row appears twice) or near-duplicates (same entity with small differences — the same person entered twice with slightly different names). Both are real engineering problems.</li>
-<li><strong>Inconsistent values?</strong> A "country" column with "USA," "United States," and "U.S." A "dates" column in three different formats. An "age" column with values of 200. Inconsistency is the rule, not the exception, in real-world data.</li>
+<li><strong>Duplicate rows?</strong> Duplicates can be exact (same row appears twice) or near-duplicates (same entity with small differences — the same person entered twice with slightly different names).</li>
+<li><strong>Inconsistent values?</strong> A "country" column with "USA," "United States," and "U.S." A "dates" column in three different formats. An "age" column with values of 200.</li>
 <li><strong>Outliers or extreme values?</strong> Outliers can be sensor failures, data entry errors, or real-but-rare events. <em>The data alone usually can't tell you which.</em></li>
 <li><strong>Values that make sense given domain knowledge?</strong> A heart rate of 800 bpm is not a real heart rate. A house listing at $1.00 is not a deal. Sanity-check against what should be possible.</li>
 </ul>`,
@@ -19,7 +19,7 @@ const dataQuality: Section = {
       type: "callout",
       variant: "warning",
       title: "Domain Knowledge Beats Statistical Anomaly Detection",
-      html: `<p>A statistician can flag an extreme value as a numerical outlier. Only a domain expert can tell you whether it's a sensor failure or a real, important event. Engage your experts before making outlier decisions — not after.</p>`,
+      html: `<p>A statistician can flag an extreme value as a numerical outlier. Only a domain expert can tell you whether it's a sensor failure or a real, important event. Engage your experts before making outlier decisions.</p>`,
     },
     {
       type: "callout",

@@ -7,15 +7,15 @@ const simpsonsParadox: Section = {
   blocks: [
     {
       type: "text",
-      html: `<p>Before we close, one of the most counterintuitive — and important — phenomena in applied statistics: <strong>Simpson's Paradox</strong>.</p>
-<p>Simpson's Paradox occurs when a trend or relationship visible in subgroups of data <strong>disappears or reverses</strong> when the subgroups are aggregated. A drug appears effective in men, appears effective in women, and appears ineffective in the combined dataset. An algorithm appears better than another within each user segment but worse overall. These aren't statistical errors — they're real properties of the data — and they can completely upend your conclusions.</p>`,
+      html: `<p>One of the most counterintuitive (and important!) phenomena in applied statistics is <strong>Simpson's Paradox</strong>.</p>
+<p>Simpson's Paradox occurs when a trend or relationship visible in subgroups of data <strong>disappears or reverses</strong> when the subgroups are aggregated. A drug appears effective in men, appears effective in women, and appears ineffective in the combined dataset. An algorithm appears better than another within each user segment but worse overall.</p>`,
     },
     {
       type: "callout",
       variant: "example",
       title: "A Famous Real Example: UC Berkeley Admissions (1973)",
       html: `<p>Aggregate data showed men were admitted at a higher rate than women (44% vs. 35%), suggesting gender bias. But when broken down by department, most departments showed women being admitted at <em>equal or higher</em> rates than men.</p>
-<p>The resolution: women disproportionately applied to more competitive departments (lower overall admission rates). The aggregate rate was driven by department selection, not discrimination within departments. The paradox was real.</p>`,
+<p>The resolution: women disproportionately applied to more competitive departments (lower overall admission rates). The aggregate rate was driven by department selection, not discrimination within departments.</p>`,
     },
     {
       type: "callout",
@@ -24,13 +24,16 @@ const simpsonsParadox: Section = {
       html: `<ul>
 <li><strong>Confounding variables</strong> that influence both the predictor and the outcome differently across subgroups.</li>
 <li><strong>Group heterogeneity</strong> — differences in the size or composition of subgroups pull the aggregate trend in a different direction than within-group trends.</li>
-</ul>
-<p><strong>The defense:</strong> Always run subgroup analysis alongside aggregate analysis. Visualize relationships within meaningful slices of your data before declaring the aggregate result. This is part of what makes good exploratory data analysis so much more than just "looking at the data."</p>`,
+</ul>`,
+    },
+    {
+      type: "text",
+      html: `<p>Always run subgroup analysis alongside aggregate analysis. Visualize relationships within meaningful slices of your data before declaring the aggregate result. This is part of what makes good exploratory data analysis so much more than just "looking at the data."</p>`,
     },
     {
       type: "interactive",
       component: "SimpsonsParadoxVisualizer",
-      caption: "Placeholder: Display a Simpson's Paradox scenario — show the aggregate trend and the per-subgroup trends side by side. Adjust the subgroup sizes to watch the paradox emerge and disappear.",
+      caption: "Display a Simpson's Paradox scenario — show the aggregate trend and the per-subgroup trends side by side. Adjust the subgroup sizes to watch the paradox emerge and disappear.",
       props: {},
     },
     {

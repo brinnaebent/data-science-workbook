@@ -3,3 +3,9 @@
 /* Source app and interactive components for Tailwind class scanning */
 @source "./**/*.tsx";
 @source "../interactives/**/*.tsx";
+
+/* Prevent code blocks from overflowing callout boxes */
+.border-l-4 pre {
+  overflow-x: auto;
+  max-width: 100%;
+}

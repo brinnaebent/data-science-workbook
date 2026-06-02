@@ -5,8 +5,8 @@ import { useState, useRef, useCallback, useEffect } from "react";
 type Channel = "rgb" | "grayscale";
 
 const CHANNELS: { id: Channel; label: string; color: string }[] = [
-  { id: "rgb", label: "Full Color", color: "text-slate-300" },
-  { id: "grayscale", label: "Grayscale", color: "text-slate-300" },
+  { id: "rgb", label: "Full Color", color: "text-slate-700" },
+  { id: "grayscale", label: "Grayscale", color: "text-slate-700" },
 ];
 
 // 16×12 pixel art of a simple house scene — stored as [r, g, b] triples
@@ -75,10 +75,10 @@ export default function PixelExplorer() {
   const barWidth = (v: number) => `${(v / 255) * 100}%`;
 
   return (
-    <div className="rounded-xl border border-slate-700 bg-slate-900 overflow-hidden">
+    <div className="rounded-xl border border-slate-200 bg-white overflow-hidden shadow-sm">
       {/* Header */}
-      <div className="px-5 py-3 border-b border-slate-700 flex items-center gap-2">
-        <span className="text-xs font-semibold uppercase tracking-wide text-slate-400">
+      <div className="px-5 py-3 border-b border-slate-100 bg-slate-50 flex items-center gap-2">
+        <span className="text-xs font-semibold uppercase tracking-wide text-slate-500">
           Pixel Explorer
         </span>
       </div>
@@ -91,8 +91,8 @@ export default function PixelExplorer() {
             onClick={() => setActiveChannel(ch.id)}
             className={`px-3 py-1.5 rounded-t-lg text-xs font-medium border-b-2 transition-colors duration-150 cursor-pointer ${
               activeChannel === ch.id
-                ? `${ch.color} border-slate-300 bg-slate-800`
-                : "text-slate-500 border-transparent hover:text-slate-300"
+                ? `${ch.color} border-indigo-500 bg-slate-50`
+                : "text-slate-400 border-transparent hover:text-slate-600"
             }`}
           >
             {ch.label}
@@ -101,10 +101,10 @@ export default function PixelExplorer() {
       </div>
 
       {/* Main panel */}
-      <div className="border border-slate-700 mx-4 mb-4 rounded-b-xl rounded-tr-xl overflow-hidden bg-slate-800/40">
+      <div className="border border-slate-200 mx-4 mb-4 rounded-b-xl rounded-tr-xl overflow-hidden bg-slate-50/40">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
           {/* Pixel grid */}
-          <div className="p-5 border-b md:border-b-0 md:border-r border-slate-700/60 flex flex-col items-center justify-center gap-3">
+          <div className="p-5 border-b md:border-b-0 md:border-r border-slate-200 flex flex-col items-center justify-center gap-3">
             <p className="text-xs font-semibold uppercase tracking-wide text-slate-500 self-start">
               Sample image ({COLS}×{ROWS} px)
             </p>
@@ -121,7 +121,7 @@ export default function PixelExplorer() {
                     <div
                       key={`${r}-${c}`}
                       style={{ backgroundColor: toDisplayColor(px, activeChannel), aspectRatio: "1" }}
-                      className={`cursor-crosshair transition-all duration-75 ${isActive ? "ring-2 ring-white ring-inset z-10" : ""}`}
+                      className={`cursor-crosshair transition-all duration-75 ${isActive ? "ring-2 ring-indigo-500 ring-inset z-10" : ""}`}
                       onMouseEnter={() => setHovered({ row: r, col: c })}
                       onClick={() => setTapped(tapped?.row === r && tapped?.col === c ? null : { row: r, col: c })}
                     />
@@ -129,7 +129,7 @@ export default function PixelExplorer() {
                 })
               )}
             </div>
-            <p className="text-xs text-slate-500 italic">Hover or tap a pixel to inspect it</p>
+            <p className="text-xs text-slate-400 italic">Hover or tap a pixel to inspect it</p>
           </div>
 
           {/* Pixel inspector */}
@@ -142,7 +142,7 @@ export default function PixelExplorer() {
               <>
                 <div className="flex items-center gap-3 text-xs">
                   <span className="text-slate-500">Position</span>
-                  <span className="font-mono text-slate-300">col {active!.col}, row {active!.row}</span>
+                  <span className="font-mono text-slate-700">col {active!.col}, row {active!.row}</span>
                 </div>
 
                 {activeChannel === "rgb" ? (
@@ -150,12 +150,12 @@ export default function PixelExplorer() {
                     {/* Color swatch */}
                     <div className="flex items-center gap-3">
                       <div
-                        className="w-12 h-12 rounded-lg border border-slate-600 shrink-0"
+                        className="w-12 h-12 rounded-lg border border-slate-200 shrink-0"
                         style={{ backgroundColor: `rgb(${pixel[0]},${pixel[1]},${pixel[2]})` }}
                       />
-                      <div className="font-mono text-sm text-slate-200 leading-relaxed">
+                      <div className="font-mono text-sm text-slate-700 leading-relaxed">
                         <div>[{pixel[0]}, {pixel[1]}, {pixel[2]}]</div>
-                        <div className="text-xs text-slate-500">
+                        <div className="text-xs text-slate-400">
                           #{pixel[0].toString(16).padStart(2,"0")}{pixel[1].toString(16).padStart(2,"0")}{pixel[2].toString(16).padStart(2,"0")}
                         </div>
                       </div>
@@ -166,14 +166,14 @@ export default function PixelExplorer() {
                       {(["R","G","B"] as const).map((label, i) => {
                         const val = pixel[i];
                         const barColor = i === 0 ? "bg-red-500" : i === 1 ? "bg-green-500" : "bg-blue-500";
-                        const textColor = i === 0 ? "text-red-400" : i === 1 ? "text-green-400" : "text-blue-400";
+                        const textColor = i === 0 ? "text-red-500" : i === 1 ? "text-green-600" : "text-blue-500";
                         return (
                           <div key={label} className="flex items-center gap-2">
                             <span className={`font-mono font-bold text-sm w-4 shrink-0 ${textColor}`}>{label}</span>
-                            <div className="flex-1 h-3 bg-slate-700 rounded-full overflow-hidden">
+                            <div className="flex-1 h-3 bg-slate-200 rounded-full overflow-hidden">
                               <div className={`h-full rounded-full transition-all duration-150 ${barColor}`} style={{ width: barWidth(val) }} />
                             </div>
-                            <span className="font-mono text-xs text-slate-300 w-8 text-right">{val}</span>
+                            <span className="font-mono text-xs text-slate-600 w-8 text-right">{val}</span>
                           </div>
                         );
                       })}
@@ -184,32 +184,32 @@ export default function PixelExplorer() {
                     {/* Grayscale swatch */}
                     <div className="flex items-center gap-3">
                       <div
-                        className="w-12 h-12 rounded-lg border border-slate-600 shrink-0"
+                        className="w-12 h-12 rounded-lg border border-slate-200 shrink-0"
                         style={{ backgroundColor: `rgb(${luminance},${luminance},${luminance})` }}
                       />
-                      <div className="font-mono text-sm text-slate-200 leading-relaxed">
+                      <div className="font-mono text-sm text-slate-700 leading-relaxed">
                         <div>[{luminance}]</div>
-                        <div className="text-xs text-slate-500">single channel</div>
+                        <div className="text-xs text-slate-400">single channel</div>
                       </div>
                     </div>
 
                     {/* Luminance bar */}
                     <div className="flex items-center gap-2">
-                      <span className="font-mono font-bold text-sm w-4 shrink-0 text-slate-400">L</span>
-                      <div className="flex-1 h-3 bg-slate-700 rounded-full overflow-hidden">
-                        <div className="h-full rounded-full transition-all duration-150 bg-slate-300" style={{ width: barWidth(luminance) }} />
+                      <span className="font-mono font-bold text-sm w-4 shrink-0 text-slate-500">L</span>
+                      <div className="flex-1 h-3 bg-slate-200 rounded-full overflow-hidden">
+                        <div className="h-full rounded-full transition-all duration-150 bg-slate-500" style={{ width: barWidth(luminance) }} />
                       </div>
-                      <span className="font-mono text-xs text-slate-300 w-8 text-right">{luminance}</span>
+                      <span className="font-mono text-xs text-slate-600 w-8 text-right">{luminance}</span>
                     </div>
 
-                    <div className="text-xs text-slate-500 bg-slate-800 rounded-lg px-3 py-2 leading-relaxed">
-                      Luminance = 0.299 × {pixel[0]} + 0.587 × {pixel[1]} + 0.114 × {pixel[2]} = <span className="font-mono text-slate-300">{luminance}</span>
+                    <div className="text-xs text-slate-500 bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 leading-relaxed">
+                      Luminance = 0.299 × {pixel[0]} + 0.587 × {pixel[1]} + 0.114 × {pixel[2]} = <span className="font-mono text-slate-700">{luminance}</span>
                     </div>
                   </>
                 )}
               </>
             ) : (
-              <div className="flex-1 flex flex-col items-center justify-center gap-2 py-8 text-slate-600">
+              <div className="flex-1 flex flex-col items-center justify-center gap-2 py-8 text-slate-400">
                 <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden>
                   <circle cx="12" cy="12" r="3" />
                   <path d="M3 12s3-7 9-7 9 7 9 7-3 7-9 7-9-7-9-7z" />
@@ -219,10 +219,10 @@ export default function PixelExplorer() {
             )}
 
             {/* Tensor shape callout */}
-            <div className="mt-auto pt-3 border-t border-slate-700/60">
+            <div className="mt-auto pt-3 border-t border-slate-100">
               <p className="text-xs text-slate-500">
                 Tensor shape:{" "}
-                <span className="font-mono text-slate-300">
+                <span className="font-mono text-slate-700">
                   [{ROWS}, {COLS}, {activeChannel === "rgb" ? 3 : 1}]
                 </span>
                 {" "}— {(ROWS * COLS * (activeChannel === "rgb" ? 3 : 1)).toLocaleString()} values total

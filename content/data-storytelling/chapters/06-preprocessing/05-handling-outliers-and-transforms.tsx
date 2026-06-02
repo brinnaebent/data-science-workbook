@@ -12,17 +12,15 @@ const handlingOutliersAndTransforms: Section = {
 <p><strong>For predictor (X) outliers</strong> — first determine whether they're influential (use Cook's distance or similar). If they significantly steer the model, investigate the root cause. If they're real, natural observations, leave them in. If they're errors, remove or correct them.</p>`,
     },
     {
-      type: "callout",
-      variant: "info",
-      title: "Three Scaling Methods",
-      html: `<p><strong>Min-Max Scaling (Normalization).</strong> Rescales each feature to [0, 1]: $x_{\\text{scaled}} = (x - x_{\\min}) / (x_{\\max} - x_{\\min})$. Use when data is bounded or binary, or for computer vision (pixel values). Watch out: sensitive to outliers — a single extreme value compresses everything else into a narrow range.</p>
+      type: "text",
+      html: `<h3>Common Transforms</h3><p><strong>Min-Max Scaling (Normalization).</strong> Rescales each feature to [0, 1]: $x_{\\text{scaled}} = (x - x_{\\min}) / (x_{\\max} - x_{\\min})$. Use when data is bounded or binary, or for computer vision (pixel values). Watch out: sensitive to outliers — a single extreme value compresses everything else into a narrow range.</p>
 <p><strong>Z-Score Standardization.</strong> Rescales to zero mean and unit variance: $x_{\\text{standardized}} = (x - \\mu) / \\sigma$. Use when data is approximately Gaussian and unbounded. Helpful for clustering, PCA, and neural networks. Doesn't produce bounded output.</p>
 <p><strong>Log Transformation.</strong> For right-skewed data: $x_{\\text{log}} = \\log(x + 1)$. Compresses large values, pulls the distribution toward normality. Required before linear regression, ANOVA, and models assuming normal features. Classic candidates: income, population, prices, word counts, file sizes.</p>`,
     },
     {
       type: "interactive",
       component: "TransformExplorer",
-      caption: "Placeholder: interactive transform explorer — apply min-max, z-score, or log to a sample distribution and see the effect on shape and outlier behavior.",
+      caption: "Apply min-max, z-score, or log to a sample distribution and see the effect on shape and outlier behavior.",
       props: {},
     },
     {

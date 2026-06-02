@@ -7,14 +7,19 @@ const plotToNarrative: Section = {
   blocks: [
     {
       type: "text",
-      html: `<p>A bar chart is just a bar chart. A bar chart embedded in a clear narrative is a recommendation. The chart is a vehicle for the story — not the story itself.</p>`,
+      html: `<p>A bar chart is just a bar chart. A bar chart embedded in a clear narrative is a recommendation. The chart is a vehicle for the story — not the story itself. Below you will find the short version of one of my favorite presentations ever. The data storytelling is incredible. This is what we should try to emulate, whether we are in the boardroom, pitching our startup, or presenting in class.</p>`,
+    },
+    {
+      type: "video",
+      src: "https://www.youtube.com/watch?v=jbkSRLYSojo",
+      caption: "From plot to narrative: turning a chart into a story.",
     },
     {
       type: "callout",
       variant: "info",
       title: "The Three-Part Anatomy of a Data Story",
       html: `<ol>
-<li><strong>Setup.</strong> What's the situation? What's the data? What's at stake? This is where you frame the problem and orient the audience. Don't skip this. Even if you've been working on the problem for three months, the audience may have last thought about it three months ago.</li>
+<li><strong>Setup.</strong> What's the situation? What's the data? What's at stake? This is where you frame the problem and orient the audience. Even if you've been working on the problem for three months, the audience may have last thought about it three months ago.</li>
 <li><strong>Tension.</strong> What changed? What's the anomaly? What's the surprising finding? This is where the analysis earns its keep. If there's no tension, there's no story — you're just reporting numbers.</li>
 <li><strong>Resolution.</strong> What's the recommendation? What's the next step? Analysis without a recommendation is reading off a screen. Always finish with what you'd do.</li>
 </ol>`,
@@ -22,12 +27,6 @@ const plotToNarrative: Section = {
     {
       type: "text",
       html: `<p>Take any chart you're about to present and try to write down its insight in <em>one sentence</em>. If you can, the chart is doing its job. If you can't, the chart is unclear or the insight is unclear — or both. If the one-sentence headline is so good that the chart is redundant, you may not even need the chart. Sometimes the sentence alone is more powerful.</p>`,
-    },
-    {
-      type: "interactive",
-      component: "NarrativeBuilder",
-      caption: "Placeholder: interactive narrative builder — input a finding and get a structured setup/tension/resolution story scaffold.",
-      props: {},
     },
     {
       type: "callout",

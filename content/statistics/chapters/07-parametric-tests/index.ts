@@ -1,7 +1,8 @@
 import type { Chapter } from "@brinnaebent/workbook";
 import theMostImportantRule from "./01-the-most-important-rule";
 import checkingAssumptions from "./02-checking-assumptions";
-import zScoresAndOneSampleT from "./03-z-scores-and-one-sample-t";
+import zScores from "./03-z-scores";
+import oneSampleT from "./04-one-sample-t";
 import independentSamplesT from "./04-independent-samples-t";
 import pairedTTest from "./05-paired-t-test";
 
@@ -14,7 +15,8 @@ const parametricTests: Chapter = {
   sections: [
     theMostImportantRule,
     checkingAssumptions,
-    zScoresAndOneSampleT,
+    zScores,
+    oneSampleT,
     independentSamplesT,
     pairedTTest,
   ],

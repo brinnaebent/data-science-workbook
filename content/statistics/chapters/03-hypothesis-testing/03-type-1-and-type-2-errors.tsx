@@ -12,6 +12,13 @@ const typeErrors: Section = {
 <p>A <strong>Type 2 error</strong> is a false negative: you failed to reject a false null hypothesis. There really was an effect, and you missed it.</p>`,
     },
     {
+      type: "image",
+      src: "/stats/bday.png",
+      alt: "Difference between T1 error and T2 error",
+      width: "100%",
+      caption: `Type 1 vs. Type 2 Error`,
+    },
+    {
       type: "callout",
       variant: "tip",
       title: "A Mnemonic That Sticks",
@@ -20,7 +27,7 @@ const typeErrors: Section = {
 <li><strong>Type 1 error:</strong> You say "happy birthday" — and it's not their birthday. (False positive.)</li>
 <li><strong>Type 2 error:</strong> You say nothing — and it <em>is</em> their birthday. (False negative.)</li>
 </ul>
-<p>Which is worse depends entirely on who the person is. For a colleague you barely know: Type 1 (saying happy birthday incorrectly) is mildly awkward. For your partner: Type 2 (forgetting) is catastrophic.</p>`,
+<p>Which is worse depends entirely on who the person is. For a colleague you barely know: Type 1 (saying happy birthday incorrectly) is mildly awkward. For your partner: Type 2 (forgetting) could be catastrophic!</p>`,
     },
     {
       type: "text",
@@ -29,6 +36,7 @@ const typeErrors: Section = {
 <li>A <strong>Type 1 error</strong> means your model tells a patient they have cancer when they don't. They may undergo unnecessary biopsies, treatments, and serious psychological distress.</li>
 <li>A <strong>Type 2 error</strong> means your model fails to detect cancer that's actually there. The patient doesn't receive treatment, the disease progresses.</li>
 </ul>
+<br>
 <p>If you have to favor one, you'd rather have the false alarm. Missing a real cancer is far worse than triggering a follow-up test. This shapes everything: the decision threshold, the loss function, which metric you optimize for.</p>`,
     },
     {
@@ -36,13 +44,7 @@ const typeErrors: Section = {
       variant: "warning",
       title: "This Trade-off Is Everywhere in ML",
       html: `<p>Fraud detection skews the same direction: a missed fraud (Type 2) is usually worse than a false flag (Type 1) that a human can review. Medical screening tests are deliberately tuned toward Type 1 errors. Content moderation may trade off differently depending on the platform's values.</p>
-<p>Your choice of decision threshold and your primary evaluation metric both encode an implicit answer to the Type 1 / Type 2 trade-off. Make that choice deliberately — don't let it happen by default.</p>`,
-    },
-    {
-      type: "interactive",
-      component: "ErrorTradeoffExplorer",
-      caption: "Placeholder: Adjust a classification threshold and observe how Type 1 and Type 2 error rates change. See the cost consequences when errors have different weights.",
-      props: {},
+<p>Your choice of decision threshold and your primary evaluation metric both encode an implicit answer to the Type 1 / Type 2 trade-off. Make that choice deliberately — don't let it happen by default!</p>`,
     },
     {
       type: "checkpoint",

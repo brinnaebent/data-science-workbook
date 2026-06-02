@@ -21,7 +21,7 @@ const workedExampleIris: Section = {
     {
       type: "interactive",
       component: "IrisPairPlot",
-      caption: "Placeholder: interactive pair plot of the Iris dataset — hover to see species labels, drag to rotate 3D scatter.",
+      caption: "Pair plot of the Iris dataset",
       props: {},
     },
     {
@@ -29,16 +29,10 @@ const workedExampleIris: Section = {
       html: `<p><strong>Step 5 — Visualization.</strong> The histogram of petal length is <strong>bimodal</strong> — two distinct peaks, likely corresponding to setosa (much smaller petals) vs. the other two species. The box plots reveal a few outliers in sepal width. The pair plot confirms the species clusters are visible to the naked eye.</p>`,
     },
     {
-      type: "image",
-      src: "/images/placeholder.png",
-      alt: "Iris petal length histogram showing bimodal distribution",
-      caption: "Placeholder: histogram of Iris petal length, annotated to show the setosa cluster vs. versicolor/virginica.",
-    },
-    {
       type: "callout",
       variant: "tip",
       title: "Step 6 — Feature Engineering Hint from EDA",
-      html: `<p>A new feature like <code>petal_area = petal_length × petal_width</code> shows even cleaner separation between species in histograms. EDA just handed us a feature engineering recipe. This is the goal: EDA doesn't just describe the data — it gives you a concrete plan for what to do next.</p>`,
+      html: `<p>A new feature like <code>petal_area = petal_length × petal_width</code> shows even cleaner separation between species in histograms. EDA just handed us a feature engineering recipe. This is the goal: EDA gives you a concrete plan for what to do next.</p>`,
     },
     {
       type: "callout",
@@ -62,7 +56,7 @@ const workedExampleIris: Section = {
         {
           label: "Correct: flag the redundancy for feature selection. Not warranted: immediately drop one of the features.",
           correct: true,
-          explanation: "Correct. EDA surfaces the redundancy — it doesn't prescribe the fix. Dropping a feature is a modeling decision that belongs in the feature selection step, informed by what the model actually needs. It's possible that for some models or tasks, both features add value despite their correlation.",
+          explanation: "Correct. EDA shows this redundancy without prescribing the fix. Dropping a feature is a modeling decision that belongs in the feature selection step, informed by what the model actually needs. It's possible that for some models or tasks, both features add value despite their correlation.",
         },
         {
           label: "Correct: drop petal_width immediately since petal_length has more variance.",

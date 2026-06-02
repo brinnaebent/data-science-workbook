@@ -8,8 +8,7 @@ const pHacking: Section = {
     {
       type: "text",
       html: `<p>Here's a problem you have to actively guard against. Suppose you collect your data, look at it, decide you'd love the result to be significant, and start shopping. You try α = 0.05 — your p of 0.07 doesn't make the cut. You think, "0.10 is sometimes used in exploratory research." Now you have significance.</p>
-<p>This is <strong>p-hacking</strong>: bending the rules after the fact to get the result you want. It's not always this brazen. Sometimes it's running a dozen statistical tests and only reporting the one that came out significant. Sometimes it's slicing the data by every demographic until one slice shows an effect. Sometimes it's stopping data collection the moment a result crosses the significance threshold.</p>
-<p>P-hacked results don't replicate. They make you look smart in one report and a fraud in the follow-up.</p>`,
+<p>This is <strong>p-hacking</strong>: bending the rules after the fact to get the result you want. It's not always this brazen. Sometimes it's running a dozen statistical tests and only reporting the one that came out significant. Sometimes it's slicing the data by every demographic until one slice shows an effect. Sometimes it's stopping data collection the moment a result crosses the significance threshold.</p>`,
     },
     {
       type: "callout",

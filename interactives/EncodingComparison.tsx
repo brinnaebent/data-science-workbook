@@ -98,8 +98,8 @@ function OneHotTable({ values }: { values: string[] }) {
         </thead>
         <tbody>
           {values.map((row, ri) => (
-            <tr key={row} className={ri % 2 === 0 ? "bg-slate-800/40" : ""}>
-              <td className="py-1.5 pr-3 text-slate-300 font-semibold">{row}</td>
+            <tr key={row} className={ri % 2 === 0 ? "bg-slate-50" : ""}>
+              <td className="py-1.5 pr-3 text-slate-700 font-semibold">{row}</td>
               {values.map((col) => {
                 const active = row === col;
                 return (
@@ -108,7 +108,7 @@ function OneHotTable({ values }: { values: string[] }) {
                       className={`inline-block w-5 h-5 rounded text-[11px] font-bold leading-5 text-center
                         ${active
                           ? "bg-emerald-500 text-white"
-                          : "bg-slate-700 text-slate-500"
+                          : "bg-slate-200 text-slate-400"
                         }`}
                     >
                       {active ? "1" : "0"}
@@ -161,27 +161,27 @@ function ScalarTable({
             const rank = sorted.indexOf(n) + 1;
             const flagged = highlight ? highlight(v, n) : false;
             return (
-              <tr key={v} className={i % 2 === 0 ? "bg-slate-800/40" : ""}>
-                <td className="py-1.5 pr-6 text-slate-300 font-semibold">{v}</td>
+              <tr key={v} className={i % 2 === 0 ? "bg-slate-50" : ""}>
+                <td className="py-1.5 pr-6 text-slate-700 font-semibold">{v}</td>
                 <td className="py-1.5">
                   <span
                     className={`inline-block px-2 py-0.5 rounded font-bold text-sm
                       ${flagged
-                        ? "bg-amber-500/20 text-amber-300 border border-amber-500/40"
-                        : "bg-slate-700 text-slate-200"
+                        ? "bg-amber-100 text-amber-700 border border-amber-300"
+                        : "bg-slate-200 text-slate-700"
                       }`}
                   >
                     {n}
                   </span>
                 </td>
-                <td className="py-1.5 pl-4 text-slate-500">#{rank}</td>
+                <td className="py-1.5 pl-4 text-slate-400">#{rank}</td>
               </tr>
             );
           })}
         </tbody>
       </table>
       {!isMonotone && (
-        <p className="mt-2 text-[10px] text-amber-400/70 italic">
+        <p className="mt-2 text-[10px] text-amber-600 italic">
           Note: assigned integers don't follow input order.
         </p>
       )}
@@ -218,9 +218,9 @@ export default function EncodingComparison() {
     : { color: "slate", label: "Depends on context" };
 
   return (
-    <div className="rounded-xl border border-slate-700 bg-slate-900 overflow-hidden">
-      <div className="px-5 py-3 border-b border-slate-700">
-        <span className="text-xs font-semibold uppercase tracking-wide text-slate-400">
+    <div className="rounded-xl border border-slate-200 bg-white overflow-hidden shadow-sm">
+      <div className="px-5 py-3 border-b border-slate-100 bg-slate-50">
+        <span className="text-xs font-semibold uppercase tracking-wide text-slate-500">
           Encoding Comparison
         </span>
       </div>
@@ -239,7 +239,7 @@ export default function EncodingComparison() {
                 className={`px-3 py-1.5 rounded-lg text-xs font-semibold border transition-all cursor-pointer
                   ${i === datasetIdx
                     ? "bg-violet-600 border-violet-500 text-white"
-                    : "bg-slate-800 border-slate-700 text-slate-400 hover:border-slate-500 hover:text-slate-300"
+                    : "bg-white border-slate-200 text-slate-500 hover:border-slate-300 hover:text-slate-700"
                   }`}
               >
                 {ds.label}
@@ -253,11 +253,11 @@ export default function EncodingComparison() {
           </div>
           <p className="text-xs text-slate-500">
             Values:{" "}
-            <span className="font-mono text-slate-300">
+            <span className="font-mono text-slate-700">
               {values.join(", ")}
             </span>
             {ordered && ordinalNote && (
-              <span className="ml-2 text-violet-400 italic">({ordinalNote})</span>
+              <span className="ml-2 text-violet-600 italic">({ordinalNote})</span>
             )}
           </p>
         </div>
@@ -274,8 +274,8 @@ export default function EncodingComparison() {
                 onClick={() => setActiveEncoding(enc.key)}
                 className={`flex flex-col gap-1 px-3 py-2.5 rounded-lg border text-left transition-all cursor-pointer
                   ${activeEncoding === enc.key
-                    ? "bg-slate-700 border-slate-500 text-slate-100"
-                    : "bg-slate-800 border-slate-700 text-slate-400 hover:border-slate-600 hover:text-slate-300"
+                    ? "bg-slate-100 border-slate-400 text-slate-800"
+                    : "bg-white border-slate-200 text-slate-500 hover:border-slate-300 hover:text-slate-700"
                   }`}
               >
                 <span className="text-xs font-bold">{enc.name}</span>
@@ -291,19 +291,19 @@ export default function EncodingComparison() {
         <div
           className={`flex items-center gap-2 px-3 py-2 rounded-lg border text-xs font-semibold
             ${verdict.color === "emerald"
-              ? "bg-emerald-900/30 border-emerald-700/50 text-emerald-300"
+              ? "bg-emerald-50 border-emerald-200 text-emerald-700"
               : verdict.color === "rose"
-              ? "bg-rose-900/30 border-rose-700/50 text-rose-300"
-              : "bg-slate-800 border-slate-700 text-slate-400"
+              ? "bg-rose-50 border-rose-200 text-rose-700"
+              : "bg-slate-50 border-slate-200 text-slate-500"
             }`}
         >
           <span
             className={`w-2 h-2 rounded-full flex-shrink-0
               ${verdict.color === "emerald"
-                ? "bg-emerald-400"
+                ? "bg-emerald-500"
                 : verdict.color === "rose"
-                ? "bg-rose-400"
-                : "bg-slate-500"
+                ? "bg-rose-500"
+                : "bg-slate-400"
               }`}
           />
           {verdict.label}
@@ -320,7 +320,7 @@ export default function EncodingComparison() {
         </div>
 
         {/* Table */}
-        <div className="rounded-lg bg-slate-800/60 border border-slate-700 p-4">
+        <div className="rounded-lg bg-white border border-slate-200 p-4">
           {activeEncoding === "onehot" ? (
             <OneHotTable values={values} />
           ) : activeEncoding === "nominal" ? (
@@ -341,7 +341,7 @@ export default function EncodingComparison() {
         </div>
 
         {/* Explainer */}
-        <div className="text-xs text-slate-500 leading-relaxed border-t border-slate-800 pt-3 space-y-1">
+        <div className="text-xs text-slate-500 leading-relaxed border-t border-slate-100 pt-3 space-y-1">
           {activeEncoding === "onehot" && (
             <p>
               One-hot creates a separate binary column for each category.
@@ -363,8 +363,8 @@ export default function EncodingComparison() {
             <p>
               Nominal encoding assigns integers without any ordering intent — but any model that sees
               numbers will treat{" "}
-              <span className="font-mono text-slate-300">3</span> as greater than{" "}
-              <span className="font-mono text-slate-300">1</span>.{" "}
+              <span className="font-mono text-slate-700">3</span> as greater than{" "}
+              <span className="font-mono text-slate-700">1</span>.{" "}
               {ordered ? "With an ordered variable, this could accidentally work — but ordinal encoding is more explicit." : "With unordered categories, this silently introduces false structure."}
             </p>
           )}

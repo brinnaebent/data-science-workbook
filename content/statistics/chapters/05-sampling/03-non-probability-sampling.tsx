@@ -7,14 +7,12 @@ const nonProbabilitySampling: Section = {
   blocks: [
     {
       type: "text",
-      html: `<p>Non-probability sampling is included here somewhat reluctantly. The samples it produces are biased in ways that are hard to characterize, and statistical claims based on them have weaker external validity. But here's the reality: it's often the only thing available. If it's what you have, you work with it — but you should always strive for probability sampling and be honest about the limitations when it's not feasible.</p>`,
+      html: `<p>Non-probability sampling produces samples that are biased in ways that are hard to characterize, and statistical claims based on them have weaker external validity. You should always strive for probability sampling and be honest about the limitations when it's not feasible.</p>`,
     },
     {
-      type: "callout",
-      variant: "warning",
-      title: "Four Non-Probability Methods — Know Them to Recognize Their Limitations",
+      type: "text",
       html: `<ul>
-<li><strong>Convenience sampling:</strong> Select subjects because they're convenient — nearby, already in your database, responded to your email. The classic research example is recruiting your own students. You can imagine what this does to representativeness.</li>
+<li><strong>Convenience sampling:</strong> Select subjects because they're convenient — nearby, already in your database, responded to your email. The classic research example is recruiting your own students.</li>
 <li><strong>Purposive (judgmental) sampling:</strong> Researchers hand-pick subjects they believe are most representative. Selection bias is baked in — your judgment of who is "representative" shapes the conclusions.</li>
 <li><strong>Snowball sampling:</strong> Participants recruit other participants. Useful for hard-to-reach populations, but you often end up with a homogeneous chain — friends recruiting friends. Used legitimately in research on marginalized communities; less legitimate in contexts that assume representativeness.</li>
 <li><strong>Quota sampling:</strong> Divide the population into subgroups and non-randomly select observations to meet a quota. It looks structured but the within-stratum selection isn't random.</li>
@@ -35,7 +33,7 @@ const nonProbabilitySampling: Section = {
       type: "reflection",
       id: "stats-ch5-s3-reflect",
       question: "A company trains a content recommendation model on data from its most engaged users, since those are the users with the most behavioral history. What type of bias does this introduce, and how might it affect model behavior for new or less-engaged users?",
-      sampleAnswer: "This is selection bias (specifically, a type of undercoverage). Engaged users likely have different content preferences, interaction patterns, and demographics than typical or new users. A model trained on this data learns to optimize for already-engaged users — it may recommend 'sticky' but niche content that works for power users, while failing to surface the on-ramp content that new users would find valuable. The model generalizes poorly to the population it's actually supposed to serve.",
+      sampleAnswer: "This is selection bias (specifically, a type of undercoverage). Engaged users likely have different content preferences, interaction patterns, and demographics than typical or new users. A model trained on this data learns to optimize for already-engaged users — it may recommend 'sticky' but niche content that works for power users, while failing to recommend the on-ramp content that new users would find valuable. The model generalizes poorly to the population it's actually supposed to serve.",
     },
   ],
 };

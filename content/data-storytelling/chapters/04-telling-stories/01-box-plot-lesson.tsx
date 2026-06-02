@@ -20,19 +20,28 @@ const boxPlotLesson: Section = {
     },
     {
       type: "text",
-      html: `<p>Default visualizations by audience:</p>
-<ul>
-<li><strong>Board of directors, executive teams, non-technical product teams</strong> — bar charts and histograms. One insight per chart.</li>
-<li><strong>Engineers and statisticians</strong> — full toolkit available.</li>
-<li><strong>Clinical or regulatory audiences</strong> — ask first. These audiences often have field-specific conventions that have nothing to do with "best practices."</li>
-</ul>
-<p>The goal of a visualization is not to demonstrate sophistication. The goal is to land an insight. The plot that lands wins.</p>`,
+      html: `<p>Before you pick a visualization, ask three questions. The answers determine the chart, not your personal preference or the sophistication of the analysis.</p>
+<ol>
+<li><strong>Who is looking at this?</strong> A data scientist? An executive? A regulator? A clinician? A patient? Your default visualization should be calibrated to their visual literacy.</li>
+<li><strong>What decision are they trying to make?</strong> A board approving a major investment needs the headline number front-and-center. A scientist reviewing a study needs the full distribution. A clinician making a treatment decision needs the patient's specific data, not aggregate trends.</li>
+<li><strong>What do they already understand about plots?</strong> If the audience has never seen a box plot in their life, throwing one at them is malpractice. If the audience reads scientific papers all day, a bar chart of means with no error bars will annoy them.</li>
+</ol>`,
     },
     {
-      type: "image",
-      src: "/images/placeholder.png",
-      alt: "The same data shown as a box plot vs. a bar chart for different audiences",
-      caption: "Placeholder: side-by-side showing the same insight presented as a box plot (for technical audiences) and a bar chart (for executives).",
+      type: "callout",
+      variant: "info",
+      title: "Audience Defaults",
+      html: `<ul>
+<li><strong>Technical and statistical</strong> — full toolkit: violin plots, pair plots, faceted plots, log scales, complex multi-panel figures.</li>
+<li><strong>Executive and product</strong> — default to bar charts, line plots, histograms. Simplify aggressively. One insight per chart.</li>
+<li><strong>Regulatory and compliance</strong> — ask first. There are often field-specific conventions you're expected to follow.</li>
+<li><strong>Clinical</strong> — ask first. Medicine has its own conventions (e.g., Kaplan–Meier curves for survival analysis), and using the right one matters for credibility.</li>
+</ul>`,
+    },
+    {
+      type: "interactive",
+      component: "AudienceChartComparison",
+      caption: "The same support-team response-time data shown as a bar chart (executive view) and a box plot (technical view). Toggle between views to see how the packaging changes what's communicated.",
     },
     {
       type: "checkpoint",

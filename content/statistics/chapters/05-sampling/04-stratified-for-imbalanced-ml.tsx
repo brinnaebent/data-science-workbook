@@ -7,7 +7,7 @@ const stratifiedForImbalancedML: Section = {
   blocks: [
     {
       type: "text",
-      html: `<p>The most concrete place sampling concepts hit your ML workflow is class imbalance. If your dataset has 95% one class and 5% another, a naive random train/test split can produce a test set with very few minority-class examples — making your evaluation metrics noisy and your model's behavior on the minority class unstable.</p>`,
+      html: `<p>The most concrete place sampling concepts hit your ML workflow is class imbalance. If your dataset has 95% one class and 5% another, a naive random train/val/test split can produce a test set with very few minority-class examples — making your evaluation metrics noisy and your model's behavior on the minority class unstable.</p>`,
     },
     {
       type: "callout",
@@ -32,8 +32,8 @@ for train_idx, val_idx in skf.split(X, y):
     },
     {
       type: "interactive",
-      component: "SamplingExplorer",
-      caption: "Explore how different sampling strategies affect the class distribution in train and test sets. Observe what happens with and without stratification on an imbalanced dataset.",
+      component: "StratifiedSplitExplorer",
+      caption: "Compare random vs. stratified train/test splits on an imbalanced dataset. Notice how random splits can produce test sets with very few — or zero — minority examples, while stratified splits preserve the true class ratio in both sets.",
       props: {},
     },
     {

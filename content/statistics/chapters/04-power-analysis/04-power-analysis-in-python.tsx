@@ -12,6 +12,7 @@ const powerAnalysisInPython: Section = {
 <li><code>statsmodels.stats.power.TTestPower</code> — one-sample or paired t-tests.</li>
 <li><code>statsmodels.stats.power.TTestIndPower</code> — independent-sample t-tests.</li>
 </ul>
+<br>
 <p>A typical workflow:</p>
 <ol>
 <li>Run or find a pilot study with two groups.</li>
@@ -42,13 +43,7 @@ n = analysis.solve_power(
     alternative='two-sided'
 )
 print(f"Required sample size per group: {n:.0f}")</code></pre>
-<p>The output is the minimum sample size per group. You can hand this to your manager or stakeholder and explain exactly why you need that many users.</p>`,
-    },
-    {
-      type: "interactive",
-      component: "PowerAnalysisCalculator",
-      caption: "Placeholder: Enter effect size, α, and desired power. Compute required sample size and see the power curve.",
-      props: {},
+<p>The output is the minimum sample size per group.</p>`,
     },
     {
       type: "callout",

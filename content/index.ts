@@ -1,8 +1,9 @@
 import type { Unit } from "@brinnaebent/workbook";
 import dataStorytelling from "./data-storytelling";
 import statistics from "./statistics";
+import engineering from "./engineering";
 
-export const units: Unit[] = [dataStorytelling, statistics];
+export const units: Unit[] = [dataStorytelling, statistics, engineering];
 
 export function getUnit(id: string): Unit | undefined {
   return units.find((u) => u.id === id);

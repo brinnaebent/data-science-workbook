@@ -13,19 +13,6 @@ const beyondTwoGroups: Section = {
     },
     {
       type: "callout",
-      variant: "info",
-      title: "Learning Objectives",
-      html: `<p>By the end of this chapter, you'll be able to:</p>
-<ol>
-<li>Explain why ANOVA is preferred over multiple t-tests for three or more groups.</li>
-<li>Understand the logic of partitioning variability (SST, SSB, SSW).</li>
-<li>Interpret the F-statistic.</li>
-<li>Identify ANOVA's assumptions.</li>
-<li>Apply a post hoc test (Tukey's HSD) to identify which group pairs differ.</li>
-</ol>`,
-    },
-    {
-      type: "callout",
       variant: "warning",
       title: "ANOVA Tells You 'Some Group Differs' — Not Which One",
       html: `<p>The alternative hypothesis in ANOVA is: "at least one group mean is significantly different from the others." When you reject the null, you know <em>something</em> is different — not <em>what</em>. You need post hoc tests for that, and they're covered at the end of this chapter.</p>`,

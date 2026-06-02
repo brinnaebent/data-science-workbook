@@ -11,9 +11,7 @@ const bayesTheorem: Section = {
 <p style="text-align:center">$$P(A \\mid B) = \\frac{P(B \\mid A) \\cdot P(A)}{P(B)}$$</p>`,
     },
     {
-      type: "callout",
-      variant: "info",
-      title: "Breaking Down Each Term",
+      type: "text",
       html: `<ul>
 <li><strong>P(A | B)</strong> — <em>Posterior:</em> Probability of hypothesis A given evidence B. Your updated belief after seeing data.</li>
 <li><strong>P(B | A)</strong> — <em>Likelihood:</em> Probability of observing evidence B given that A is true. How well does the hypothesis explain the data?</li>
@@ -21,6 +19,12 @@ const bayesTheorem: Section = {
 <li><strong>P(B)</strong> — <em>Marginal likelihood (evidence):</em> Probability of observing B under any hypothesis. Acts as a normalization constant.</li>
 </ul>
 <p>In plain language: <strong>posterior ∝ likelihood × prior</strong>. Your updated belief is your initial belief, scaled by how well the hypothesis explains what you observed.</p>`,
+    },
+    {
+      type: "interactive",
+      component: "BayesTheoremVisualizer",
+      caption: "Adjust prior probability, test sensitivity, and specificity. See the posterior probability update. Visualize how prevalence (prior) dramatically affects the positive predictive value.",
+      props: {},
     },
     {
       type: "callout",
@@ -35,12 +39,6 @@ const bayesTheorem: Section = {
 <li>P(disease | positive) = (0.99 × 0.01) / 0.0198 ≈ 0.50</li>
 </ul>
 <p>A 99%-accurate test on a 1%-prevalence disease yields only ~50% probability of disease given a positive result. The low prior (rare disease) pulls against the high likelihood. This is why medical screening relies on prevalence data, not just test accuracy.</p>`,
-    },
-    {
-      type: "interactive",
-      component: "BayesTheoremVisualizer",
-      caption: "Placeholder: Adjust prior probability, test sensitivity, and specificity. See the posterior probability update. Visualize how prevalence (prior) dramatically affects the positive predictive value.",
-      props: {},
     },
     {
       type: "checkpoint",

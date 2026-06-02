@@ -16,36 +16,35 @@ const oversampling: Section = {
 <p>If you can collect more genuine minority-class data, you almost always should. Synthetic methods are clever, but they're synthetic.</p>`,
     },
     {
-      type: "callout",
-      variant: "example",
-      title: "Random Oversampling",
-      html: `<p>Duplicate examples from the minority class until it matches the majority class.</p>
+      type: "text",
+      html: `<h3>Random Oversampling</h3>
+<p>Duplicate examples from the minority class until it matches the majority class.</p>
 <pre><code>from imblearn.over_sampling import RandomOverSampler
 ros = RandomOverSampler(sampling_strategy='minority')
 X_resampled, y_resampled = ros.fit_resample(X, y)</code></pre>
-<p><strong>Catch:</strong> You're duplicating. The model sees identical examples multiple times, which can cause overfitting — it learns those specific examples rather than the pattern behind them.</p>`,
+<p><br><strong>Catch:</strong> You're duplicating. The model sees identical examples multiple times, which can cause overfitting — it learns those specific examples rather than the pattern behind them.</p>`,
     },
     {
-      type: "callout",
-      variant: "example",
-      title: "SMOTE — Synthetic Minority Oversampling Technique",
-      html: `<p>Instead of duplicating, SMOTE creates synthetic minority examples by interpolating between existing ones:</p>
+      type: "text",
+      html: `<h3>SMOTE — Synthetic Minority Oversampling Technique</h3>
+<p>Instead of duplicating, SMOTE creates synthetic minority examples by interpolating between existing ones:</p>
 <ol>
 <li>Pick a minority instance.</li>
 <li>Find its k nearest neighbors (typically k=5).</li>
 <li>Randomly choose one neighbor.</li>
 <li>Create a new synthetic point somewhere on the line between them.</li>
 </ol>
+<br>
 <pre><code>from imblearn.over_sampling import SMOTE
 smote = SMOTE(k_neighbors=5)
 X_resampled, y_resampled = smote.fit_resample(X, y)</code></pre>
-<p><strong>Advantages:</strong> Less prone to overfitting than random oversampling. Introduces diversity.<br>
+<p><br><strong>Advantages:</strong> Less prone to overfitting than random oversampling. Introduces diversity.<br>
 <strong>Caveats:</strong> Can add noise if minority class is itself noisy. Can blur class boundaries if classes overlap. Only works on continuous features — use SMOTE-NC for categorical features.</p>`,
     },
     {
       type: "interactive",
       component: "SMOTEVisualizer",
-      caption: "Placeholder: Visualize SMOTE in 2D. See the minority class examples, the synthetic interpolated points, and how the decision boundary shifts.",
+      caption: "SMOTE in 2D: the minority class (violet) is oversampled by interpolating synthetic points between real minority examples and their k nearest neighbors.",
       props: {},
     },
     {

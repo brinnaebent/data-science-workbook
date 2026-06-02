@@ -1,5 +1,5 @@
 import type { Unit } from "@brinnaebent/workbook";
-import thinkingLikeADataScientist from "./chapters/01-thinking-like-a-data-scientist";
+import thinkingLikeADataScientist from "./chapters/01-practical-statistics";
 import probabilityDistributions from "./chapters/02-probability-distributions";
 import hypothesisTesting from "./chapters/03-hypothesis-testing";
 import powerAnalysis from "./chapters/04-power-analysis";
@@ -17,7 +17,7 @@ const statistics: Unit = {
   number: 2,
   title: "Statistics",
   description:
-    "Statistics is what separates 'the number went up' from 'the number went up meaningfully.' This unit builds a practitioner's statistical toolkit — from descriptive foundations through hypothesis testing, power analysis, sampling, the full test toolkit, regression, Bayesian inference, and rigorous model evaluation.",
+    "This unit builds a practitioner's statistical toolkit — from descriptive foundations through hypothesis testing, power analysis, sampling, the full test toolkit, regression, Bayesian inference, and rigorous model evaluation.",
   chapters: [
     thinkingLikeADataScientist,
     probabilityDistributions,

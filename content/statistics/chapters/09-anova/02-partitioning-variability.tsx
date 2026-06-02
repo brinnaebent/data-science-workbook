@@ -33,12 +33,12 @@ const partitioningVariability: Section = {
       html: `<p>The F-statistic compares between-group and within-group variability, normalized by degrees of freedom:</p>
 <p style="text-align:center">$$F = \\frac{\\text{SSB}/(k-1)}{\\text{SSW}/(n-k)}$$</p>
 <p>A large F means between-group variability dominates within-group variability — evidence against the null. If p ≤ α, reject the null: at least one group mean differs.</p>
-<p><strong>In Python:</strong> <code>scipy.stats.f_oneway(group1, group2, group3, ...)</code></p>`,
+<br><p><strong>In Python:</strong> <code>scipy.stats.f_oneway(group1, group2, group3, ...)</code></p>`,
     },
     {
       type: "interactive",
       component: "ANOVAVariancePartitioner",
-      caption: "Placeholder: Adjust the means and spreads of three groups. See SSB, SSW, and the F-statistic update in real time. Observe how group separation relative to within-group spread determines F.",
+      caption: "Adjust the means and spreads of three groups. See SSB, SSW, and the F-statistic update in real time. Observe how group separation relative to within-group spread determines F.",
       props: {},
     },
     {

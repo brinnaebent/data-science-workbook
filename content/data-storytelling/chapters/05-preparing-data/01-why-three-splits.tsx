@@ -17,7 +17,8 @@ const whyThreeSplits: Section = {
 <li>You evaluate on test data again. Better. You iterate.</li>
 <li>By the time you're done, your "test" set has effectively become a <em>training signal</em> — you've been making decisions based on it.</li>
 </ol>
-<p>That's data leakage. Your reported test performance is now a lie.</p>`,
+<br>
+<p>That's <strong>data leakage</strong>. Your reported test performance is now a lie.</p>`,
     },
     {
       type: "callout",
@@ -31,10 +32,10 @@ const whyThreeSplits: Section = {
 <p>If you have an external test set — data from a completely separate collection or time period — use that instead of a third split. If you don't, <strong>always split three ways</strong>.</p>`,
     },
     {
-      type: "image",
-      src: "/images/placeholder.png",
-      alt: "Three-split diagram showing train, validation, and test sets",
-      caption: "Placeholder: diagram of the three-split setup, showing which operations touch which sets.",
+      type: "interactive",
+      component: "ThreeSplitExplorer",
+      caption: "Drag the handles to set split proportions, then step through the workflow to see which operations touch each set.",
+      props: {},
     },
     {
       type: "callout",
@@ -46,7 +47,7 @@ const whyThreeSplits: Section = {
       type: "callout",
       variant: "example",
       title: "99% AUC → 70% in Production",
-      html: `<p>A medical imaging model I heard about scored 99% AUC during evaluation and dropped to 70% in production. The cause: random train/test split across patients, so the same patient's images appeared in both sets. The model had memorized patients, not learned the disease. A proper patient-level split would have caught it before deployment.</p>`,
+      html: `<p>A medical imaging model scored 99% AUC during evaluation and dropped to 70% in production. The cause: random train/test split across patients, so the same patient's images appeared in both sets. The model had memorized patients, not learned the disease. A proper patient-level split would have caught it before deployment.</p>`,
     },
     {
       type: "checkpoint",

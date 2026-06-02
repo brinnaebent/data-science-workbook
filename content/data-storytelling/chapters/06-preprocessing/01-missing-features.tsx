@@ -10,6 +10,11 @@ const missingFeatures: Section = {
       html: `<p>Before we talk about missing <em>values</em>, let's talk about missing <em>features</em> — the variables you didn't measure that turn out to be necessary for a correct answer. This is more dangerous than missing values, because it's harder to detect.</p>`,
     },
     {
+      type: "image",
+      src: "/data-storytelling/sharks.png",
+      alt: "Chart showing correlation between ice cream sales and shark attacks over summer months",
+    },
+    {
       type: "callout",
       variant: "example",
       title: "The Ice Cream and Shark Attack Problem",
