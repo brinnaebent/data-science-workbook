@@ -13,12 +13,12 @@ const scalabilityCostAndSecurity: Section = {
       type: "callout",
       variant: "info",
       title: "Scalability: Serving More Requests",
-      html: `<p>When traffic grows, you have two options:</p>
+      html: `<p>When traffic grows, you have two options:</p><br>
 <ul>
-<li><strong>Vertical scaling</strong> — give the existing machine more resources (bigger CPU, more RAM, a faster GPU). Simple, but has a ceiling — machines only get so big, and a single machine is a single point of failure.</li>
+<li><strong>Vertical scaling</strong> — give the existing machine more resources (bigger CPU, more RAM, a faster GPU). Simple, but has a ceiling — machines only get so big, and a single machine is a single point of failure.</li><br>
 <li><strong>Horizontal scaling</strong> — add more instances behind a load balancer. Traffic is distributed across many machines. No ceiling, no single point of failure.</li>
-</ul>
-<p><strong>Auto-scaling</strong> is the version that responds dynamically: when traffic spikes, new instances spin up; when traffic subsides, instances scale down. Most cloud platforms (AWS ECS, Kubernetes, SageMaker) support auto-scaling on CPU or request queue depth.</p>
+</ul><br>
+<p><strong>Auto-scaling</strong> is the version that responds dynamically: when traffic spikes, new instances spin up; when traffic subsides, instances scale down. Most cloud platforms (AWS ECS, Kubernetes, SageMaker) support auto-scaling on CPU or request queue depth.</p><br>
 <p>One design decision that affects everything: <strong>batch vs. real-time inference</strong>. Batch inference processes many predictions at once (a nightly job scoring all customers for a churn model); real-time inference processes one request at a time as it arrives (a recommendation engine serving users live). Batch is cheaper — you can run it on off-peak compute, optimize for throughput. Real-time requires always-on infrastructure optimized for latency.</p>`,
     },
     {
@@ -26,14 +26,14 @@ const scalabilityCostAndSecurity: Section = {
       variant: "info",
       title: "Cost: Where Your Inference Budget Goes",
       html: `<ul>
-<li><strong>Right-sizing</strong> — match the infrastructure to the actual workload. A model that gets two requests per day doesn't need a dedicated GPU instance. A model serving a million requests per hour does.</li>
-<li><strong>Spot instances</strong> — cloud providers sell spare capacity at a steep discount (60–90% off on-demand prices). The catch: the instance can be terminated with 2 minutes' notice. Great for training jobs (just checkpoint frequently). Risky for latency-sensitive inference.</li>
-<li><strong>Caching</strong> — if your model frequently receives the same or similar inputs, cache the predictions. A recommendation model that shows the same top-10 products to most anonymous users can serve those from a cache rather than running inference.</li>
-<li><strong>Model compression</strong> — smaller models cost less to run and respond faster. Three techniques worth knowing:
+<li><strong>Right-sizing</strong> — match the infrastructure to the actual workload. A model that gets two requests per day doesn't need a dedicated GPU instance. A model serving a million requests per hour does.</li><br>
+<li><strong>Spot instances</strong> — cloud providers sell spare capacity at a steep discount (60–90% off on-demand prices). The catch: the instance can be terminated with 2 minutes' notice. Great for training jobs (just checkpoint frequently). Risky for latency-sensitive inference.</li><br>
+<li><strong>Caching</strong> — if your model frequently receives the same or similar inputs, cache the predictions. A recommendation model that shows the same top-10 products to most anonymous users can serve those from a cache rather than running inference.</li><br>
+<li><strong>Model compression</strong> — smaller models cost less to run and respond faster. <br>Three techniques to explore:
   <ul>
-    <li><strong>Quantization</strong> — reduce the precision of weights from float32 to int8. Often 4× smaller with minimal accuracy loss.</li>
-    <li><strong>Pruning</strong> — remove weights that contribute little to predictions. Reduces parameter count.</li>
-    <li><strong>Distillation</strong> — train a small "student" model to mimic a large "teacher" model. The student is far cheaper to run.</li>
+    <li><strong>1. Quantization</strong> — reduce the precision of weights from float32 to int8. Often 4× smaller with minimal accuracy loss.</li>
+    <li><strong>2. Pruning</strong> — remove weights that contribute little to predictions. Reduces parameter count.</li>
+    <li><strong>3. Distillation</strong> — train a small "student" model to mimic a large "teacher" model. The student is far cheaper to run.</li>
   </ul>
 </li>
 </ul>`,
@@ -42,13 +42,23 @@ const scalabilityCostAndSecurity: Section = {
       type: "callout",
       variant: "warning",
       title: "ML-Specific Security Threats",
-      html: `<p>Standard security hygiene (encryption in transit and at rest, access control, regular audits) applies to ML systems just as to any software. But ML models face a class of attacks that general software does not:</p>
+      html: `<p>Standard security hygiene (encryption in transit and at rest, access control, regular audits) applies to ML systems just as to any software. But ML models face a class of attacks that general software does not:</p><br>
 <ul>
-<li><strong>Model inversion attacks</strong> — an adversary queries the model repeatedly to reconstruct its training data. If the model was trained on sensitive records (medical data, PII), this is a serious privacy concern.</li>
-<li><strong>Membership inference attacks</strong> — the adversary tries to determine whether a specific record was in the training set. This leaks information about who was included in your training data.</li>
+<li><strong>Model inversion attacks</strong> — an adversary queries the model repeatedly to reconstruct its training data. If the model was trained on sensitive records (medical data, PII), this is a serious privacy concern.</li><br>
+<li><strong>Membership inference attacks</strong> — the adversary tries to determine whether a specific record was in the training set. This leaks information about who was included in your training data.</li><br>
 <li><strong>Adversarial examples</strong> — inputs crafted to cause the model to misclassify. A stop sign with a few stickers that a human reads as "stop sign" but a computer vision model reads as "speed limit." In autonomous systems, this is a safety concern.</li>
-</ul>
+</ul><br>
 <p>These aren't theoretical. Defenses include differential privacy during training, rate-limiting and anomaly detection on API queries, and adversarial training. Most ML engineers won't implement these from scratch, but you should be able to recognize the threat and escalate to a security team that can.</p>`,
+    },
+    {
+      type: "article",
+      href: "https://www.duketrustlab.com/outreach/fooled",
+      imageSrc: "/engineering/fooled.png",
+      imageAlt: "Play a Game: Are You Smarter than AI?",
+      publisher: "Duke Trust Lab",
+      title: "Play a Game: Are You Smarter than AI?",
+      excerpt: "Adversarial examples and deceptive inputs can fool machine learning models. Can they fool you?",
+      ctaLabel: "Play Game",
     },
     {
       type: "checkpoint",

@@ -61,7 +61,6 @@ import BayesTheoremVisualizer from "./interactives/BayesTheoremVisualizer";
 import ResidualAnalysisDashboard from "./interactives/ResidualAnalysisDashboard";
 import SimpsonsParadoxVisualizer from "./interactives/SimpsonsParadoxVisualizer";
 import SQLSandbox from "./interactives/SQLSandbox";
-import EmbeddingPlayground from "./interactives/EmbeddingPlayground";
 import StoragePicker from "./interactives/StoragePicker";
 import PipelineCostSimulator from "./interactives/PipelineCostSimulator";
 import DAGBuilder from "./interactives/DAGBuilder";
@@ -86,6 +85,14 @@ import LakehouseComparison from "./interactives/LakehouseComparison";
 import ETLStepsGrid from "./interactives/ETLStepsGrid";
 import AirflowDAG from "./interactives/AirflowDAG";
 import SparkArchitecture from "./interactives/SparkArchitecture";
+import MLCICDPipeline from "./interactives/MLCICDPipeline";
+import MLOpsLifecycleGrid from "./interactives/MLOpsLifecycleGrid";
+import DeploymentOptionsGrid from "./interactives/DeploymentOptionsGrid";
+import DockerPropertiesGrid from "./interactives/DockerPropertiesGrid";
+import VersioningGrid from "./interactives/VersioningGrid";
+import DataDriftVisualizer from "./interactives/DataDriftVisualizer";
+import MonitoringStackGrid from "./interactives/MonitoringStackGrid";
+import DemoFrameworksGrid from "./interactives/DemoFrameworksGrid";
 
 // Register your interactive components here.
 // The key must match the "component" field in your content blocks.
@@ -157,7 +164,6 @@ export default defineConfig({
     ResidualAnalysisDashboard,
     SimpsonsParadoxVisualizer,
     SQLSandbox,
-    EmbeddingPlayground,
     StoragePicker,
     PipelineCostSimulator,
     DAGBuilder,
@@ -182,5 +188,13 @@ export default defineConfig({
     ETLStepsGrid,
     AirflowDAG,
     SparkArchitecture,
+    MLCICDPipeline,
+    MLOpsLifecycleGrid,
+    DeploymentOptionsGrid,
+    DockerPropertiesGrid,
+    VersioningGrid,
+    DataDriftVisualizer,
+    MonitoringStackGrid,
+    DemoFrameworksGrid,
   },
 });
