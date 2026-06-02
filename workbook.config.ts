@@ -99,7 +99,7 @@ import DemoFrameworksGrid from "./interactives/DemoFrameworksGrid";
 // e.g. { type: "interactive", component: "MyDemo", ... }
 
 export default defineConfig({
-  title: "Data Science Workbook",
+  title: "Data Science",
   description: "Learn fundamental concepts in data science including data storytelling, statistics, and data/ML engineering.",
   components: {
     ArticleEmbed,
