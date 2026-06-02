@@ -61,7 +61,7 @@ export default function Home() {
           About
         </h2>
         <p className="text-slate-600">
-          This workbook was created and is maintained by Dr. Brinnae Bent at Duke University for AIPI 510: Data Sourcing for Analytics.{" "}
+          This workbook was created and is maintained by <a href="https://brinnae.com" className="underline hover:text-slate-900">Dr. Brinnae Bent</a> at Duke University for AIPI 510: Data Sourcing for Analytics. <br></br><br></br>This book is a compilation of best practices, lessons learned, and concepts that are directly applicable when designing and deploying machine learning systems for production.{" "}
           {/* TODO: add your name(s) here */}
         </p>
       </section>

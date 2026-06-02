@@ -252,8 +252,8 @@ export default function MLCICDPipeline() {
             <div className="flex items-center gap-2 mb-3">
               <span className={activeStage.color.icon}>{activeStage.icon}</span>
               <span className="text-sm font-bold text-slate-800">{activeStage.label}</span>
-              <span className={`ml-auto text-[10px] font-semibold uppercase tracking-wide px-2 py-0.5 rounded-full ${PHASE_META[activeStage.phase].color}`}>
-                {PHASE_META[activeStage.phase].label}
+              <span className={`ml-auto text-[10px] font-semibold uppercase tracking-wide px-2 py-0.5 rounded-full ${PHASE_META[activeStage.phase as keyof typeof PHASE_META].color}`}>
+                {PHASE_META[activeStage.phase as keyof typeof PHASE_META].label}
               </span>
             </div>
 
